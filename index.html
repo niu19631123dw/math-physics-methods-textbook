@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学物理方法：从物理问题出发 · 在线阅读</title>
+<meta name="description" content="以物理问题为骨架组织的数学物理方法讲义。工具在问题后面出场，不在前面等着。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --border:#30363d;
+  --text:#c9d1d9; --muted:#8b949e; --strong:#f0f6fc;
+  --accent:#58a6ff; --accent-bg:#1f6feb;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Microsoft YaHei',sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{
+  text-align:center; padding:72px 20px 56px;
+  background:radial-gradient(ellipse at top,rgba(31,111,235,.16),transparent 65%),var(--bg);
+  border-bottom:1px solid var(--border);
+}
+.hero h1{font-size:clamp(26px,5vw,42px);color:var(--strong);margin-bottom:12px;letter-spacing:-.02em;}
+.hero .subtitle{font-size:clamp(14px,2vw,17px);color:var(--muted);margin-bottom:8px;}
+.hero .subtitle em{color:var(--accent);font-style:normal;font-weight:500;}
+.hero .lead{max-width:680px;margin:22px auto 30px;color:var(--muted);font-size:15px;line-height:1.9;}
+.hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:8px;
+  font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;transition:all .2s;
+}
+.btn:hover{transform:translateY(-1px);text-decoration:none;}
+.btn-primary{background:var(--accent-bg);color:#fff;}
+.btn-primary:hover{background:#388bfd;}
+.btn-ghost{background:var(--panel);border-color:var(--border);color:var(--text);}
+.btn-ghost:hover{background:#21262d;}
+
+.wrap{max-width:1100px;margin:0 auto;padding:40px 20px;}
+.viewer{
+  position:relative;background:var(--panel);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;height:82vh;min-height:500px;display:flex;flex-direction:column;
+}
+.progress{position:absolute;top:0;left:0;right:0;height:3px;background:#21262d;z-index:5;display:none;}
+.progress .bar{height:100%;width:0;background:var(--accent);transition:width .2s;}
+
+#loading,#error{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px;
+}
+#error{display:none;}
+.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+#scroll{flex:1;overflow:auto;background:var(--bg);text-align:center;padding:20px;display:none;}
+#canvas{display:block;margin:0 auto;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .15s;}
+#canvas.loading-page{opacity:.4;}
+
+.controls{
+  display:none;padding:10px;background:var(--panel);border-top:1px solid var(--border);
+  justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.controls.on{display:flex;}
+.controls button{
+  background:#21262d;border:1px solid var(--border);color:var(--text);
+  padding:7px 13px;border-radius:6px;cursor:pointer;font-size:13px;transition:background .15s;
+}
+.controls button:hover:not(:disabled){background:#30363d;}
+.controls button:disabled{opacity:.4;cursor:not-allowed;}
+.controls .pg{
+  width:56px;background:var(--bg);border:1px solid var(--border);
+  color:var(--text);border-radius:6px;padding:6px 8px;text-align:center;font-size:13px;
+}
+.controls .pg:focus{outline:none;border-color:var(--accent);}
+.controls .info{color:var(--muted);font-size:13px;min-width:56px;text-align:center;}
+.controls .sep{width:1px;height:20px;background:var(--border);margin:0 6px;}
+
+.hint{text-align:center;color:var(--muted);font-size:12px;margin-top:14px;}
+.hint code{
+  background:var(--panel);padding:2px 6px;border-radius:4px;
+  font-size:12px;color:var(--accent);border:1px solid var(--border);
+}
+
+footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px;}
+footer a{color:var(--muted);}
+footer a:hover{color:var(--accent);}
+
+@media (max-width:600px){
+  .hero{padding:48px 16px 40px;}
+  .wrap{padding:20px 12px;}
+  .viewer{height:70vh;min-height:380px;}
+  .controls .sep{display:none;}
+  .controls button{padding:6px 10px;font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>数学物理方法</h1>
+  <p class="subtitle">从物理问题出发 · <em>工具在问题后面出场，不在前面等着</em></p>
+  <p class="lead">
+    不从数学分支出发，而从具体的物理问题出发：<br>
+    先让学生感到卡住，再引入数学工具。<br>
+    不追求数学体系的完整，但必须保住「什么时候会坏」的判断能力。
+  </p>
+  <div class="actions">
+    <a class="btn btn-primary" href="#reader">📖 开始阅读</a>
+    <a class="btn btn-ghost" href="数学物理方法-讲义.pdf" download>⬇ 下载 PDF</a>
+  </div>
+</section>
+
+<div class="wrap" id="reader">
+  <div class="viewer">
+    <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
+
+    <div id="loading">
+      <div class="spinner"></div>
+      <span style="color:var(--muted);">正在加载 PDF…</span>
+    </div>
+
+    <div id="error">
+      <div style="font-size:46px;">❌</div>
+      <h3 style="color:var(--strong);">PDF 加载失败</h3>
+      <p style="color:var(--muted);">文件可能尚未上传或网络异常。</p>
+      <p style="font-size:12px;color:var(--muted);">错误：<span id="errMsg">未知</span></p>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+        <button class="btn btn-primary" onclick="location.reload()">🔄 重试</button>
+        <a class="btn btn-ghost" href="数学物理方法-讲义.pdf" download>⬇ 直接下载</a>
+      </div>
+    </div>
+
+    <div id="scroll"><canvas id="canvas"></canvas></div>
+
+    <div class="controls" id="controls">
+      <button id="prev">◀</button>
+      <input type="number" class="pg" id="pageInput" value="1" min="1">
+      <span class="info">/ <span id="total">?</span></span>
+      <button id="next">▶</button>
+      <span class="sep"></span>
+      <button id="zoomOut">−</button>
+      <span class="info"><span id="zoomPct">100</span>%</span>
+      <button id="zoomIn">+</button>
+      <button id="fit" title="适应宽度">⇔</button>
+    </div>
+  </div>
+
+  <p class="hint">
+    <code>← →</code> 翻页 ·
+    <code>+ −</code> 缩放 ·
+    <code>F</code> 适应宽度 ·
+    <code>Home End</code> 首尾页
+  </p>
+</div>
+
+<footer>
+  <p>
+    <a href="https://github.com/niu19631123dw/math-physics-methods-textbook" target="_blank" rel="noopener">GitHub</a>
+    · 作者：胡甜、DeepSeek · 持续修订中
+  </p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  const PDF_URL = '数学物理方法-讲义.pdf';
+  const STORE_KEY = 'mpm-page';
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  const $ = (id) => document.getElementById(id);
+  const state = { doc:null, page:1, total:0, scale:1, fitWidth:true, rendering:false, pending:null, task:null };
+
+  const task = pdfjsLib.getDocument({
+    url: PDF_URL,
+    cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+    cMapPacked: true,
+  });
+
+  task.onProgress = (p) => {
+    if (p.total) {
+      $('progress').style.display = 'block';
+      $('bar').style.width = Math.round(p.loaded / p.total * 100) + '%';
+    }
+  };
+
+  task.promise.then((pdf) => {
+    state.doc = pdf;
+    state.total = pdf.numPages;
+    $('total').textContent = state.total;
+    const saved = parseInt(localStorage.getItem(STORE_KEY) || '1', 10);
+    state.page = Math.min(Math.max(saved, 1), state.total);
+    $('progress').style.display = 'none';
+    $('loading').style.display = 'none';
+    $('scroll').style.display = 'block';
+    $('controls').classList.add('on');
+    fitToWidth(true);
+  }).catch((err) => {
+    console.error(err);
+    $('progress').style.display = 'none';
+    $('loading').style.display = 'none';
+    $('error').style.display = 'flex';
+    $('errMsg').textContent = err.message || '未知错误';
+  });
+
+  function render(num) {
+    if (!state.doc) return;
+    if (state.task) { try { state.task.cancel(); } catch (e) {} }
+    state.rendering = true;
+    $('pageInput').value = num;
+    localStorage.setItem(STORE_KEY, num);
+
+    state.doc.getPage(num).then((page) => {
+      const canvas = $('canvas');
+      const ctx = canvas.getContext('2d');
+      const vp = page.getViewport({ scale: state.scale });
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(vp.width * dpr);
+      canvas.height = Math.floor(vp.height * dpr);
+      canvas.style.width = vp.width + 'px';
+      canvas.style.height = vp.height + 'px';
+      canvas.classList.add('loading-page');
+      const t = page.render({
+        canvasContext: ctx,
+        viewport: vp,
+        transform: dpr !== 1 ? [dpr,0,0,dpr,0,0] : null,
+      });
+      state.task = t;
+      return t.promise;
+    }).then(() => {
+      state.rendering = false;
+      state.task = null;
+      $('canvas').classList.remove('loading-page');
+      if (state.pending !== null) {
+        const p = state.pending; state.pending = null; render(p);
+      }
+    }).catch((err) => {
+      if (err && err.name !== 'RenderingCancelledException') console.error(err);
+      state.rendering = false;
+    });
+
+    $('prev').disabled = num <= 1;
+    $('next').disabled = num >= state.total;
+  }
+
+  function queue(num) { if (state.rendering) state.pending = num; else render(num); }
+
+  function prev() { if (state.page > 1) { state.page--; queue(state.page); } }
+  function next() { if (state.page < state.total) { state.page++; queue(state.page); } }
+  function goTo(n) {
+    n = parseInt(n, 10);
+    if (isNaN(n) || n < 1 || n > state.total) { $('pageInput').value = state.page; return; }
+    state.page = n; queue(n);
+  }
+
+  function setZoom(z) { $('zoomPct').textContent = Math.round(z * 100); }
+  function zoomIn() { state.fitWidth = false; state.scale = Math.min(state.scale + 0.15, 4); setZoom(state.scale); queue(state.page); }
+  function zoomOut() { state.fitWidth = false; state.scale = Math.max(state.scale - 0.15, 0.3); setZoom(state.scale); queue(state.page); }
+  function fitToWidth(silent) {
+    if (!state.doc) return;
+    state.fitWidth = true;
+    state.doc.getPage(state.page).then((page) => {
+      const base = page.getViewport({ scale: 1 });
+      const avail = Math.max($('scroll').clientWidth - 40, 240);
+      state.scale = Math.max(avail / base.width, 0.2);
+      setZoom(state.scale);
+      silent ? render(state.page) : queue(state.page);
+    });
+  }
+
+  $('prev').onclick = prev;
+  $('next').onclick = next;
+  $('zoomIn').onclick = zoomIn;
+  $('zoomOut').onclick = zoomOut;
+  $('fit').onclick = () => fitToWidth();
+  $('pageInput').onchange = (e) => goTo(e.target.value);
+
+  document.addEventListener('keydown', (e) => {
+    const t = (e.target.tagName || '').toLowerCase();
+    if (t === 'input' || t === 'textarea') return;
+    switch (e.key) {
+      case 'ArrowLeft': prev(); break;
+      case 'ArrowRight': next(); break;
+      case '+': case '=': zoomIn(); break;
+      case '-': case '_': zoomOut(); break;
+      case 'Home': goTo(1); break;
+      case 'End': goTo(state.total); break;
+      case 'f': case 'F': fitToWidth(); break;
+    }
+  });
+
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => { if (state.doc && state.fitWidth) fitToWidth(true); }, 250);
+  });
+})();
+</script>
+</body>
+</html>
