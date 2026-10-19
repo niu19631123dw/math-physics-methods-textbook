@@ -94,3 +94,5 @@ $$\tilde f(k)=\int_{-\infty}^{\infty} f(x)\,e^{-ikx}\,dx,\qquad f(x)=\frac{1}{2\
 ## 作者
 
 胡甜
+
+DeepSeek
