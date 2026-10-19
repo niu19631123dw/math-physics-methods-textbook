@@ -1,0 +1,21 @@
+# 构建中间产物
+build/*.aux
+build/*.log
+build/*.toc
+build/*.out
+build/*.pdf
+build/body.tex
+build/appendix.tex
+build/__pycache__/
+build/preview/
+build/*.txt
+build/_*.py
+build/patch*.py
+build/fix*.py
+build/check*.py
+build/audit*.py
+
+# 数据文件保留，但中间日志不保留
+build/figs/*.dat
+build/test.tex
+build/tikztest.*

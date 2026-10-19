@@ -1,0 +1,37 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=10cm, height=4.2cm,
+  xlabel={$x$}, ylabel={$y$},
+  xmin=0, xmax=6.28, ymin=-1.15, ymax=1.15,
+  legend style={font=\footnotesize, at={(0.98,0.02)}, anchor=south east},
+  grid=major, grid style={black!8},
+  title={\small 热方程：$t$ 增大，尖峰被抹平}
+]
+\addplot[thick, black!40, domain=0:6.28, samples=200] {exp(-((x-3.14)^2)/0.02)};
+\addplot[thick, blue!70, domain=0:6.28, samples=200] {0.6*exp(-((x-3.14)^2)/0.6)};
+\addplot[thick, red!70, domain=0:6.28, samples=200] {0.3*exp(-((x-3.14)^2)/2.4)};
+\legend{$t$ 小, $t$ 中, $t$ 大}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.3em}
+
+\begin{tikzpicture}
+\begin{axis}[
+  width=10cm, height=4.2cm,
+  xlabel={$x$}, ylabel={$y$},
+  xmin=0, xmax=6.28, ymin=-1.15, ymax=1.15,
+  legend style={font=\footnotesize, at={(0.98,0.02)}, anchor=south east},
+  grid=major, grid style={black!8},
+  title={\small 波动方程：形状保持，整体平移}
+]
+\addplot[thick, black!40, domain=0:6.28, samples=200] {0.3*exp(-((x-2.5)^2)/0.6)};
+\addplot[thick, blue!70, domain=0:6.28, samples=200] {0.3*exp(-((x-3.14)^2)/0.6)};
+\addplot[thick, red!70, domain=0:6.28, samples=200] {0.3*exp(-((x-3.8)^2)/0.6)};
+\legend{$t$ 小, $t$ 中, $t$ 大}
+\end{axis}
+\end{tikzpicture}
+\caption{同一个初始扰动，热方程把它抹平、峰值不断下降；波动方程让它保持形状、整体平移。前者无前沿，后者有前沿。}
+\end{figure}

@@ -1,0 +1,37 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=4.2cm,
+  xlabel={$x$}, ylabel={$\psi$},
+  xmin=-4, xmax=4, ymin=-0.15, ymax=1.1,
+  legend style={font=\footnotesize, at={(0.98,0.95)}, anchor=north east},
+  grid=major, grid style={black!8},
+  title={\small 空间越窄}
+]
+\addplot[thick, blue!70, domain=-4:4, samples=200] {0.6*exp(-x^2/0.18)};
+\addplot[thick, red!70, domain=-4:4, samples=200] {0.35*exp(-x^2/0.5)};
+\addplot[thick, black!60, domain=-4:4, samples=200] {0.18*exp(-x^2/2)};
+\legend{$\sigma$ 小, $\sigma$ 中, $\sigma$ 大}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.3em}
+
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=4.2cm,
+  xlabel={$k$}, ylabel={$\tilde\psi$},
+  xmin=-4, xmax=4, ymin=-0.15, ymax=1.1,
+  legend style={font=\footnotesize, at={(0.98,0.95)}, anchor=north east},
+  grid=major, grid style={black!8},
+  title={\small 频谱越宽}
+]
+\addplot[thick, blue!70, domain=-4:4, samples=200] {0.9*exp(-x^2*1.8)};
+\addplot[thick, red!70, domain=-4:4, samples=200] {0.55*exp(-x^2*0.6)};
+\addplot[thick, black!60, domain=-4:4, samples=200] {0.3*exp(-x^2*0.15)};
+\legend{$\sigma$ 小, $\sigma$ 中, $\sigma$ 大}
+\end{axis}
+\end{tikzpicture}
+\caption{高斯波包：$e^{-x^2/2\sigma^2}$ 的 Fourier 变换仍是高斯，宽度是 $1/\sigma$。空间上压窄，频谱就拉宽，两者不可能同时变小。}
+\end{figure}

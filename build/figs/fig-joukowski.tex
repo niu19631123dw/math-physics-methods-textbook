@@ -1,0 +1,14 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=10cm, height=4.8cm,
+  axis equal image,
+  xlabel={$\mathrm{Re}\,z$}, ylabel={$\mathrm{Im}\,z$},
+  grid=major, grid style={black!8}
+]
+\addplot[very thick, blue!70] table {figs/joukowski.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Joukowski 变换把经过 $\zeta=a$ 的偏心圆映成翼型。临界点在 $\zeta=\pm a$（像点 $z=\pm2a$）；本图圆只经过 $\zeta=a$，故后缘尖点在 $z=2a$。环量由 Kutta 条件确定。}
+\end{figure}

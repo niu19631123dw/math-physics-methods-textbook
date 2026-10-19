@@ -1,0 +1,18 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=5.2cm,
+  xlabel={$x$}, ylabel={$u$},
+  ymin=-1.35, ymax=1.35,
+  legend style={font=\footnotesize, at={(0.98,0.02)}, anchor=south east},
+  grid=major, grid style={black!8}
+]
+\addplot[thick, black!35] table {figs/gibbs_5.dat};
+\addplot[thick, blue!70] table {figs/gibbs_25.dat};
+\addplot[thick, red!70] table {figs/gibbs_100.dat};
+\legend{$N=5$, $N=25$, $N=100$}
+\end{axis}
+\end{tikzpicture}
+\caption{方波的部分和。$N$ 增大时峰值停在同一高度（约 9\% 过冲），只是越来越靠近跳变点。}
+\end{figure}

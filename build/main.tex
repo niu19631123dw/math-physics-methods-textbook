@@ -1,0 +1,109 @@
+\documentclass[UTF8,11pt,oneside,openany]{ctexbook}
+
+\usepackage[a4paper,left=2.7cm,right=2.7cm,top=2.6cm,bottom=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\linespread{1.32}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{2em}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  framerule=0.3pt,
+  numbers=none,
+  showstringspaces=false,
+  xleftmargin=0.6em,
+  xrightmargin=0.6em,
+  aboveskip=0.8em,
+  belowskip=0.8em
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\ctexset{
+  chapter/format = \Large\bfseries,
+  section/format = \large\bfseries,
+}
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+
+\begin{titlepage}
+\vspace*{4cm}
+\begin{center}
+{\Huge\bfseries 数学物理方法}\\[0.6em]
+{\LARGE 从物理问题出发}\\[1.6em]
+{\large 工具在问题后面出场，不在前面等着。}\\[1.2em]
+{\large 毕竟我们不是数学家。}\\[2.6cm]
+{\large 胡甜}\\[1.4em]
+\end{center}
+\vfill
+\end{titlepage}
+
+\pagestyle{fancy}
+\chapter*{前言}
+\addcontentsline{toc}{chapter}{前言}
+
+这本讲义换一种方式组织数学物理方法：不从数学分支出发，而从物理问题出发。
+
+市面上的教材多数按「复变函数—数学物理方程—特殊函数」排列。这个顺序对写书的人是自然的，对学物理的人是反的：学生先学完一整本复分析，还不知道这些定理将来解的是哪道题。另一种常见的毛病是讲得太细、太严格——Laurent 级数的收敛性证明占据半节课，而学生连为什么需要这种展开都没弄明白。这种严格在物理里收益很低，代价却很大：它挤掉了真正需要讲的东西，也就是一个工具什么时候能用、什么时候会坏。
+
+所以正文共七章（另设第 0 章导论），前六章围绕六条线索：振动与波、本征函数与特殊函数、点源与响应、边值问题、分解与因果、极值原理；第 7 章补上广义相对论所需的张量与黎曼几何。复分析的集中讲解只在第 4 章——留数定理，以及用它把圆的结果搬到翼型的保角映射；第 5 章会再次调用留数。附录 G 给出这些线索与各章各节的完整对照，以及和国内数理方法大纲的覆盖情况。
+
+每一章都从一个具体的物理问题开场，先让读者感到卡住，再引入数学工具。工具出现时，必然已经有一个问题在等它。除导论外，每章末尾有一份判断点清单，回答三个问题：这个操作什么时候合法、坏了会怎样、怎么在具体问题里察觉。附录 B 把全书判断点汇总成一张速查表。
+
+这本讲义不追求数学体系的完整，但必须保住「什么时候会坏」的判断能力。这是它和「只讲套路」的教材最根本的区别。
+
+本书由胡甜与 DeepSeek 协作完成。例题与习题的选题传统参考了 Arfken、Boas、Riley 等经典教材，正文的组织、表述与解答均为独立撰写。参考书目见书末。
+
+\tableofcontents
+
+\mainmatter
+\pagestyle{fancy}
+\setcounter{chapter}{-1}
+
+\input{body}
+
+\appendix
+\input{appendix}
+
+\backmatter
+\chapter*{参考书目}
+\addcontentsline{toc}{chapter}{参考书目}
+
+\begin{enumerate}[leftmargin=2.4em,itemsep=0.5em]
+\item G. B. Arfken, H. J. Weber, F. E. Harris, \emph{Mathematical Methods for Physicists}, 7th ed., Academic Press, 2013.
+\item M. L. Boas, \emph{Mathematical Methods in the Physical Sciences}, 3rd ed., Wiley, 2005.
+\item K. F. Riley, M. P. Hobson, S. J. Bence, \emph{Mathematical Methods for Physics and Engineering}, 3rd ed., Cambridge University Press, 2006.
+\item E. Butkov, \emph{Mathematical Physics}, Addison-Wesley, 1968.
+\item P. M. Morse, H. Feshbach, \emph{Methods of Theoretical Physics}, McGraw-Hill, 1953.
+\item R. Courant, D. Hilbert, \emph{Methods of Mathematical Physics}, Wiley, 1953.
+\item J. D. Jackson, \emph{Classical Electrodynamics}, 3rd ed., Wiley, 1999.
+\item G. N. Watson, \emph{A Treatise on the Theory of Bessel Functions}, 2nd ed., Cambridge University Press, 1944.
+\item 梁昆淼，《数学物理方法》，高等教育出版社。
+\end{enumerate}
+
+\end{document}

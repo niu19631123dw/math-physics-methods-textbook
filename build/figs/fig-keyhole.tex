@@ -1,0 +1,31 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.05]
+% 支割线：正实轴上一段，用红色粗线表示
+\draw[very thick, red!70] (0.25,0) -- (2.7,0);
+\node[red!70, above] at (1.7,0.02) {\small 支割线};
+
+% 钥匙孔：上沿（R -> eps），从外面绕过支割线
+\draw[very thick, -{Stealth}]
+  (2.7,-0.14) .. controls (1.5,-0.14) and (0.5,-0.14) .. (0.25,-0.14);
+% 左端小圆（逆时针，从下到上）
+\draw[very thick] (0.25,0.14) arc (90:270:0.14);
+% 下沿（eps -> R）
+\draw[very thick, -{Stealth}]
+  (0.25,0.14) .. controls (0.5,0.14) and (1.5,0.14) .. (2.7,0.14);
+% 右端：从下沿末端经大圆回到上沿起点（逆时针沿大半圆）
+\draw[very thick, -{Stealth}]
+  (2.7,0.14) arc (4:340:2.7) ;
+
+% 缺口标记
+\draw (-3.0,0) -- (3.4,0) node[right] {$\mathrm{Re}\,z$};
+\draw (0,-3.0) -- (0,3.2) node[above] {$\mathrm{Im}\,z$};
+
+% 极点示例（在支割线外）
+\fill[blue!70] (-1.2,1.2) circle (2pt) node[right] {\small $z=-1$};
+
+\node at (2.95,-0.15) {\small $R$};
+\node at (0.55,0.35) {\small $\varepsilon$};
+\end{tikzpicture}
+\caption{钥匙孔回路（keyhole contour）。沿支割线上方从 $R$ 走到 $\varepsilon$，绕小圆一圈，再沿下方从 $\varepsilon$ 走回 $R$，最后绕大半圆闭合。上下两侧的积分不抵消——支割线两侧函数取不同的分支，差一个 $e^{2\pi ia}$，这个差正是积分的来源。}
+\end{figure}

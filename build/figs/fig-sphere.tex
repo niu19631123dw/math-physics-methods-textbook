@@ -1,0 +1,12 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\shade[ball color=gray!25,opacity=0.85] (0,0) circle (1.5);
+\draw[thick] (0,0) circle (1.5);
+\draw[thick,gray] (0,-1.5) arc (-90:90:1.5 and 0.45);
+\draw[dashed,gray] (0,-1.5) arc (270:90:1.5 and 0.45);
+\draw[very thick,blue!70] (-1.32,-0.72) .. controls (-0.6,0.5) and (0.6,0.5) .. (1.32,-0.72);
+\node at (0,-1.85) {\small 大圆（测地线）};
+\end{tikzpicture}
+\caption{球面上的测地线是大圆。在直角坐标里，它是三维空间中的一条曲线；在球面自己的坐标里，它是「最直」的路径——但这里的「直」是用球面度规和它的联络定义的，不是三维空间里看出来的样子。}
+\end{figure}

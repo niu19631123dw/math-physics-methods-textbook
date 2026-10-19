@@ -1,0 +1,14 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.15]
+\draw[->] (-2.6,0) -- (2.8,0) node[right] {$\mathrm{Re}\,z$};
+\draw[->] (0,-1.5) -- (0,2.3) node[above] {$\mathrm{Im}\,z$};
+\draw[very thick,-{Stealth}] (-2.2,0) -- (2.2,0);
+\draw[very thick,-{Stealth}] (2.2,0) arc (0:180:2.2);
+\fill (0,1) circle (2pt) node[right] {$z=i$};
+\fill (0,-1) circle (2pt) node[right] {$z=-i$};
+\draw (2.2,0) -- (2.55,0);
+\node[below] at (2.4,0) {\small $R$};
+\end{tikzpicture}
+\caption{上半平面闭合回路：实轴段加上大半圆。回路内的极点决定积分值；弧上积分由 ML 估计消失（含振荡因子时改用 Jordan 引理）。}
+\end{figure}
