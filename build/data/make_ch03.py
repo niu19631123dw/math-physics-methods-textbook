@@ -5,7 +5,7 @@
 零点用二分法从扫描出的变号区间求。
 
 运行：python build/data/make_ch03.py
-输出：build/figs/ch03-02.dat ... ch03-07.dat
+输出：build/figs/ch03-02.dat ... ch03-06.dat
 """
 import io
 import math
@@ -155,16 +155,6 @@ for n in range(3):
     k = JZ[0][n]
     cols.append([J(0, k * t) for t in xi])
 save('ch03-05.dat', 'xi n1 n2 n3', cols)
-
-# ---- ch03-07：圆波导各模式的 k_c a -----------------------------------
-modes = [('TE$_{11}$', JPZ[1][0]), ('TM$_{01}$', JZ[0][0]),
-         ('TE$_{21}$', JPZ[2][0]), ('TE$_{01}$', JPZ[0][0]),
-         ('TM$_{11}$', JZ[1][0]), ('TE$_{31}$', JPZ[3][0]),
-         ('TM$_{21}$', JZ[2][0]), ('TE$_{41}$', JPZ[4][0])]
-modes.sort(key=lambda p: p[1])
-save('ch03-07.dat', 'order kca',
-     [np.arange(1, len(modes) + 1), [v for _, v in modes]])
-print('    模式顺序：' + ', '.join('%s=%.4f' % (k, v) for k, v in modes))
 
 # ---- ch03-06：零点随阶数的位置与渐近线 (n + m/2 - 1/4)*pi -------------
 n = np.arange(1, 6)

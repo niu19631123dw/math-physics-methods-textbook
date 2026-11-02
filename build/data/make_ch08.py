@@ -77,21 +77,13 @@ for tag, t in (('a', 0.0), ('b', 2.0), ('c', 5.0)):
     env = np.exp(-xs ** 2 / (2 * s ** 2)) / s
     save('ch08-03%s.dat' % tag, 'x env', [xs, env])
 
-# ---- ch08-04：三种极点位置对应的时域响应 ----------------------------
+# ---- ch08-05：三种极点位置对应的时域响应 ----------------------------
 tt = np.linspace(0, 6, 601)
 gam = 0.5
-save('ch08-04.dat', 't decay const grow',
+save('ch08-05.dat', 't decay const grow',
      [tt, np.exp(-gam * tt), np.ones_like(tt), np.exp(0.35 * tt)])
 
-# ---- ch08-05：单缝 sinc^2 与圆孔艾里斑 ------------------------------
-u = np.linspace(0.001, 3.2, 801)                       # u = sinθ/(λ/a)
-I_single = (np.sin(np.pi * u) / (np.pi * u)) ** 2
-vv = np.pi * 1.22 * u                                  # x = πD sinθ/λ
-I_circ = (2 * np.array([J1(t) for t in vv]) / vv) ** 2
-db = lambda y: np.maximum(10 * np.log10(np.maximum(y, 1e-9)), -60)
-save('ch08-05.dat', 'u single circ', [u, db(I_single), db(I_circ)])
-
-# ---- ch08-06：RC 低通的幅频与相频 ----------------------------------
+# ---- ch08-06：RC 低通的幅频与相频（第 6 张图） ----------------------------------
 f = np.logspace(-2, 2, 401)                            # f/f_c
 H = 1.0 / (1 + 1j * f)
 save('ch08-06.dat', 'f mag phase',

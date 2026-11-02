@@ -40,13 +40,13 @@
 
 **1.18** 钢中：$2000/5000=0.40\ \mathrm{s}$；空气中：$2000/343=5.83\ \mathrm{s}$；时间差 $5.4\ \mathrm{s}$。这个「先到的是固体里的纵波」是 1.5 节「同一段路程、不同速度」的最朴素演示。
 
-**1.19** $v=2.0\times10^{8}\ \mathrm{m/s}$，$d=v\Delta t/2=2.0\times10^{8}\times0.80\times10^{-6}/2=80\ \mathrm{m}$。同相意味着 $R>0$、$Z_2>Z_1$，是开路（断线）或高阻接头；若倒相则是短路。
+**1.19** 设入射 $f(t-x/c)$、反射 $Rf(t+x/c)$。端点条件 $T\frac{\partial u}{\partial x}\Big|_{x=0}=\kappa u(0,t)$ 对简谐波给出 $iTk(1-R)=\kappa(1+R)$，解出 $R=\dfrac{iTk-\kappa}{iTk+\kappa}$。分子与分母互为共轭，所以 $|R|=1$：端点不吸能，只改相位。分界在 $Tk=\kappa$，即 $\omega_c=\kappa c/T$；代入 $\kappa=10^{3}\ \mathrm{N/m}$、$T=70\ \mathrm{N}$、$c=\sqrt{T/\rho}=418\ \mathrm{m/s}$，得 $\omega_c=6.0\times10^{3}\ \mathrm{rad/s}$、$f_c\approx9.5\times10^{2}\ \mathrm{Hz}$。低于它像撞固定端（倒相），高于它像撞自由端（不倒相）。(c) 脉冲含各种频率，各成分的反射相位不同，叠加之后就从尖脉冲拖成一段尾巴。
 
 **1.20** $\tau=Q/\omega_1=1000/(2\pi\times322)=0.49\ \mathrm{s}$，振幅按 $e^{-t/\tau}$ 衰减，听觉上 3 到 4 个 $\tau$，即 $1.5$ 到 $2\ \mathrm{s}$。若 $\gamma\propto\omega$，则 $\tau_n=2/\gamma_n\propto1/\omega_n$，第 $n$ 阶的衰减时间是基频的 $1/n$：第 10 阶只有 $49\ \mathrm{ms}$。所以余音在几十毫秒后就只剩低阶，听感由亮变暗。
 
 **1.21** $c=\sqrt{9.8\times4000}=198\ \mathrm{m/s}$，$t=8.0\times10^{6}/198=4.0\times10^{4}\ \mathrm{s}=11\ \mathrm{h}$。近岸水浅，$c=\sqrt{gh}$ 变小，而能流 $c\times$（单位宽度的能量）近似守恒，波长被压缩、振幅必须增大；浅水波的格林定律给出振幅 $\propto h^{-1/4}$，所以几千米深的浪到岸边可以放大到几米。
 
-**1.22** $R=\frac{50-75}{50+75}=-0.2$，反射功率比为 $R^{2}=0.04$，即 $4\%$。这就是为什么射频系统要求全程 $50\ \Omega$：每经过一个失配接头就丢一点，还会在源端引起多次反射。
+**1.22** 在 $x=0$ 处 $u=(1+R)f$、$\frac{\partial u}{\partial x}=\frac{R-1}{c}f'$，质量块的运动方程给出 $T\frac{\partial u}{\partial x}=M\frac{\partial^{2}u}{\partial t^{2}}$。取 $f=e^{-i\omega t}$ 代入，得 $iTk(1-R)=-M\omega^{2}(1+R)$，于是 $R=\dfrac{iTk+M\omega^{2}}{iTk-M\omega^{2}}$，分子分母共轭，$|R|=1$。分界在 $M\omega^{2}=Tk$，即 $\omega_c=T/(Mc)$；代入 $M=2.0\ \mathrm{g}$、$T=70\ \mathrm{N}$、$c=418\ \mathrm{m/s}$，得 $\omega_c=8.4\times10^{1}\ \mathrm{rad/s}$、$f_c\approx13\ \mathrm{Hz}$。低频时质量块很容易被推着走，端点几乎不约束（$R\to+1$，像自由端）；高频时它来不及响应（$R\to-1$，像固定端）。
 
 **1.23** 拾音器输出正比于该点的弦速 $\frac{\partial u}{\partial t}\propto\sin\frac{n\pi x_p}{L}$。$x_p=L/5$ 时 $\sin\frac{n\pi}{5}=0$ 对 $n=5,10,15,\dots$，这些泛音没有输出。三个拾音器装在离琴桥不同距离处，各自削掉的泛音组不同，所以同一根弦在三个位置上的音色不同—这不是电路差异，是几何造成的频谱缺口。
 
@@ -81,8 +81,6 @@
 **1.38** 对。对无色散均匀弦上的行波，$e_k=e_p$ 处处成立（1.6.4），所以 $e=e_k+e_p=2e_k$。注意这只对行波成立；驻波里两者不相等，一般时刻 $e_p$ 可以远大于 $e_k$。
 
 **1.39** 错。这里的 $c$ 是弦（或介质）的横波速度，由 $T$、$\rho$ 决定，不是信号速度的上限。在相对论情形下，波动方程本身要换成满足洛伦兹协变的方程，「$c$ 很大」这件事在物理上不允许；弦的模型只是非相对论近似。
-
-**1.40** 错。$d=v\Delta t/2$，$v$ 必须已知，而 $v=c_0/\sqrt{\varepsilon_r}$ 由绝缘材料的介电常数决定。同一条电缆换了绝缘材料，$1\ \mu\mathrm{s}$ 对应的距离就变了；工程上要么按型号查 $v$，要么先用一段已知长度的电缆标定。
 
 ## 第 2 章
 
@@ -346,21 +344,31 @@ $$f_{0,1}=57.4\ \text{Hz},\quad f_{1,1}=91.5\ \text{Hz},\quad f_{2,1}=122.6\ \te
 $$\int_0^a rJ_0^2\!\left(j_{0,1}\frac{r}{a}\right)\mathrm{d}r=\frac{a^2}{2}J_1^2(j_{0,1})
 =\frac{a^2}{2}(0.51915)^2=0.1348\,a^2 .$$
 
-**3.10** $f_c=jc/(2\pi a)$，$c/(2\pi a)=2.386\ \text{GHz}$：
+**3.10** $c/(2\pi a)=3\times10^{8}/(2\pi\times0.02)=2.387\ \text{GHz}$：
 
-$$f_c(\text{TE}_{11})=1.8412\times2.386=4.39\ \text{GHz},$$
+$$f_c(\mathrm{TM}_{01})=2.4048\times2.387=5.74\ \text{GHz},\qquad
+f_c(\mathrm{TE}_{11})=1.8412\times2.387=4.39\ \text{GHz}.$$
 
-$$f_c(\text{TM}_{01})=2.4048\times2.386=5.74\ \text{GHz},\qquad
-f_c(\text{TE}_{21})=3.0542\times2.386=7.29\ \text{GHz}.$$
+**TE 模比 TM 模低**，因为 $J_m'$ 的首零比 $J_m$ 的小。
 
-**3.11** $\ln(a/b)=\ln4=1.386$：
+**3.11** $\ln(a/b)=\ln4=1.386$，
 
-$$C=\frac{2\pi\varepsilon_0}{\ln4}=4.01\times10^{-11}\ \text{F/m},\qquad
-L=\frac{\mu_0}{2\pi}\ln4=2.77\times10^{-7}\ \text{H/m},$$
+$$C=\frac{2\pi\varepsilon_0}{\ln4}=4.01\times10^{-11}\ \text{F/m}=40.1\ \text{pF/m}.$$
 
-$$Z_0=\sqrt{L/C}=83\ \Omega .$$
+**只依赖比值 $a/b$**：同轴线整体做细，电容不变。
 
-**3.12** 由 $\frac{1}{r}\frac{\mathrm{d}}{\mathrm{d}r}\left(r\frac{\mathrm{d}V}{\mathrm{d}r}\right)=0$ 得 $V=A\ln r+B$。边界 $V(b)=0$、$V(a)=100\ \text{V}$：
+**3.12** 由 $\frac{\mathrm{d}J_0}{\mathrm{d}x}=-J_1$ 再求一次导：
+
+$$\frac{\mathrm{d}^2J_0}{\mathrm{d}x^2}=-\frac{\mathrm{d}J_1}{\mathrm{d}x}
+=-\left(J_0-\frac{J_1}{x}\right)=-J_0+\frac{J_1}{x}.$$
+
+而 $\frac{1}{x}\frac{\mathrm{d}J_0}{\mathrm{d}x}=-\frac{J_1}{x}$。两项相加，$\pm J_1/x$ 抵掉，只剩 $-J_0$，即
+
+$$\frac{\mathrm{d}^2J_0}{\mathrm{d}x^2}+\frac{1}{x}\frac{\mathrm{d}J_0}{\mathrm{d}x}+J_0=0 .$$
+
+**这说明贝塞尔方程不是凭空来的：它等价于两条一阶递推。** 反过来，从方程加上递推也能重建全部 $J_m$。
+
+**3.13** 由 $\frac{1}{r}\frac{\mathrm{d}}{\mathrm{d}r}\left(r\frac{\mathrm{d}V}{\mathrm{d}r}\right)=0$ 得 $V=A\ln r+B$。边界 $V(b)=0$、$V(a)=100\ \text{V}$：
 
 $$A=\frac{100}{\ln3}=91.0,\qquad V(r)=91.0\ln\frac{r}{0.01},$$
 
@@ -368,54 +376,41 @@ $$E(r)=-\frac{\mathrm{d}V}{\mathrm{d}r}=-\frac{91.0}{r}\ \text{V/m},\qquad E(0.0
 
 负号表示场指向内柱。
 
-**3.13** $c/(2\pi a)=55/(2\pi\times0.33)=26.53\ \text{Hz}$：
+**3.14** $c/(2\pi a)=55/(2\pi\times0.33)=26.53\ \text{Hz}$：
 
 $$f_{0,1}=63.8,\quad f_{1,1}=101.6,\quad f_{2,1}=136.2,\quad f_{0,2}=146.4\ \text{Hz}.$$
 
 最小间隔是 $(2,1)$ 与 $(0,2)$ 之间的 $10.2\ \text{Hz}$。**这正是「$j_{2,1}$ 与 $j_{0,2}$ 交错」的直接后果（3.6.2 节）。**
 
-**3.14** （a）中心 $r_0=0$：$J_m(0)=0$ 对一切 $m\geq1$，所以系数为零，只剩 $m=0$。（b）边界 $r_0=a$：$J_m(j_{m,n})=0$ 对一切 $m,n$，所有系数为零，什么都不响——因为边界被固定死了。两个结论用的都是 $J_m$ 的零点，一个在原点、一个在 $x=j_{m,n}$。
+**3.15** （a）中心 $r_0=0$：$J_m(0)=0$ 对一切 $m\geq1$，所以系数为零，只剩 $m=0$。（b）边界 $r_0=a$：$J_m(j_{m,n})=0$ 对一切 $m,n$，所有系数为零，什么都不响——因为边界被固定死了。两个结论用的都是 $J_m$ 的零点，一个在原点、一个在 $x=j_{m,n}$。
 
-**3.15** 初位移正好是一个模式，所以只有一项：
+**3.16** 初位移正好是一个模式，所以只有一项：
 
 $$u(r,t)=u_0J_0\!\left(j_{0,1}\frac{r}{a}\right)\cos(\omega_{0,1}t),\qquad \omega_{0,1}=\frac{cj_{0,1}}{a}.$$
 
 中心点 $J_0(0)=1$，所以 $u(0,t)=u_0\cos\omega_{0,1}t$——**中心点振幅最大，且没有节圆通过它。**
 
-**3.16** 刚性壁给诺伊曼条件 $\partial p/\partial r=0$，即 $J_m'(k_ca)=0$，最低是 $j'_{1,1}=1.8412$：
+**3.17** $f_{0,3}=\frac{c\,j_{0,3}}{2\pi a}=\frac{30\times8.6537}{2\pi\times0.2}=206.6\ \text{Hz}$。
 
-$$f_c=\frac{1.8412\times343}{2\pi\times0.05}=2010\ \text{Hz}.$$
+节圆半径 $r_k=a\,j_{0,k}/j_{0,3}$：$r_1=0.2779a=5.56\ \text{cm}$，$r_2=0.6379a=12.76\ \text{cm}$。
 
-$500\ \text{Hz}$ 时 $ka=2\pi\times500\times0.05/343=0.46\ll1.84$，高阶模全部截止，只剩平面波。**这就是「低频声波在一维管道里传播」的定量依据。**
+**模有两个节圆、没有节线**，所以图样是同心的三圈（内正、中负、外正）。
 
-**3.17** $ka=2\pi fa/c=2\pi\times12\times10^{9}\times0.015/3\times10^{8}=3.77$。凡是 $k_ca<3.77$ 的模式都能传：TE$_{11}$（1.841）、TM$_{01}$（2.405）、TE$_{21}$（3.054），共三个。下一个是 $3.832$（TE$_{01}$ 与 TM$_{11}$），对应
+**3.18** 强度因子 $J_m(j_{m,1}r_0/a)$，$r_0/a=0.7$：
 
-$$f_c=\frac{3.832\times3\times10^{8}}{2\pi\times0.015}=12.20\ \text{GHz},$$
+$$J_0(1.683)=0.408,\qquad J_1(2.682)=0.447,\qquad J_2(3.595)=0.446 .$$
 
-只比工作频率高一点点。**实际使用时要把工作频率留出足够余量。**
+以 $(1,1)$ 归一：$(0,1):(1,1):(2,1)=0.91:1:1.00$。
 
-**3.18** $\ln(a/b)=1.188$，$\varepsilon_r=2.3$：
+**读法：** $0.7a$ 处三个模式几乎等强，所以敲出来的音色最「杂」；越靠外，低阶模式越弱，声音越尖。
 
-$$Z_0=\frac{60}{\sqrt{2.3}}\times1.188=47\ \Omega,\qquad
-C=\frac{2\pi\varepsilon_r\varepsilon_0}{1.188}=1.08\times10^{-10}\ \text{F/m},$$
-
-$$v=\frac{c}{\sqrt{\varepsilon_r}}=1.98\times10^{8}\ \text{m/s}.$$
-
-100 m：总电容 $10.8\ \text{nF}$，延迟 $100/v=506\ \text{ns}$。
-
-**3.19** 截止波长
-
-$$\lambda_c=\frac{2\pi a\,\mathrm{NA}}{2.405}=\frac{2\pi\times4.1\times0.12}{2.405}=1.29\ \mu\text{m}.$$
-
-$1.31\ \mu\text{m}$：$V=2.36<2.405$，单模（余量很小）；$1.55\ \mu\text{m}$：$V=1.99$，单模。**波长越长越容易单模**，因为 $V\propto1/\lambda$。
-
-**3.20**
+**3.19**
 
 $$T(0)=T_s+\frac{q_Va^2}{4\kappa}=300+\frac{2\times10^{8}\times25\times10^{-6}}{12}=300+417=717\,^\circ\text{C}.$$
 
 半径加倍：$T(0)-T_s\propto a^2$，变成 $1667\ \text{K}$，即 $1967\,^\circ\text{C}$，早已超过铀的熔点。
 
-**3.21** 区域 $b<r<a$ 不含原点，通解 $R=AJ_0(kr)+BY_0(kr)$，两个边界条件给出
+**3.20** 区域 $b<r<a$ 不含原点，通解 $R=AJ_0(kr)+BY_0(kr)$，两个边界条件给出
 
 $$J_0(kb)Y_0(ka)-J_0(ka)Y_0(kb)=0 .$$
 
@@ -425,21 +420,21 @@ $$\frac{f_{\text{环}}}{f_{\text{实心}}}=\frac{6.246}{2.4048}=2.60 .$$
 
 **中间挖掉一半半径，基频升到 2.6 倍**：环形膜面积小、约束多，更「硬」。
 
-**3.22** $k_c=1.8412/10^{-3}=1841\ \text{m}^{-1}$，$k=2\pi\times2.45\times10^{9}/3\times10^{8}=51\ \text{m}^{-1}$，
-
-$$\alpha=\sqrt{k_c^2-k^2}\approx1840\ \text{m}^{-1},\qquad \frac{1}{\alpha}=0.54\ \text{mm}.$$
-
-5 mm 厚：$e^{-\alpha d}=e^{-9.2}\approx10^{-4}$。**衰减 40 dB 以上，所以网孔远小于波长时微波漏不出去。**
-
-**3.23** $c=\frac{2\pi af}{j_{0,1}}=\frac{2\pi\times0.35\times60}{2.4048}=54.9\ \text{m/s}$。此时
+**3.21** $c=\frac{2\pi af}{j_{0,1}}=\frac{2\pi\times0.35\times60}{2.4048}=54.9\ \text{m/s}$。此时
 
 $$f_{1,1}=\frac{3.8317\times54.9}{2\pi\times0.35}=95.7\ \text{Hz}.$$
 
 **放松鼓皮把基频降下来，所有模式按同一比例降，音程关系不变**（3.6.5 节）。
 
-**3.24** $ka=2\pi fa/c=2\pi\times500\times0.1/343=0.916<1.8412$，第一高阶模截止，只有平面波。**所以家用通风管在几百赫兹以内可以当一维声学管道处理。**
+**3.22** 内部解 $T=300+20(r/a)^2\cos2\varphi$（例 3.5）。$r=0.5a$ 时 $(r/a)^2=0.25$：
 
-**3.25** 取 $t=ie^{i\varphi}$，母函数左边为 $e^{ix\cos\varphi}$，右边为 $\sum_mJ_m(x)i^me^{im\varphi}$：
+$$T(0.05,\varphi)=300+5\cos2\varphi .$$
+
+最高 $305\ \text{K}$、最低 $295\ \text{K}$。
+
+**表面 $20\ \text{K}$ 的起伏到半径一半处只剩 $5\ \text{K}$**，按 $(r/a)^2$ 衰减。
+
+**3.23** 取 $t=ie^{i\varphi}$，母函数左边为 $e^{ix\cos\varphi}$，右边为 $\sum_mJ_m(x)i^me^{im\varphi}$：
 
 $$e^{ikr\cos\varphi}=\sum_{m=-\infty}^{\infty}i^mJ_m(kr)e^{im\varphi}.$$
 
@@ -448,7 +443,7 @@ $ka=10$：$|J_0|=0.246$、$|J_1|=0.044$、$|J_2|=0.255$，比值 $1:0.18:1.04$�
 
 **读法：** $ka\ll1$ 时只有 $m=0,1$ 两个分量有分量，对应瑞利散射的「偶极 + 单极」角分布；$ka\gg1$ 时高阶项与 $m=0$ 同量级，必须算很多阶（米氏级数收敛慢）。**「需要几阶」由 $ka$ 决定，不由 $m$ 决定。**
 
-**3.26** 由 $\int zJ_0\,\mathrm{d}z=zJ_1$（因为 $\frac{\mathrm{d}}{\mathrm{d}z}(zJ_1)=zJ_0$）：
+**3.24** 由 $\int zJ_0\,\mathrm{d}z=zJ_1$（因为 $\frac{\mathrm{d}}{\mathrm{d}z}(zJ_1)=zJ_0$）：
 
 $$\int_0^aJ_0\!\left(j_{0,1}\frac{r}{a}\right)r\,\mathrm{d}r
 =\frac{a^2}{j_{0,1}}J_1(j_{0,1})=\frac{0.51915}{2.4048}a^2=0.2159\,a^2 .$$
@@ -457,22 +452,22 @@ $$\int_0^aJ_0\!\left(j_{0,1}\frac{r}{a}\right)r\,\mathrm{d}r
 
 **读法：** 基模的平均位移只有峰值的 $43\%$，因为 $J_0$ 在边缘附近迅速掉到零。**用「平均位移」估计峰值会低估一倍多。**
 
-**3.27** 级数中 $x^{2k-m}/k!(k-m)!$ 在 $m\to-m$ 时给出 $(-1)^m$ 的额外因子，故 $J_{-m}=(-1)^mJ_m$，两者线性相关。二阶方程需要两个独立解，于是必须引入含对数项的第二解 $Y_m$；它在原点发散（3.5.2 节）。**整数阶是「例外」，非整数阶时 $J_{\pm m}$ 本来就独立。**
+**3.25** 级数中 $x^{2k-m}/k!(k-m)!$ 在 $m\to-m$ 时给出 $(-1)^m$ 的额外因子，故 $J_{-m}=(-1)^mJ_m$，两者线性相关。二阶方程需要两个独立解，于是必须引入含对数项的第二解 $Y_m$；它在原点发散（3.5.2 节）。**整数阶是「例外」，非整数阶时 $J_{\pm m}$ 本来就独立。**
 
-**3.28** 在 $r=0.5a$、$\cos m\varphi=1$ 方向：
+**3.26** 在 $r=0.5a$、$\cos m\varphi=1$ 方向：
 
 $$J_1\!\left(\frac{j_{1,1}}{2}\right)=J_1(1.916)=0.581,\qquad
 J_2\!\left(\frac{j_{2,1}}{2}\right)=J_2(2.568)=0.455,$$
 
 比值 $0.455/0.581=0.78$。**两者接近，说明 $0.5a$ 处敲击会同时激发这两个模式；要强调 $(2,1)$ 得往更外侧敲，要强调 $(1,1)$ 则在 $0.4a$ 附近最有效。**
 
-**3.29** 同面积：$\pi a^2=L^2$，$L=a\sqrt{\pi}$。方膜基频 $\omega_\square=c\pi\sqrt{2}/L=c\sqrt{2\pi}/a$，圆膜 $\omega_\bigcirc=2.4048c/a$：
+**3.27** 同面积：$\pi a^2=L^2$，$L=a\sqrt{\pi}$。方膜基频 $\omega_\square=c\pi\sqrt{2}/L=c\sqrt{2\pi}/a$，圆膜 $\omega_\bigcirc=2.4048c/a$：
 
 $$\frac{f_\bigcirc}{f_\square}=\frac{2.4048}{\sqrt{2\pi}}=0.959 .$$
 
 **圆膜比方膜低 4%**：圆形边界「更松」，同样面积下约束少一点。
 
-**3.30** 单位长度散热量
+**3.28** 单位长度散热量
 
 $$\frac{Q}{L}=\frac{2\pi(T_i-T_\infty)}{\dfrac{\ln(a/r_i)}{\kappa}+\dfrac{1}{ha}} .$$
 
@@ -482,37 +477,45 @@ $$a_c=\frac{\kappa}{h}=\frac{0.15}{10}=15\ \text{mm}.$$
 
 **当芯半径小于 $15\ \text{mm}$ 时，加保温层反而增大散热**（外表面面积增加带来的对流增益超过导热热阻）。细导线包保温层「更凉」就是这个原因。
 
-**3.31** $k_c=2.4048/0.01=240.5\ \text{m}^{-1}$，$k=2\pi\times5\times10^{9}/3\times10^{8}=104.7\ \text{m}^{-1}$，
+**3.29** 先求场：$E_r=-\frac{\partial V}{\partial r}=E_0\cos\varphi\left(1+\frac{a^2}{r^2}\right)$。在 $r=a$ 处 $E_r=2E_0\cos\varphi$，所以
 
-$$\alpha=\sqrt{240.5^2-104.7^2}=216.5\ \text{m}^{-1},\qquad \frac{1}{\alpha}=4.6\ \text{mm}.$$
+$$\sigma(\varphi)=\varepsilon_0E_r(a)=2\varepsilon_0E_0\cos\varphi .$$
 
-10 cm：$e^{-21.6}\approx4\times10^{-10}$，衰减 $-216\ \text{dB}$，**隔离足够。**
+$\varphi=0$（外场指来的一侧）带正电，$\varphi=\pi$ 带负电，两侧各半。
 
-**3.32** $V=2\pi a\,\mathrm{NA}/\lambda=2\pi\times5\times0.2/1.3=4.83$，导模数 $\approx V^2/2=11.7$，约 12 个——**多模**。单模要求
+**验算：** 感应电荷的总量为零（$\int_0^{2\pi}\cos\varphi\,\mathrm{d}\varphi=0$），符合「接地导体不净带电」。
 
-$$a<\frac{2.405\lambda}{2\pi\,\mathrm{NA}}=\frac{2.405\times1.3}{2\pi\times0.2}=2.49\ \mu\text{m}.$$
+**3.30** $T(0)-T_s=\dfrac{q_Va^2}{4\kappa}$。
 
-即纤芯半径不能超过约 $2.5\ \mu\text{m}$。
+$q_V\to2q_V$、$a\to2a$：分子变成 $2\times4=8$ 倍，**温升 8 倍**。只把 $\kappa$ 减半：**温升 2 倍**。
 
-**3.33** 错。「位移为零」是瞬时的：$u=0$ 也可能只是 $\cos\omega t=0$ 的时刻，全膜同时过零。节线的定义是**恒为零**，即空间因子在那一点为零。判据：换一个时刻再看，若还是零才是节线。
+**这就是「功率密度与尺寸不能同时放大」的定量版本**：燃料棒半径加一倍，中心温度不是加倍而是八倍。
 
-**3.34** 错。$r=0$ 根本不在同轴电缆的求解区域里，「在原点有限」这个要求无从谈起；更重要的是二阶方程需要两个边界条件（$r=b$ 与 $r=a$），只有两个独立解才凑得出非零解。舍掉 $Y_m$ 会得到「一个常数满足两个条件」，一般无解。
+**3.31** 错。「位移为零」是瞬时的：$u=0$ 也可能只是 $\cos\omega t=0$ 的时刻，全膜同时过零。节线的定义是**恒为零**，即空间因子在那一点为零。判据：换一个时刻再看，若还是零才是节线。
 
-**3.35** 需要修正。$m$ 是角向的**量子数**（整数），但局部的「每米波数」是 $m/r$：固定 $\Delta\varphi$ 时弧长是 $r\Delta\varphi$，所以 $\varphi$ 方向的局部波长是 $2\pi r/m$，随 $r$ 增大而变长。**这就是径向方程里 $m^2/r^2$ 那一项的物理含义：离心项。**
+**3.32** 错。$r=0$ 根本不在同轴电缆的求解区域里，「在原点有限」这个要求无从谈起；更重要的是二阶方程需要两个边界条件（$r=b$ 与 $r=a$），只有两个独立解才凑得出非零解。舍掉 $Y_m$ 会得到「一个常数满足两个条件」，一般无解。
 
-**3.36** 错。高阶零点间距趋于 $\pi$，对应频率间距 $\Delta f=c/(2a)$；而基频是 $2.4048c/(2\pi a)=0.3828c/a$。比值 $\Delta f/f_{0,1}=1.306$ 不是整数，所以「等间距」不等于「谐波列」。**等间距只是说相邻峰的距离固定，与基频成不成整数比是另一件事。**
+**3.33** 需要修正。$m$ 是角向的**量子数**（整数），但局部的「每米波数」是 $m/r$：固定 $\Delta\varphi$ 时弧长是 $r\Delta\varphi$，所以 $\varphi$ 方向的局部波长是 $2\pi r/m$，随 $r$ 增大而变长。**这就是径向方程里 $m^2/r^2$ 那一项的物理含义：离心项。**
 
-**3.37** 对的部分：那个模式不能传播能量，$\beta$ 变成 $i\alpha$，不进入远场。错的部分：「不存在」容易被理解成场为零，实际上场以 $e^{-\alpha z}$ 存在，衰减长度 $\sim a/j$。**这个「存在但不传播」的区域是隔离器、衰减器、微波炉门网的工作基础。**
+**3.34** 错。高阶零点间距趋于 $\pi$，对应频率间距 $\Delta f=c/(2a)$；而基频是 $2.4048c/(2\pi a)=0.3828c/a$。比值 $\Delta f/f_{0,1}=1.306$ 不是整数，所以「等间距」不等于「谐波列」。**等间距只是说相邻峰的距离固定，与基频成不成整数比是另一件事。**
 
-**3.38** 不同意。两条理由：（1）数学上它来自把方程乘 $r$ 凑成自伴形式 $\frac{\mathrm{d}}{\mathrm{d}r}\left(r\frac{\mathrm{d}R}{\mathrm{d}r}\right)+\cdots$，系数 $r$ 就是施图姆–刘维尔权重；（2）物理上 $r\,\mathrm{d}r\,\mathrm{d}\varphi$ 是面积元，正交性说的是两个模式在面积上的交叉项为零。**两条理由其实是同一件事：拉普拉斯算子关于面积元自伴。**
+**3.35** 不同意。两条理由：（1）数学上它来自把方程乘 $r$ 凑成自伴形式 $\frac{\mathrm{d}}{\mathrm{d}r}\left(r\frac{\mathrm{d}R}{\mathrm{d}r}\right)+\cdots$，系数 $r$ 就是施图姆–刘维尔权重；（2）物理上 $r\,\mathrm{d}r\,\mathrm{d}\varphi$ 是面积元，正交性说的是两个模式在面积上的交叉项为零。**两条理由其实是同一件事：拉普拉斯算子关于面积元自伴。**
 
-**3.39** 错。$\sin(n\pi r/a)$ 是「两端为零」的本征函数族，与 $J_0(j_{0,1}r/a)$ 属于不同的边界条件与不同的算子，两者在 $[0,a]$ 上（带权 $r$）并不正交。硬展开虽然形式上可以（完备性），但系数不衰减得快，边界附近还必然出现 吉布斯型振荡。**要展开就必须用同一族本征函数。**
+**3.36** 错。$\sin(n\pi r/a)$ 是「两端为零」的本征函数族，与 $J_0(j_{0,1}r/a)$ 属于不同的边界条件与不同的算子，两者在 $[0,a]$ 上（带权 $r$）并不正交。硬展开虽然形式上可以（完备性），但系数不衰减得快，边界附近还必然出现 吉布斯型振荡。**要展开就必须用同一族本征函数。**
 
-**3.40** 错。TM 的边界条件落在 $E_z$ 上（$J_m(k_ca)=0$），TE 落在 $\partial H_z/\partial r$ 上（$J_m'(k_ca)=0$）。差一个导数，最低模从 $2.405$ 变成 $1.841$。**「都是理想导体壁」只保证切向电场为零，不同模式里这个切向分量由不同的场分量提供。**
+**3.37** 错。$m\geq1$ 的模式在中心为零：$J_m(0)=0$。例如 $(1,1)$ 模中心是节线上的点（一条直径穿过中心），位移在中心恒为零。**只有 $m=0$ 的模式在中心取极值。**
 
-**3.41** 错。$m\geq1$ 的模式在中心为零：$J_m(0)=0$。例如 $(1,1)$ 模中心是节线上的点（一条直径穿过中心），位移在中心恒为零。**只有 $m=0$ 的模式在中心取极值。**
+**3.38** 错。环形区域不含 $r=0$，径向通解是 $AJ_0(kr)+BY_0(kr)$，两个边界条件给出特征方程
 
-**3.42** 前半句对：两个 $2.405$ 都来自 $J_0$ 的第一个零点。后半句错：物理机制不同——圆波导里是 $E_z$ 在导体壁上为零（边界条件），光纤里是包层无法束缚更高阶模（$V$ 数判据）。**相同的数学结构不等于相同的物理机制**；这也正是本章反复强调「本征函数由边界形状决定，但边界条件由物理决定」的原因。
+$$J_0(kb)Y_0(ka)-J_0(ka)Y_0(kb)=0 .$$
+
+$b=0.5a$ 时最低根 $ka=6.246$，是实心膜 $j_{0,1}=2.405$ 的 $2.60$ 倍。**用 $j_{0,1}$ 会把基频算低一半以上。**
+
+**3.39** 错（对 $m=0$ 而言）。因为 $\frac{\mathrm{d}J_0}{\mathrm{d}x}=-J_1$，$J_0'$ 的零点就是 $J_1$ 的零点：
+
+$$j'_{0,n}=j_{1,n}=3.8317,\ 7.0156,\ 10.1735,\dots$$
+
+**是同一张表，只是换了名字。** 但 $m\geq1$ 的 $j'_{m,n}$ 不能这样换（只有 $j'_{1,n}=j_{2,n}$ 这类特殊关系），要单独查。
 
 ## 第 4 章
 
@@ -959,6 +962,7 @@ $$\frac{W}{m_ec^2}=\frac{3}{20}\cdot\frac{e^2}{4\pi\varepsilon_0r_e}\cdot\frac{1
 
 $$\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{x^2+2x+2}=2\pi i\cdot\frac{1}{2i}=\pi .$$
 
+
 **6.2** 极点在 $z=\pm ia$，都是三阶。$m=3$，需要二阶导：
 
 $$\operatorname{Res}_{z=ia}\frac{1}{(z^2+a^2)^3}=\frac{1}{2!}\frac{\mathrm{d}^2}{\mathrm{d}z^2}\left[\frac{1}{(z+ia)^3}\right]_{z=ia}
@@ -968,17 +972,20 @@ $$\operatorname{Res}_{z=ia}\frac{1}{(z^2+a^2)^3}=\frac{1}{2!}\frac{\mathrm{d}^2}
 
 $$\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{(x^2+a^2)^3}=2\pi i\cdot\frac{3}{16ia^5}=\frac{3\pi}{8a^5}.$$
 
+
 **6.3** 先做代数变形避开二阶极点公式：$\dfrac{x^2}{(x^2+a^2)^2}=\dfrac{1}{x^2+a^2}-\dfrac{a^2}{(x^2+a^2)^2}$。用 6.5 的 $\int\mathrm{d}x/(x^2+a^2)=\pi/a$ 与例 4 类的 $\int\mathrm{d}x/(x^2+a^2)^2=\pi/(2a^3)$：
 
 $$\int_{-\infty}^{\infty}\frac{x^2\,\mathrm{d}x}{(x^2+a^2)^2}=\frac{\pi}{a}-a^2\cdot\frac{\pi}{2a^3}=\frac{\pi}{2a}.$$
 
 **不能"逐项相除"**：$\int x^2\mathrm{d}x/\int(x^2+a^2)^2$ 没有任何意义，商的积分不等于积分的商。
 
+
 **6.4** 极点是 $z^4=-a^4$ 的四个解，$z_k=ae^{i\pi(2k+1)/4}$，上半平面取 $k=0,1$。留数 $1/(4z_k^3)=-z_k/(4a^4)$（用 $z_k^4=-a^4$）。两个之和 $-(z_1+z_2)/(4a^4)=-i\sqrt2/(4a^3)$。全实轴
 
 $$\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{x^4+a^4}=2\pi i\left(-\frac{i\sqrt2}{4a^3}\right)=\frac{\pi}{\sqrt2\,a^3},$$
 
 半条实轴（偶函数）给一半：$\dfrac{\pi}{2\sqrt2\,a^3}$。
+
 
 **6.5** 二阶极点 $z=\pm i$，取 $z=i$，用 $P=e^{2iz}$、$Q=(z^2+1)^2$，$Q$ 在 $i$ 有二阶零点，改用三阶刀的等价形式：
 
@@ -994,11 +1001,13 @@ $$\int_{-\infty}^{\infty}\frac{\cos(2x)}{(x^2+1)^2}\,\mathrm{d}x=\operatorname{R
 
 （用一般公式 $\int\mathrm{d}x\cos(ax)/(x^2+b^2)^2=\frac{\pi}{2b^3}(1+ab)e^{-ab}$ 核对：$a=2,b=1$ 给 $\frac{3\pi}{2}e^{-2}$。）
 
+
 **6.6** 被积函数 $x\sin(ax)/(x^2+b^2)$ 是偶函数（奇×奇）。用 $ze^{iaz}/(z^2+b^2)$，上半平面极点 $ib$，留数 $\dfrac{ib\,e^{-ab}}{2ib}=\dfrac{e^{-ab}}{2}$。大弧由若尔当消失（$a>0$）。于是
 
 $$\int_{-\infty}^{\infty}\frac{xe^{iax}}{x^2+b^2}\,\mathrm{d}x=2\pi i\cdot\frac{e^{-ab}}{2}=i\pi e^{-ab}.$$
 
 取虚部即得 $\pi e^{-ab}$（$x/(x^2+b^2)$ 实值，取虚部合法）。
+
 
 **6.7** $f=e^{i\omega x}/(x-\omega_0)$，$\omega>0$，极点在实轴 $\omega_0$ 处，一阶，留数 $e^{i\omega\omega_0}$。实轴从左到右、从上方绕过（顺时针）给 $-i\pi$ 乘留数，大弧由若尔当消失。回路内无其他极点：
 
@@ -1006,11 +1015,13 @@ $$\mathrm{P.V.}\int_{-\infty}^{\infty}\frac{e^{i\omega x}}{x-\omega_0}\,\mathrm{
 
 实部是 $\cos$ 的主值积分 $-\pi\sin(\omega\omega_0)$，虚部是 $\sin$ 的 $\pi\cos(\omega\omega_0)$。
 
+
 **6.8** $x^4+4=(x^2-2x+2)(x^2+2x+2)$，极点在 $z=\pm1\pm i$，上半平面两个一阶极点。$Q'=4z^3$，留数 $1/(4z^3)$。$z_1=1+i$：$z_1^2=2i$，$z_1^3=2i(1+i)=2i-2$，留数 $1/(8i-8)$。$z_2=-1+i$：$z_2^2=-2i$，$z_2^3=-2i(-1+i)=2i+2$，留数 $1/(8i+8)$。相加
 
 $$\frac{1}{8}\left(\frac{1}{i-1}+\frac{1}{i+1}\right)=\frac{1}{8}\cdot\frac{2i}{-2}=-\frac{i}{8}.$$
 
 于是 $\int=2\pi i(-i/8)=\pi/4$。
+
 
 **6.9** $f=1/[(z^2+a^2)(z^2+b^2)]$，极点 $\pm ia,\pm ib$ 都是一阶。留数：$\pm ia$ 处 $\dfrac{1}{2z(z^2+b^2)}$，即 $\dfrac{1}{\pm2ia(b^2-a^2)}$；$\pm ib$ 处 $\dfrac{1}{\pm2ib(a^2-b^2)}$。上半平面两个相加，提 $\dfrac{1}{2i(b^2-a^2)}$ 后括号为 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}$，于是总和 $=\dfrac{1}{2iab(a+b)}$，
 
@@ -1018,23 +1029,57 @@ $$\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{(x^2+a^2)(x^2+b^2)}=2\pi i\cdot\frac
 
 $a\to b$ 时极限为 $\pi/(2b^3)$，正是 $\int\mathrm{d}x/(x^2+b^2)^2$，与二阶极点公式一致—所以这个公式在 $a=b$ 处虽然推导用了 $a\ne b$，结果连续。
 
-**6.10** 用 6.9.4 的结果，$a=1$：
 
-$$\sum_{n=-\infty}^{\infty}\frac{1}{n^2+1}=\pi\coth\pi=\pi\frac{e^{\pi}+e^{-\pi}}{e^{\pi}-e^{-\pi}}\approx3.1533 .$$
+**6.10** 极点 $z=\pm ib$ 都是二阶，取上半平面的 $ib$。用三阶刀：
 
-（$\coth\pi=1.00374$。）
+$$\operatorname{Res}_{z=ib}\frac{e^{iaz}}{(z^2+b^2)^2}
+=\frac{\mathrm{d}}{\mathrm{d}z}\left[\frac{e^{iaz}}{(z+ib)^2}\right]_{z=ib}
+=-\frac{i(1+ab)}{4b^3}e^{-ab}.$$
 
-**6.11** 配方 $n^2+n+1=(n+\tfrac12)^2+\tfrac34$，所以极点在**半整数**上，要用 $\pi\tan(\pi z)$（例 6.7）。取 $a=\sqrt3/2$：
+（$(2ib)^2=-4b^2$、$(2ib)^3=-8ib^3$；求导后两项都要保留，正是它们给出 $1+ab$。）于是
 
-$$\sum_{n}\frac{1}{n^2+n+1}=\frac{\pi}{a}\tanh(\pi a)=\frac{2\pi}{\sqrt3}\tanh\frac{\pi\sqrt3}{2}\approx3.5963 .$$
+$$\int_{-\infty}^{\infty}\frac{\cos(ax)}{(x^2+b^2)^2}\,\mathrm{d}x
+=\operatorname{Re}\left[2\pi i\cdot\left(-\frac{i(1+ab)}{4b^3}e^{-ab}\right)\right]
+=\frac{\pi}{2b^3}(1+ab)e^{-ab}.$$
 
-（若误用 $\cot$ 会得 $\frac{2\pi}{\sqrt3}\coth\frac{\pi\sqrt3}{2}\approx3.6332$，两者差在第三位，可以用数值和判别。）
+**两个极限：** $a\to0$ 给 $\pi/(2b^3)$，正是 $\int\mathrm{d}x/(x^2+b^2)^2$；$a\gg b$ 时化为 $\frac{\pi a}{2b^2}e^{-ab}$，指数衰减的衰减长度是 $1/a$。这两条能抓住"漏掉 $(1+ab)$"或"漏掉 $b$ 的幂次"的错误。
 
-**6.12** 用 $\pi/\sin(\pi z)$，$a=1$：
 
-$$\sum_{n=-\infty}^{\infty}\frac{(-1)^n}{n^2+1}=\frac{\pi}{\sinh\pi}\approx0.2720 .$$
+**6.11** 极点是 $z^6=-1$ 的六个解，$z_k=e^{i(2k+1)\pi/6}$，上半平面取 $k=0,1,2$（角 $\pi/6,\ \pi/2,\ 5\pi/6$）。留数用第二把刀，$Q'=6z^5$，而 $z_k^6=-1$ 给 $1/z_k^5=z_k/z_k^6=-z_k$：
 
-比 6.10 小一个量级（$3.153\to0.272$），因为交错符号把相邻项抵消掉了—这正是 6.9.5 节说的"交错和衰减得快"。
+$$\operatorname{Res}_{z=z_k}\frac{1}{1+z^6}=-\frac{z_k}{6}.$$
+
+三个之和：
+
+$$-\frac{1}{6}\left(e^{i\pi/6}+e^{i\pi/2}+e^{i5\pi/6}\right)
+=-\frac{1}{6}\left(\left(\frac{\sqrt3}{2}+\frac{i}{2}\right)+i+\left(-\frac{\sqrt3}{2}+\frac{i}{2}\right)\right)
+=-\frac{i}{3}.$$
+
+（实部两两抵消，虚部 $1/2+1+1/2=2$。）于是
+
+$$\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{x^6+1}=2\pi i\left(-\frac{i}{3}\right)=\frac{2\pi}{3},
+\qquad
+\int_0^{\infty}=\frac{\pi}{3}.$$
+
+与通式 $\int_0^\infty\mathrm{d}x/(1+x^n)=\dfrac{\pi}{n\sin(\pi/n)}$ 在 $n=6$ 处一致（$\sin(\pi/6)=1/2$）。
+
+
+**6.12** 不要直接算。拆成两个已知的：
+
+$$\int_{-\infty}^{\infty}\frac{x^2+1}{x^4+1}\,\mathrm{d}x
+=\int_{-\infty}^{\infty}\frac{x^2}{x^4+1}\,\mathrm{d}x
++\int_{-\infty}^{\infty}\frac{1}{x^4+1}\,\mathrm{d}x .$$
+
+第一个用 6.5.2 的方法：极点 $e^{i(2k+1)\pi/4}$，上半平面两个，留数 $-z_k/4$；分子 $z^2$ 让它变成 $-z_k^3/4=-z_k\cdot z_k^2/4$。算下来
+
+$$\int_{-\infty}^{\infty}\frac{x^2}{x^4+1}\,\mathrm{d}x=\frac{\pi}{\sqrt2},
+\qquad
+\int_{-\infty}^{\infty}\frac{1}{x^4+1}\,\mathrm{d}x=\frac{\pi}{\sqrt2}.$$
+
+（两式相等不是巧合：代换 $x\to1/x$ 把 $\mathrm{d}x/(x^4+1)$ 换成 $x^2\mathrm{d}x/(x^4+1)$。）相加：
+
+$$\int_{-\infty}^{\infty}\frac{x^2+1}{x^4+1}\,\mathrm{d}x=\pi\sqrt2 .$$
+
 
 ### 习题 6.13–6.24
 
@@ -1043,6 +1088,7 @@ $$\sum_{n=-\infty}^{\infty}\frac{(-1)^n}{n^2+1}=\frac{\pi}{\sinh\pi}\approx0.272
 $$N=\frac{1/\gamma}{2\pi/\Omega}=\frac{\Omega}{2\pi\gamma}=\frac{Q}{2\pi}\approx1.59 .$$
 
 不足两个周期。$Q$ 的物理意义就是"振铃能维持多少个弧度"：$Q\approx10$ 意味着约 10 rad，即 1.6 周。
+
 
 **6.14** 角度积分与例 6.3 相同，给出 $2\sin(kr)/(kr)$，但分母多一个 $k^2+\kappa^2$：
 
@@ -1056,13 +1102,8 @@ $$\int_0^{\infty}\frac{k\sin(kr)}{k^2+\kappa^2}\,\mathrm{d}k=\frac{\pi}{2}e^{-\k
 
 与例 6.1 对比：三维是 $e^{-\kappa r}/r$，一维是 $e^{-\kappa|x|}$。**三维多一个 $1/r$，所以 $\kappa\to0$ 时三维给出有限的库仑势，一维却发散**—这是维度决定力程的又一个例子。
 
-**6.15** $\omega\operatorname{Im}\chi=\omega_p^2\gamma\omega^2/[({\omega_0^2-\omega^2})^2+\gamma^2\omega^2]$，偶函数，所以
 
-$$\int_0^{\infty}\omega\operatorname{Im}\chi\,\mathrm{d}\omega=\frac{\omega_p^2\gamma}{2}\int_{-\infty}^{\infty}\frac{\omega^2\,\mathrm{d}\omega}{(\omega_0^2-\omega^2)^2+\gamma^2\omega^2}=\frac{\omega_p^2\gamma}{2}\cdot I_v .$$
-
-例 6.2 算出 $I_v=\pi/\gamma$，代入得 $\dfrac{\pi}{2}\omega_p^2$。$\gamma$ 精确抵消，$\omega_0$ 根本没出现—**这就是"求和规则"的含义：谱的加权总面积只由振子数目（$\omega_p^2\propto N$）决定，与线宽、线位无关。**
-
-**6.16** $h(t)=\sin(Wt)/(\pi t)$ 在 $t=0$ 有界（$=W/\pi$），所以 $\int_{-\infty}^\infty$ 是普通收敛积分，但**原函数是正弦积分**，只能靠留数。写成虚部：$\sin(Wt)=\operatorname{Im}e^{iWt}$，考虑 $\int e^{iWt}/t\,\mathrm{d}t$，$t=0$ 有一阶极点，需绕（从上方，顺时针）：
+**6.15** $h(t)=\sin(Wt)/(\pi t)$ 在 $t=0$ 有界（$=W/\pi$），所以 $\int_{-\infty}^\infty$ 是普通收敛积分，但**原函数是正弦积分**，只能靠留数。写成虚部：$\sin(Wt)=\operatorname{Im}e^{iWt}$，考虑 $\int e^{iWt}/t\,\mathrm{d}t$，$t=0$ 有一阶极点，需绕（从上方，顺时针）：
 
 $$\mathrm{P.V.}\int_{-\infty}^{\infty}\frac{e^{iWt}}{t}\,\mathrm{d}t=i\pi
 \quad\Longrightarrow\quad
@@ -1070,13 +1111,15 @@ $$\mathrm{P.V.}\int_{-\infty}^{\infty}\frac{e^{iWt}}{t}\,\mathrm{d}t=i\pi
 
 所以 $\int h\,\mathrm{d}t=\pi/\pi=1$。**"为什么还要用主值"**：$\sin(Wt)/t$ 本身在 $0$ 有界，但它不是我们直接积的对象—我们积的是 $e^{iWt}/t$，后者在 $0$ 有极点。这个"提升成复指数后多出极点"的现象，与例 6.3 是同一件事。物理上 $\int h=1$ 就是说：单位冲激的"总面积"经过滤波器不变，直流增益为 1。
 
-**6.17** $\sigma(\omega)=\sigma_0/(1-i\omega\tau)$。极点在 $1-i\omega\tau=0$，即 $\omega=-i/\tau$，**下半平面**，所以因果性满足（上半平面解析）。$\operatorname{Re}\sigma=\sigma_0/(1+\omega^2\tau^2)$，于是
+
+**6.16** $\sigma(\omega)=\sigma_0/(1-i\omega\tau)$。极点在 $1-i\omega\tau=0$，即 $\omega=-i/\tau$，**下半平面**，所以因果性满足（上半平面解析）。$\operatorname{Re}\sigma=\sigma_0/(1+\omega^2\tau^2)$，于是
 
 $$\int_0^{\infty}\operatorname{Re}\sigma(\omega)\,\mathrm{d}\omega=\sigma_0\int_0^{\infty}\frac{\mathrm{d}\omega}{1+\omega^2\tau^2}=\frac{\pi\sigma_0}{2\tau}.$$
 
 这个积分与 $f$ 求和规则同源：它等于 $\frac{\pi e^2n}{2m}$（把 $\sigma_0=ne^2\tau/m$ 代入即得），只依赖电子密度，与碰撞时间无关。**碰撞越频繁（$\tau$ 小），谱越宽越矮，但加权面积不变**—这就是"电子数守恒"在光学里的表现。
 
-**6.18** $\sum_k\to(L/2\pi)\int\mathrm{d}k$，$\omega=ck$，两个偏振给因子 2：
+
+**6.17** $\sum_k\to(L/2\pi)\int\mathrm{d}k$，$\omega=ck$，两个偏振给因子 2：
 
 $$u=\frac{1}{L}\cdot2\cdot\frac{L}{2\pi}\int_0^{\infty}\mathrm{d}k\,\frac{\hbar ck}{e^{\beta\hbar ck}-1}
 =\frac{\hbar}{\pi}\int_0^{\infty}\frac{\omega\,\mathrm{d}\omega}{e^{\beta\hbar\omega}-1}.$$
@@ -1085,7 +1128,8 @@ $$u=\frac{1}{L}\cdot2\cdot\frac{L}{2\pi}\int_0^{\infty}\mathrm{d}k\,\frac{\hbar 
 
 与三维的 $u\propto T^4$ 对比：**$d$ 维光子气的能量密度 $\propto T^{d+1}$**（态密度 $\omega^{d-1}$，乘 $\omega$ 给 $\omega^d$，积分给 $\Gamma(d+1)\zeta(d+1)$）。一维是 $T^2$，三维是 $T^4$。维数直接决定温度幂次，这是"为什么三维斯特藩–玻尔兹曼定律是四次方"的最简解释。
 
-**6.19** 分母 $1-i\omega RC=-iRC(\omega+i/(RC))$，极点 $\omega_0=-i/(RC)$，**下半平面**。$t>0$ 时 $e^{-i\omega t}$ 要求 $y<0$ 才衰减，所以往下闭合，顺时针，捕获这个极点：
+
+**6.18** 分母 $1-i\omega RC=-iRC(\omega+i/(RC))$，极点 $\omega_0=-i/(RC)$，**下半平面**。$t>0$ 时 $e^{-i\omega t}$ 要求 $y<0$ 才衰减，所以往下闭合，顺时针，捕获这个极点：
 
 $$V(t)=-2\pi i\cdot\frac{e^{-i\omega_0t}}{-iRC}\cdot\frac{1}{2\pi}
 =\frac{1}{RC}e^{-t/(RC)},\qquad t>0 .$$
@@ -1096,7 +1140,8 @@ $$\int_0^{\infty}\frac{e^{-t/RC}}{RC}\,\mathrm{d}t=1 .$$
 
 （单位冲激的"总电荷"守恒—电容最终充到电压 1，电量 $C\cdot1=C$，而冲激给的总电荷是 $\int\delta\,\mathrm{d}t=1$ 乘上……这里取的是单位冲激的电压响应，积分归一于 1。）
 
-**6.20** 代换 $u=2(E-E_0)/\Gamma$：
+
+**6.19** 代换 $u=2(E-E_0)/\Gamma$：
 
 $$\int_{-\infty}^{\infty}\frac{\sigma_{\max}\,\mathrm{d}E}{1+4(E-E_0)^2/\Gamma^2}
 =\sigma_{\max}\frac{\Gamma}{2}\int_{-\infty}^{\infty}\frac{\mathrm{d}u}{1+u^2}
@@ -1104,13 +1149,8 @@ $$\int_{-\infty}^{\infty}\frac{\sigma_{\max}\,\mathrm{d}E}{1+4(E-E_0)^2/\Gamma^2
 
 **峰面积 $=\frac{\pi}{2}\times$ 峰高 $\times$ 宽度**（半高全宽 $=\Gamma$）。若 $\Gamma=\hbar/\tau$，则面积 $\propto1/\tau$：**寿命越短，峰越宽、越矮，但"面积"（跃迁强度）不变**—这正是 $f$ 求和规则在共振散射里的版本。反过来，测到很窄的峰（小 $\Gamma$）就意味着长寿命的共振态。
 
-**6.21** 这是 6.9.5 节的结果：
 
-$$S(a)=\frac{\pi}{a\sinh(\pi a)} .$$
-
-$a\gg1$ 时 $\sinh(\pi a)\approx\frac12e^{\pi a}$，所以 $S\approx\dfrac{2\pi}{a}e^{-\pi a}$。同号链（6.9.4）在 $a\gg1$ 时趋于 $\pi/a$（代数衰减）。**交替链按 $e^{-\pi a}$ 指数衰减，比同号链快得多**：相邻的正负电荷把远处的场几乎完全抵消，只剩"偶极子尾巴"，而 $1/d$ 型偶极尾巴在求和后变成指数小。物理上这就是为什么离子晶体的静电能主要由最近邻决定，远邻的贡献按指数小。
-
-**6.22** 电容上的电压方差
+**6.20** 电容上的电压方差
 
 $$\langle V^2\rangle=\int_{-\infty}^{\infty}\frac{S_V(\omega)}{2\pi}|Z_C|^2\,\mathrm{d}\omega ,$$
 
@@ -1121,13 +1161,8 @@ $$\langle V^2\rangle=\frac{2k_BTR}{2\pi}\int_{-\infty}^{\infty}\frac{\mathrm{d}\
 
 $R$ 精确抵消。**这是涨落耗散定理最干净的一个例子：** 噪声正比于 $R$，带宽（积分）反比于 $R$，两者相乘抵消。结果是"温度计"式的公式 $\langle V^2\rangle=k_BT/C$，与电阻的具体值无关，所以可以用电容噪声测温。
 
-**6.23** 色散关系是线性积分，两条线的 $\operatorname{Im}\chi$ 相加，$\chi(0)$ 也相加。每条线用例 6.4 的结果 $\omega_{pi}^2/\omega_{0i}^2$：
 
-$$\chi(0)=\frac{\omega_{p1}^2}{\omega_{01}^2}+\frac{\omega_{p2}^2}{\omega_{02}^2}.$$
-
-**为什么可以相加：** 色散关系是 $\operatorname{Im}\chi$ 的线性泛函（一个固定核的积分），线性泛函对函数求和就是分别作用再求和。**这条性质是色散关系分析能实用的根本原因**：测到几条吸收线，就分别处理再相加，不需要一次处理整条谱。
-
-**6.24** 用 $e^{iaz}/[z(z^2+b^2)]$（$a>0$）。上半平面极点：$z=ib$（一阶）；实轴极点：$z=0$（一阶）。实轴从左到右，$z=0$ 处从上方绕过（顺时针），$z=ib$ 在回路内。
+**6.21** 用 $e^{iaz}/[z(z^2+b^2)]$（$a>0$）。上半平面极点：$z=ib$（一阶）；实轴极点：$z=0$（一阶）。实轴从左到右，$z=0$ 处从上方绕过（顺时针），$z=ib$ 在回路内。
 
 三个留数/贡献：
 
@@ -1147,6 +1182,58 @@ $$\int_{-\infty}^{\infty}\frac{\sin(ax)}{x(x^2+b^2)}\,\mathrm{d}x=\frac{\pi}{b^2
 
 ### 习题 6.25–6.32
 
+
+**6.22** 例 6.1 的结果是 $\varphi(x)=\dfrac{q}{2\varepsilon_0\kappa}e^{-\kappa|x|}$，直接令 $\kappa\to0$ 发散。原因是**一维库仑势没有有限的零点**：$\kappa=0$ 时方程是 $\mathrm{d}^2\varphi/\mathrm{d}x^2=-\dfrac{q}{\varepsilon_0}\delta(x)$，解是 $\varphi=-\dfrac{q}{2\varepsilon_0}|x|+C$，$|x|\to\infty$ 时发散，所以"势在无穷远为零"这个约定在一维做不到。
+
+正确的做法是先减掉同一个常数（选定零点），再取极限：
+
+$$\varphi(x)-\varphi(0)=\frac{q}{2\varepsilon_0\kappa}\left(e^{-\kappa|x|}-1\right)
+\longrightarrow\frac{q}{2\varepsilon_0\kappa}\left(-\kappa|x|\right)
+=-\frac{q}{2\varepsilon_0}|x| .$$
+
+（用了 $e^{-\kappa|x|}\approx1-\kappa|x|$。）
+
+**与三维对照：** 汤川势 $\dfrac{q}{4\pi\varepsilon_0}\dfrac{e^{-\kappa r}}{r}$ 在 $\kappa\to0$ 时趋于 $\dfrac{q}{4\pi\varepsilon_0 r}$，有限。**差别在维度**：三维的 $1/r$ 在无穷远衰减，一维的 $|x|$ 增长。所以"力程无限"在一维表现为势无界，在三维表现为 $1/r$。这也解释了为什么一维的库仑问题总要加一个背景（均匀正电荷）来屏蔽——那就是例 6.1 的 $\kappa$。
+
+
+**6.23** 分母是 $(k^2+\kappa^2)^2$，两个二阶极点 $k=\pm i\kappa$。直接算要套多次求导，容易出错；更稳的办法是**对参数求导**。
+
+已知（例 6.1）
+
+$$\int_{-\infty}^{\infty}\frac{e^{ikx}}{k^2+\kappa^2}\,\mathrm{d}k=\frac{\pi}{\kappa}e^{-\kappa|x|}.$$
+
+注意到 $\dfrac{\partial}{\partial(\kappa^2)}\dfrac{1}{k^2+\kappa^2}=-\dfrac{1}{(k^2+\kappa^2)^2}$，所以
+
+$$G(x)=-\frac{\partial}{\partial(\kappa^2)}\left(\frac{\pi}{\kappa}e^{-\kappa|x|}\right)
+=-\frac{1}{2\kappa}\frac{\partial}{\partial\kappa}\left(\frac{\pi}{\kappa}e^{-\kappa|x|}\right)
+=\frac{\pi}{2\kappa}\left(\frac{1}{\kappa^2}+\frac{|x|}{\kappa}\right)e^{-\kappa|x|}.$$
+
+即
+
+$$G(x)=\frac{\pi}{2\kappa^3}\left(1+\kappa|x|\right)e^{-\kappa|x|}.$$
+
+**核对：** $\kappa|x|\to0$ 时 $G\to\pi/(2\kappa^3)$（有限），与 $\int\mathrm{d}k/(k^2+\kappa^2)^2=\pi/(2\kappa^3)$ 一致；$|x|$ 大时按 $(1+\kappa|x|)e^{-\kappa|x|}$ 衰减，比单个极点多一个多项式因子——**极点的阶数决定衰减前面挂几个幂次**，这是二阶极点的一般特征。
+
+
+**6.24** 由 6.7.4 节的 $i\epsilon$ 规则（注意两项一正一负）：
+
+$$\frac{1}{\omega_0^2-\omega^2-i0^{+}\omega}
+=\mathrm{P.V.}\frac{1}{\omega_0^2-\omega^2}
++\frac{i\pi}{2\omega_0}\bigl[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)\bigr].$$
+
+乘上 $\omega_p^2$，取虚部：
+
+$$\operatorname{Im}\chi(\omega)=\frac{\pi\omega_p^2}{2\omega_0}\bigl[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)\bigr].$$
+
+**三条检验：**
+
+1. $\displaystyle\int_{-\infty}^{\infty}\operatorname{Im}\chi\,\mathrm{d}\omega=\frac{\pi\omega_p^2}{2\omega_0}(1-1)=0$。**必须为零**，因为 $\operatorname{Im}\chi$ 是 $\omega$ 的奇函数（响应函数满足 $\chi(-\omega)=\bar\chi(\omega)$）；不选一正一负就破坏这条对称性。
+2. $\displaystyle\int_0^{\infty}\omega\operatorname{Im}\chi\,\mathrm{d}\omega=\frac{\pi\omega_p^2}{2\omega_0}\cdot\omega_0=\frac{\pi}{2}\omega_p^2$，与 $\gamma\to0$ 之前的结果一致——**吸收总强度与阻尼宽度无关**。
+3. 峰的位置在 $\pm\omega_0$、宽度为零、高度无穷：无阻尼共振的"吸收"就是一根线。
+
+
+### 习题 6.25–6.31
+
 **6.25** (1) 两个极点 $z=\pm ia$ 的留数**都是** $1/2$（$z/(2z)=1/2$，与 $z$ 无关）。上半圆闭合：$\oint=2\pi i\cdot\frac12=\pi i$，实轴部分（主值，奇函数）为零，所以
 
 $$\int_{C_R}\frac{z\,\mathrm{d}z}{z^2+a^2}\longrightarrow\pi i .$$
@@ -1156,6 +1243,7 @@ $$\int_{C_R}\frac{z\,\mathrm{d}z}{z^2+a^2}\longrightarrow\pi i .$$
 (2) 判据在 $|f|\sim1/R$ 处失效：$ML$ 估计给 $\pi R\cdot(1/R)=\pi$，不趋于零。**判据不是形式检查，它就是这次估计本身。**
 
 (3) **没有"补救"**，因为错的是方法不是计算：无论上半圆还是下半圆都不消失（下半圆给 $-2\pi i\cdot\frac12=-\pi i$，符号相反），圆弧的贡献正是 $\pm\pi i$，不是小量。正确做法是承认这个积分**只能按主值定义**，而它的主值由奇对称性直接给零；或者把它看作希尔伯特变换 $\mathrm{P.V.}\int f(x)/(x-x_0)\mathrm{d}x$ 的一个核，那时需要 $i\epsilon$（6.7.4 节）而不是半圆闭合。**教训：先估后算；估出来不消失，就不要补这条回路。**
+
 
 **6.26** 取 $f(z)=z^{\alpha-1}/(1+z)$，$0<\alpha<1$，割线取正实轴，$\arg z\in(0,2\pi)$。四段：
 
@@ -1172,6 +1260,7 @@ I=\frac{-2\pi ie^{i\pi\alpha}}{e^{i\pi\alpha}(-2i\sin\pi\alpha)}=\frac{\pi}{\sin
 
 **三个极限。** $\alpha\to0$：$\pi/\sin(\pi\alpha)\sim1/\alpha\to\infty$，对应 $\int\mathrm{d}x/[x(1+x)]$ 的两端对数发散（$1/f$ 噪声的红外灾难）。$\alpha\to1$：同样爆炸，对应紫外发散（被积函数在高频不衰减）。$\alpha=\frac12$：$I=\pi$，与代换 $x=t^2$ 得到 $\int\mathrm{d}t/(1+t^2)=\pi$ 一致。**中间有限、两端发散**，这就是幂律谱的典型行为。
 
+
 **6.27** 沿 $C_\epsilon$：$z-z_0=\epsilon e^{i\theta}$，$\mathrm{d}z=i\epsilon e^{i\theta}\mathrm{d}\theta$，
 
 $$\int_{C_\epsilon}\frac{\mathrm{d}z}{(z-z_0)^2}
@@ -1180,46 +1269,8 @@ $$\int_{C_\epsilon}\frac{\mathrm{d}z}{(z-z_0)^2}
 
 半圈给 $i(1-(-1))/\epsilon=2i/\epsilon$，模按 $1/\epsilon$ 发散。**物理对应：** 临界阻尼振子的响应函数在 $\gamma=2\omega_0$ 时两个极点合并成二阶极点（$\omega_\pm=-i\gamma/2$，$\Omega=0$），对应"响应 $\propto te^{-\gamma t/2}$"而不是振荡；另一个更极端的例子是自由粒子 $f=1/\omega^2$（无回复力、无阻尼），双极点正在实轴 $0$ 上，积分 $\int\mathrm{d}\omega/\omega^2$ 在红外发散，对应一维自由粒子的红外灾难。
 
-**6.28** 用 $f=1/z^6$，唯一极点在 $z=0$（六阶，也是整数点），所以
 
-$$\sum_{n\ne0}\frac{1}{n^6}=-\operatorname{Res}_{z=0}\frac{\pi\cot(\pi z)}{z^6}.$$
-
-$\pi\cot(\pi z)$ 的展开需要到 $z^5$：由 $\cot z=\frac1z-\frac z3-\frac{z^3}{45}-\frac{2z^5}{945}-\cdots$ 得
-
-$$\pi\cot(\pi z)=\frac1z-\frac{\pi^2}{3}z-\frac{\pi^4}{45}z^3-\frac{2\pi^6}{945}z^5-\cdots$$
-
-除以 $z^6$，$1/z$ 系数是 $-\dfrac{2\pi^6}{945}$，即留数。于是 $\sum_{n\ne0}n^{-6}=\dfrac{2\pi^6}{945}$，即
-
-$$\zeta(6)=\frac{\pi^6}{945}.$$
-
-**6.29** 用 $\pi/\sin(\pi z)$，极点位置在整数、留数 $(-1)^n$，与 $\cot$ 同样处理：
-
-$$\sum_{n\ne0}\frac{(-1)^n}{n^4}=-\operatorname{Res}_{z=0}\frac{\pi}{z^4\sin(\pi z)}
-=-\frac{7\pi^4}{360}.$$
-
-（$1/z^4$ 乘上给出的展开，$1/z$ 的系数就是 $7\pi^4/360$。）左边等于 $2\sum_{n\ge1}(-1)^n/n^4=-2\eta(4)$，所以
-
-$$\eta(4)=\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^4}=\frac{7\pi^4}{720}.$$
-
-核对：$\eta(4)=(1-2^{-3})\zeta(4)=\dfrac78\cdot\dfrac{\pi^4}{90}=\dfrac{7\pi^4}{720}$。✓
-
-**6.30** 若 $\chi\to\chi_\infty\ne0$，被积函数 $\chi(\omega')/(\omega'-\omega)\sim\chi_\infty/\omega'$，大圆弧的积分 $\sim\chi_\infty\cdot2\pi i\ne0$，不消失，色散关系的推导里"$0=\cdots$"这一步就错了。补救是对 $\chi-\chi_\infty$ 用色散关系（它在无穷远趋于零），而常数 $\chi_\infty$ 的色散关系积分恒为零（$\mathrm{P.V.}\int\mathrm{d}\omega'/(\omega'-\omega)=0$），于是
-
-$$\operatorname{Re}\chi(\omega)-\chi_\infty=\frac1\pi\mathrm{P.V.}\int_{-\infty}^{\infty}\frac{\operatorname{Im}\chi(\omega')}{\omega'-\omega}\,\mathrm{d}\omega' .$$
-
-光学里 $\varepsilon=n^2=1+\chi$，$\varepsilon\to1$ 即 $\chi\to0$，所以 $n^2-1$ 自动无减除；若对 $n^2$ 直接套色散关系，会得到一个恒等于 1 的错误常数项。
-
-**6.31** (1) 用 $\pi/\sin(\pi z)$ 与 $f=1/z$。$z=0$ 是整数，$f$ 的极点与辅助函数的极点重合（双重极点），必须用组合留数：
-
-$$\frac{\pi}{z\sin(\pi z)}=\frac1{z^2}+\frac{\pi^2}{6}+\cdots$$
-
-$1/z$ 的系数是 $0$，所以 $\sum_{n\ne0}(-1)^n/n=0$。
-
-(2) 按 $n=1,2,3,\dots$ 顺序求和的极限是 $-\ln2\ne0$。不矛盾：这个级数只是**条件收敛**，重排会改变和；留数方法算的是**对称截断** $\lim_{N}(\sum_{n=-N}^{-1}+\sum_{n=1}^{N})$，那个极限确实是 0。两个"和"是两个不同的对象。
-
-(3) 一维 NaCl 链的马德隆常数：取某个正离子为原点，$V\propto\sum_{n\ne0}(-1)^n/|n|$。按对称截断给 0（荒谬—静电能不可能为零），按"由近到远一层层加"给 $\pm2\ln2$。**物理上"怎么把无限链拼起来"对应"系统是怎么被组装起来的"**：真实晶体是有限大的、由近及远生长的，所以物理上有意义的是顺序求和（$2\ln2$），不是对称截断。这条习题说明：**留数求和的答案依赖"对称截断"这个隐含约定，条件收敛时必须回到物理去确认用哪个顺序。**
-
-**6.32** (1) $\gamma<0$ 时 $\operatorname{Im}\omega_\pm=-\gamma/2>0$，两个极点进入**上半平面**。$\chi$ 在上半平面不再解析（极点在那里），色散关系的前提失效。
+**6.28** (1) $\gamma<0$ 时 $\operatorname{Im}\omega_\pm=-\gamma/2>0$，两个极点进入**上半平面**。$\chi$ 在上半平面不再解析（极点在那里），色散关系的前提失效。
 
 (2) $t<0$ 时回路往上闭合，上半平面有两个极点，被捕获，响应不为零且按 $e^{|\gamma||t|/2}$ **指数增长**：
 
@@ -1231,23 +1282,103 @@ $$x(t)\propto e^{-\gamma t/2}\sin(\Omega t),\quad t<0 .$$
 
 ### 概念与判断 6.33–6.41
 
-**6.33** 不对。缺的条件是"闭曲线内部及边界上处处解析"。反例：$f=1/z$ 在 $|z|=1$ 上解析、在环外解析，但积分 $2\pi i\ne0$，因为原点（奇点）在内部。正确说法是"内部无奇点则积分为零"。
 
-**6.34** 不对。正例：$f=1/z^2$，弧上 $\sim1/R^2$，积分 $\sim1/R\to0$。反例：$f=1/z$，弧上积分恒为 $2\pi i$（与 $R$ 无关）；$f=z/(z^2+a^2)$，弧上给 $\pi i$。判据是 $|f|\sim1/R^{1+\varepsilon}$，即分母次数比分子至少高 2。
+**6.29** 设 $\gamma_1$（外）与 $\gamma_2$（内）同向，$f$ 在两者之间的环形区域内解析。把内边界**反向**记作 $-\gamma_2$，则 $\gamma_1+(-\gamma_2)$ 围成的区域是单连通的，$f$ 在其内部和边界上解析。由柯西定理
 
-**6.35** 不对。除了实轴无极点，还需要：(i) 补上的弧上积分趋于零（衰减够快，或靠若尔当引理）；(ii) 若含 $e^{iaz}$，$a$ 的符号决定往哪个半平面闭合，方向错了被积函数在那个半平面指数爆炸；(iii) 多值函数还要避开支点。方向选错时，回路内的极点数变了，答案会差出 $2\pi i$ 乘某个留数，或者干脆发散。
+$$\oint_{\gamma_1}f\,\mathrm{d}z+\oint_{-\gamma_2}f\,\mathrm{d}z=0
+\quad\Longrightarrow\quad
+\oint_{\gamma_1}f\,\mathrm{d}z=\oint_{\gamma_2}f\,\mathrm{d}z .$$
 
-**6.36** 不对。只有在普通积分收敛时两者才相等。反例：$\mathrm{P.V.}\int_{-1}^{1}\mathrm{d}x/x=0$，而普通积分发散；$\int\cos x/x\,\mathrm{d}x$ 只有主值。物理上：无阻尼共振（$\gamma=0$）的吸收是一个 $\delta$ 函数，只能用 $i\epsilon$ 和主值来定义，这时"主值"和"积分值"是两个不同的物理量（色散部分 vs 吸收部分），混用会得到错误的吸收谱。
+**关键的两点：** (i) 环形区域是"两连通"的，不能直接用柯西定理，必须先把内边界反向拼成一条复合闭路径；(ii) 方向不能错——若 $\gamma_2$ 取成反向，等号右边会多一个负号。
 
-**6.37** 不对，只对**一阶**极点成立。二阶极点时 $f=a_{-2}/(z-z_0)^2+\cdots$，沿小半圆的积分按 $1/\epsilon$ 发散，半圈贡献不存在有限极限，主值也不存在。这与 6.4.2 的"阶数决定一切"一致：留数是 $a_{-1}$，只有它在一圈积分后存活，二阶极点的 $a_{-2}$ 需要 $1/\epsilon$ 才能体现，散掉了。
+**推论：** 回路可以在解析区域里连续变形（不扫过奇点）而不改变积分值。这就是 6.3.3 节"变形不变性"的严格版本，也是把大半圆缩成小圆、把钥匙孔收窄的依据。
 
-**6.38** 不准确但也不全错。精确表述分两步：**物理输入**是"$\chi(t)=0$ 当 $t<0$"（因果性，一条实验事实）；**数学翻译**是"$\chi(\omega)$ 在上半平面解析"（由 $e^{-\omega''t}$ 的衰减得到，是严格的定理）。之后的一切（色散关系、极点位置与衰减的联系）都是数学推论。所以说"数学上推不出因果"是对的（因果是输入），但说"因果只是一条额外假设"就错了—一旦接受它，数学会给你一大堆可检验的后果（色散关系、求和规则、极点位置约束）。
 
-**6.39** 对，但要加条件：(i) 对所有实频率 $\operatorname{Im}\chi=0$；(ii) $\chi$ 在无穷远趋于零（否则先减除）。由色散关系，$\operatorname{Re}\chi(\omega)=\frac1\pi\mathrm{P.V.}\int\operatorname{Im}\chi/(\omega'-\omega)\mathrm{d}\omega'=0$，所以 $\operatorname{Re}\chi$ 是常数（减去常数背景后为零）。物理含义：**透明与色散不可兼得**。一个"全频段透明"的介质不可能有折射率随频率的变化；反过来，任何有色散的材料必然在某些频段吸收。这是设计"低损耗高色散"光学材料时的硬约束。
+**6.30** (a) $\sqrt{z}/(1+z)$：**不能**直接用。$z=0$ 是支点，不是孤立奇点；绕一圈函数值变号，上下沿不抵消。补救：取沿正实轴的支割线，用钥匙孔回路；结果里会出现 $1-e^{i\pi}=-2$ 这类因子。
 
-**6.40** 在对称截断下成立，作为普通级数不成立。$\lim_{N}\sum_{n=-N,n\ne0}^{N}1/n=0$（正负成对抵消），但 $\sum_{n=1}^{\infty}1/n$ 发散，级数不绝对收敛，重排会得到任意值（甚至可以把正负项重新排列使部分和趋于任意指定的数）。**关键：$\sum_{n=-\infty}^{\infty}$ 这个符号本身是不完整的，必须说明"按什么顺序"**—这和 6.9.7 节、习题 6.31 是同一件事。
+(b) $\ln z/(1+z^2)$：**不能**直接用，理由同上（$z=0$ 支点）。补救：同样的钥匙孔，割线两侧 $\ln z$ 差 $2\pi i$，那个差不抵消，反而贡献出原积分。
 
-**6.41** 错。$\pi\cot(\pi z)$ 在每个整数处留数为 1 没错，但若 $f$ 自己也在某个整数 $\alpha$ 处有极点，则 $f\pi\cot$ 在该点的极点是**两个极点叠加**（阶数相加），它的留数不等于 $f$ 的留数乘 $\cot(\pi\alpha)$（后者甚至是无穷大）。这时必须用组合留数直接算，或者在 6.9.3 的公式里把该点归到"$\alpha$"那一类去处理。例子：$f=1/z^2$（$\zeta(2)$ 的推导），$z=0$ 同时是 $f$ 的二阶极点和 $\pi\cot$ 的一阶极点，乘起来是三阶极点，只有用 $\pi\cot$ 的 Laurent 展开（$-1/z$ 除以 $z^2$ 给 $-1/z^3$…）才能读出正确的留数 $- \pi^2/3$，从而得到 $\zeta(2)=\pi^2/6$。
+(c) $e^{1/z}/(z-1)$：**能**。$z=0$ 是本性奇点，但它是**孤立**的——留数定理只要求孤立，不要求是极点。留数要读洛朗系数：$e^{1/z}/(z-1)=-e^{1/z}(1+z+z^2+\cdots)$，$1/z$ 的系数来自 $e^{1/z}$ 的常数项乘 $-1$，即 $-1$。（$z=1$ 处是一阶极点，留数 $e$。）
+
+(d) $1/\sin(1/z)$：**不能**。$z=0$ 附近有无穷多个奇点（$1/z=n\pi$ 的解堆积到 $0$），奇点**不孤立**，留数定理"有限个孤立奇点"的前提不成立。
+
+**判据一句话：奇点必须是孤立的（极点或本性），否则先换围道（钥匙孔），或者根本不能用留数。**
+
+
+**6.31** 先把 $f$ 拆开：$\dfrac{1}{z(z-1)}=\dfrac{1}{z-1}-\dfrac{1}{z}$。
+
+**(1) $0<\lvert z\rvert<1$：** 把 $\dfrac{1}{z-1}=-\dfrac{1}{1-z}$ 按几何级数展开，
+
+$$f(z)=-\frac{1}{z}-1-z-z^2-\cdots
+\qquad (0<\lvert z\rvert<1),$$
+
+$1/z$ 的系数是 $-1$。
+
+**(2) $1<\lvert z\rvert<\infty$：** 这次把 $\dfrac{1}{z-1}=\dfrac{1}{z}\cdot\dfrac{1}{1-1/z}$ 展开，
+
+$$f(z)=\frac{1}{z^2}+\frac{1}{z^3}+\frac{1}{z^4}+\cdots
+-\frac{1}{z}
+=\frac{1}{z^2}+\frac{1}{z^3}+\cdots$$
+
+（$-\dfrac{1}{z}$ 与 $\dfrac{1}{z}$ 抵消！）这个展开里**没有** $1/z$ 项。
+
+**(3) 为什么留数仍是 $-1$：** 留数由**贴着奇点的那一个**展开定义，也就是 $0<\lvert z-z_0\rvert<R$ 这个最内层的去心圆盘。外层展开描述的是远处（包括无穷远点）的行为，跟 $z_0$ 处的留数无关。物理上也对：$z=0$ 处那个模式的耦合强度，不该依赖你在多远的地方做展开。
+
+
+### 概念与判断 6.32–6.40
+
+**6.32** 不对。缺的条件是"闭曲线内部及边界上处处解析"。反例：$f=1/z$ 在 $|z|=1$ 上解析、在环外解析，但积分 $2\pi i\ne0$，因为原点（奇点）在内部。正确说法是"内部无奇点则积分为零"。
+
+
+**6.33** 不对。正例：$f=1/z^2$，弧上 $\sim1/R^2$，积分 $\sim1/R\to0$。反例：$f=1/z$，弧上积分恒为 $2\pi i$（与 $R$ 无关）；$f=z/(z^2+a^2)$，弧上给 $\pi i$。判据是 $|f|\sim1/R^{1+\varepsilon}$，即分母次数比分子至少高 2。
+
+
+**6.34** 不对。除了实轴无极点，还需要：(i) 补上的弧上积分趋于零（衰减够快，或靠若尔当引理）；(ii) 若含 $e^{iaz}$，$a$ 的符号决定往哪个半平面闭合，方向错了被积函数在那个半平面指数爆炸；(iii) 多值函数还要避开支点。方向选错时，回路内的极点数变了，答案会差出 $2\pi i$ 乘某个留数，或者干脆发散。
+
+
+**6.35** 不对。只有在普通积分收敛时两者才相等。反例：$\mathrm{P.V.}\int_{-1}^{1}\mathrm{d}x/x=0$，而普通积分发散；$\int\cos x/x\,\mathrm{d}x$ 只有主值。物理上：无阻尼共振（$\gamma=0$）的吸收是一个 $\delta$ 函数，只能用 $i\epsilon$ 和主值来定义，这时"主值"和"积分值"是两个不同的物理量（色散部分 vs 吸收部分），混用会得到错误的吸收谱。
+
+
+**6.36** 不对，只对**一阶**极点成立。二阶极点时 $f=a_{-2}/(z-z_0)^2+\cdots$，沿小半圆的积分按 $1/\epsilon$ 发散，半圈贡献不存在有限极限，主值也不存在。这与 6.4.2 的"阶数决定一切"一致：留数是 $a_{-1}$，只有它在一圈积分后存活，二阶极点的 $a_{-2}$ 需要 $1/\epsilon$ 才能体现，散掉了。
+
+
+**6.37** 第一句对，第二句对但**需要单连通**。
+
+**第一句：** 由柯西–黎曼条件交叉求导，$\partial^2u/\partial x^2=-\partial^2u/\partial y^2$，所以 $\nabla^2u=\nabla^2v=0$。这一步只用到解析（二阶导数连续），不需要额外条件。
+
+**第二句：** 给定调和函数 $u$，要找共轭调和函数 $v$ 使 $u+iv$ 解析。由柯西–黎曼条件，$v$ 必须满足 $\partial v/\partial y=\partial u/\partial x$、$\partial v/\partial x=-\partial u/\partial y$，这是全微分方程；**在单连通区域内**可积性条件（$\partial^2u/\partial x^2+\partial^2u/\partial y^2=0$，正是调和性）保证 $v$ 存在且只差一个常数。在**多连通**区域（比如挖掉原点的圆环）不一定存在——反例是 $u=\ln r$，它的"共轭"是 $\theta$，而 $\theta$ 是多值的，绕原点一圈变 $2\pi$。
+
+**读法：** "解析函数 = 二维调和场"这句话在单连通区域里是双向的；一旦区域有洞，$\ln z$ 就出来了，而它正是支点（6.7.5 节）的来源。
+
+
+**6.38** 对，这是**可去奇点定理**（黎曼可去奇点定理）：有界则主部为零，奇点可去。
+
+用来判断两个例子：
+
+- $\sin z/z$：在 $0<\lvert z\rvert<1$ 内 $\lvert\sin z/z\rvert\le\cosh1<2$，有界 ⟹ 可去奇点 ✓（与 $\sin z/z=1-z^2/6+\cdots$ 一致）。
+- $e^{1/z}$：在 $z\to0$ 沿途取 $z=1/n$（$n$ 为正整数），$e^{1/z}=e^{n}\to\infty$，无界 ⟹ 不是可去奇点。事实上是本性奇点（主部无穷多项）。
+
+**判据的实用价值：** 看见"$\lvert f\rvert$ 有界"就敢判可去，不用展开级数。判断极点还是本性则要看主部——本性问题这套办法给不出答案。
+
+
+**6.39** 不对，要加条件。
+
+**成立的写法：** 若 $R$ 在实轴上取**实值**，且 $\int R(x)\cos(ax)\mathrm{d}x$ 与 $\int R(x)\sin(ax)\mathrm{d}x$ 都收敛，则
+
+$$\int R(x)\cos(ax)\,\mathrm{d}x=\operatorname{Re}\int R(x)e^{iax}\,\mathrm{d}x .$$
+
+因为 $e^{iax}=\cos ax+i\sin ax$，取实部就是把两项分开，而两项各自合法。
+
+**出错的情形：** $R$ 带 $i$（比如响应函数的分子含 $i$）。这时 $\operatorname{Re}[R e^{iax}]$ 里混进了 $\sin$ 的贡献，取实部不再等于 $\cos$ 的积分。正确做法是先把 $R$ 的实部虚部分开，或者对 $R e^{iax}$ 整体算完再取需要的组合。
+
+**还有一种情形：** $\sin$ 部分发散而 $\cos$ 部分收敛（或反过来）。这时 $e^{iax}$ 的整体积分只能按主值理解，直接取实部会得到错误的结果——必须先确认两部分各自的收敛性。
+
+
+**6.40** 错。正确的说法是：**回路可以在不扫过奇点的前提下连续变形，积分值不变**。
+
+漏掉"不扫过奇点"这一条，就会得出"$\oint 1/z\,\mathrm{d}z$ 与回路无关"的结论，而实际上绕原点的回路给 $2\pi i$、不绕的给 $0$。
+
+**推论两条：** (i) 变形时回路扫过的区域内必须处处解析；(ii) 若两条回路围住的奇点不同，它们的积分之差等于"多围住的那几个奇点"的留数之和乘 $2\pi i$。**回路不是随便变的，它只能在不碰奇点的前提下变。**
 
 ## 第 7 章
 
@@ -1281,13 +1412,13 @@ $$x(t)\propto e^{-\gamma t/2}\sin(\Omega t),\quad t<0 .$$
 
 **7.15** $\omega=2\pi\times8=50\ \mathrm{rad/s}$，$\Gamma=2\pi R^{2}\omega=3.8\ \mathrm{m^{2}/s}$，$L'=\rho U\Gamma=1.2\times30\times3.8=1.4\times10^{2}\ \mathrm{N/m}$。取有效长度 $2R=0.22\ \mathrm{m}$ 得 $F=30\ \mathrm{N}$，$a=70\ \mathrm{m/s^{2}}\approx7g$，$1\ \mathrm{s}$ 侧移 $35\ \mathrm{m}$。实际值小得多：无滑移假设把环量高估了几倍，真实球面的边界层会分离，$\Gamma$ 只有这个值的三分之一左右。
 
-**7.16** $\omega=2\pi\times3=18.8\ \mathrm{rad/s}$，$\Gamma=2\pi R^{2}\omega=2\pi\times1\times18.8=118$，$L'=\rho U\Gamma=1.2\times15\times118=2.1\times10^{3}\ \mathrm{N/m}$，推力 $=L'h=21\ \mathrm{kN}$。同样迎风面积（$20\ \mathrm{m^{2}}$）的普通帆只有 $\frac12\rho U^{2}AC_L=\frac12\times1.2\times225\times20\times1.2=3.2\ \mathrm{kN}$。转子约为帆的 $6.6$ 倍——这就是弗莱特纳转子船的原理（缺点是要动力去转）。
+**7.16** (a) 零升力角就是 $\theta_T=-4.0^\circ$：$\alpha$ 取这个值时 $C_L=0$。(b) $a=c/4=0.50\ \mathrm{m}$，$\Gamma=4\pi UR\sin(\theta_T-\alpha)=4\pi\times60\times0.5\times\sin(-10^\circ)=-65.5\ \mathrm{m^{2}/s}$；$L'=\rho U|\Gamma|=1.2\times60\times65.5=4.7\times10^{3}\ \mathrm{N/m}$。核对：$C_L=L'/(\frac12\rho U^{2}c)=4.7\times10^{3}/4320=1.09$，与 $2\pi\sin10^\circ=1.09$ 一致。(c) $\alpha=12^\circ$ 时 $\theta_T-\alpha=-16^\circ$，$L'=1.2\times60\times377\times\sin16^\circ=7.5\times10^{3}\ \mathrm{N/m}$，只有原来的 $1.59$ 倍。因为升力随 $\sin(\alpha-\theta_T)$ 走，不是随角度线性；真实翼型到这个攻角已经接近失速。
 
 **7.17** $C_L=2\pi\sin20^\circ=2.15$，$L=\frac12\times1.2\times64\times30\times2.15=2.5\times10^{3}\ \mathrm{N}$。升力垂直于来流；当船头与来流成 $45^\circ$ 时，升力沿船头方向的分量是 $L\sin45^\circ=1.7\ \mathrm{kN}$，而侧向分量由龙骨抵消。**帆船"逆风前进"靠的是升力的前向分量，不是"风推着走"。**
 
 **7.18** $L'=\frac12\rho U^{2}cC_L=\frac12\times1.2\times4\times10^{4}\times0.3\times0.6=4.3\times10^{3}\ \mathrm{N/m}$。旋翼剖面的相对速度沿展向变化（$U\pm\Omega r$），后退叶片那一侧速度小、容易失速，所以桨叶要扭转、变距，并限制前进比。
 
-**7.19** 水翼：$L=\frac12\times1000\times100\times2.0\times0.5=5.0\times10^{4}\ \mathrm{N}=50\ \mathrm{kN}$。同样的翼在空气中只有 $\frac12\times1.2\times100\times2.0\times0.5=60\ \mathrm{N}$，比值 $833\approx\rho_{\text{水}}/\rho_{\text{空气}}$。**这就是水翼能在低速下托起船的原因：密度大 800 倍，同样的翼面积能给出三个数量级大的升力。**
+**7.19** (a) 平飞时升力等于重力：$L=mg=4.9\times10^{3}\ \mathrm{N}$，单位展长 $L'=L/b=3.3\times10^{2}\ \mathrm{N/m}$，$\Gamma=L'/(\rho U)=327/(1.2\times25)=10.9\ \mathrm{m^{2}/s}$。(b) $\sin(\alpha-\theta_T)=\dfrac{\Gamma}{4\pi UR}=\dfrac{10.9}{4\pi\times25\times0.5}=0.069$，得 $\alpha-\theta_T=4.0^\circ$，即 $\alpha=2.0^\circ$——与滑翔机实际的小攻角同量级。(c) $U=30\ \mathrm{m/s}$ 时 $\Gamma$ 降到 $9.1$，而 $\sin(\alpha-\theta_T)=\Gamma/(4\pi UR)$ 的分母也变大，得 $2.8^\circ$，攻角降到约 $0.8^\circ$。**升力系数按 $1/U^{2}$ 掉，所以飞得越快、越要压平机头。**
 
 **7.20** $\alpha=5^\circ$：结冰前 $C_L=2\pi\sin(5^\circ+4^\circ)=0.98$，结冰后 $C_L=2\pi\sin(5^\circ+1^\circ)=0.66$，下降 $33\%$。**结冰不是"表面粗糙一点"，它直接把升力砍掉三分之一**——这就是飞机要除冰的原因。
 
@@ -1399,7 +1530,13 @@ $$y(t)=\int_0^{t}e^{-2\tau}\,\mathrm{d}\tau=\frac{1-e^{-2t}}{2}.$$
 
 振荡频率 $99.5\ \text{rad/s}$（比 $\omega_0$ 略小），衰减时间 $1/(\zeta\omega_0)=0.1\ \text{s}$，$Q=1/(2\zeta)=5$。
 
-**8.12** $\sin\theta=\lambda/a=500\times10^{-9}/10^{-4}=5\times10^{-3}$，$\theta\approx5\times10^{-3}\ \text{rad}$。$1\ \text{m}$ 处暗纹间距 $5\ \text{mm}$。
+**8.12** 变换：$sY+2Y=\frac{1}{s+1}$，故 $Y=\frac{1}{(s+1)(s+2)}$。部分分式
+
+$$Y=\frac{1}{s+1}-\frac{1}{s+2}
+\quad\Longrightarrow\quad
+y(t)=e^{-t}-e^{-2t}\ (t>0).$$
+
+检查：$y(0)=0$ ✓；$y'+2y=-e^{-t}+2e^{-2t}+2e^{-t}-2e^{-2t}=e^{-t}$ ✓。
 
 **8.13** $\tau=1/(\alpha k^2)$。$1\ \text{mm}$ 周期：$k=6.28\times10^{3}\ \text{m}^{-1}$，$\alpha k^2=4.34\times10^{3}\ \text{s}^{-1}$，$\tau=2.3\times10^{-4}\ \text{s}$。$1\ \text{cm}$ 周期：$k$ 小十倍，$\tau$ 大百倍，$2.3\times10^{-2}\ \text{s}$。
 
@@ -1417,45 +1554,44 @@ $$u(x,t)=\frac{1}{2}\left[f(x-ct)+f(x+ct)\right].$$
 
 两个半幅三角波分别向左右以 $c$ 跑。$t<a/c$ 时两个波还重叠在原点附近，$t>a/c$ 时完全分开，各走各的，形状不变。**波动方程不抹平、不展宽（无色散时）**，与热方程形成对照。
 
-**8.16** 韦布：$\theta=1.22\times2\times10^{-6}/6.5=3.8\times10^{-7}\ \text{rad}\approx0.077''$。哈勃：$1.22\times500\times10^{-9}/2.4=2.5\times10^{-7}\ \text{rad}\approx0.052''$。
-
-**在可见光波段哈勃反而更锐利；韦布的优势在红外**（它观测 $2\ \mu\text{m}$ 附近，哈勃在那个波段的衍射斑会大三倍，而且大气与镜面热辐射都成问题）。
-
-**8.17** $\delta=0.61\lambda/\text{NA}=0.61\times500\times10^{-9}/1.4=2.2\times10^{-7}\ \text{m}$，约 $220\ \text{nm}$。
-
-油浸提高的是 $\text{NA}=n\sin u$：空气里 $n=1$，油里 $n\approx1.5$，同样的孔径角能收集更大的空间频率。**本质上还是「让更多的高频成分进来」**，与加大望远镜口径是同一件事。
-
-**8.18** $\delta=0.61\times650\times10^{-9}/0.6=6.6\times10^{-7}\ \text{m}=0.66\ \mu\text{m}$，小于 $0.74\ \mu\text{m}$ 的坑距，**设计合理**（留了一点余量）。蓝光：$0.61\times405\times10^{-9}/0.6=4.1\times10^{-7}=0.41\ \mu\text{m}$，坑距可缩到约 $0.4\ \mu\text{m}$，容量约提高 $(0.74/0.4)^2\approx3.4$ 倍——与 Blu-ray（$25\ \text{GB}$ 对 DVD 的 $4.7\ \text{GB}$）的量级相符。
-
-**8.19** $RC=10^{4}\times10^{-8}=10^{-4}\ \text{s}$，$f_c=1/(2\pi RC)=1592\ \text{Hz}$。
+**8.16** $RC=10^{4}\times10^{-8}=10^{-4}\ \text{s}$，$f_c=1/(2\pi RC)=1592\ \text{Hz}$。
 
 $$|H(f)|=\frac{1}{\sqrt{1+(f/f_c)^2}}:\quad
 1\ \text{kHz}:0.85,\quad 3\ \text{kHz}:0.47,\quad 5\ \text{kHz}:0.30 .$$
 
 方波的高次谐波被逐级削弱，边沿变圆，但基频基本保留——**$1\ \text{kHz}$ 方波还能看出方波的轮廓**，只是角变圆了。
 
-**8.20** $\omega_0=1/\sqrt{LC}=1/\sqrt{10^{-4}\times10^{-10}}=10^{7}\ \text{rad/s}$，$f_0=1.59\ \text{MHz}$。
+**8.17** $\omega_0=1/\sqrt{LC}=1/\sqrt{10^{-4}\times10^{-10}}=10^{7}\ \text{rad/s}$，$f_0=1.59\ \text{MHz}$。
 
 $Q=\omega_0L/R\Rightarrow R=\omega_0L/Q=10^{7}\times10^{-4}/50=20\ \Omega$。
 
-**8.21** $BT=2\times10^{6}\times0.5\times10^{-3}=1000$，$\delta R=c/(2B)=1500/(4\times10^{6})=3.75\times10^{-4}\ \text{m}$，即 $0.38\ \text{mm}$。
+**8.18** $BT=2\times10^{6}\times0.5\times10^{-3}=1000$，$\delta R=c/(2B)=1500/(4\times10^{6})=3.75\times10^{-4}\ \text{m}$，即 $0.38\ \text{mm}$。
 
-**8.22** 展宽 $\Delta t=17\ \text{ps/(nm}\cdot\text{km)}\times0.1\ \text{nm}\times50\ \text{km}=85\ \text{ps}$。
+**8.19** 展宽 $\Delta t=17\ \text{ps/(nm}\cdot\text{km)}\times0.1\ \text{nm}\times50\ \text{km}=85\ \text{ps}$。
 
 比特间隔 $100\ \text{ps}$，展宽 $85\ \text{ps}$——**脉冲已经糊到相邻比特里**，必须补偿（色散补偿光纤或电子均衡）。
 
-**8.23** 极点在 $\omega$ 平面是 $\omega=-i\gamma/2\pm\omega_0$，换成 $s$ 平面是 $s=-\gamma/2\pm i\omega_0$。到虚轴距离 $\gamma/2=5\times10^{7}\ \text{s}^{-1}$，衰减时间 $1/(\gamma/2)=20\ \text{ns}$。
+**8.20** 极点在 $\omega$ 平面是 $\omega=-i\gamma/2\pm\omega_0$，换成 $s$ 平面是 $s=-\gamma/2\pm i\omega_0$。到虚轴距离 $\gamma/2=5\times10^{7}\ \text{s}^{-1}$，衰减时间 $1/(\gamma/2)=20\ \text{ns}$。
 
 振荡频率 $3\times10^{15}\ \text{rad/s}$（可见光，$\lambda\approx628\ \text{nm}$）。$Q=\omega_0/\gamma=3\times10^{7}$——**这就是原子谱线极窄的原因**。
 
-**8.24** $\omega\tau=2\pi\times1\times1=6.28$，
+**8.21** $\omega\tau=2\pi\times1\times1=6.28$，
 
 $$|H|=\frac{1}{\sqrt{1+(\omega\tau)^2}}=\frac{1}{6.36}=0.157,\qquad
 \varphi=-\arctan(6.28)=-81^\circ .$$
 
 幅度只剩 $16\%$，滞后 $81^\circ$。**用时间常数 $1\ \text{s}$ 的传感器测 $1\ \text{Hz}$ 的波动，测到的基本是「平均温度」而不是波动。** 想测 $1\ \text{Hz}$，$\tau$ 要做到 $0.01\ \text{s}$ 量级。
 
-**8.25** 记 $\|f\|^2=\int|f|^2$。由 $\Delta k^2=\|f'\|^2/\|f\|^2$（求导性质 + 帕塞瓦尔），
+**8.22** 令 $s=i\omega$：
+
+$$|H|=\frac{1}{\sqrt{1+(\omega\tau)^2}},\qquad
+\varphi=-\arctan(\omega\tau).$$
+
+输出 $y=\dfrac{1}{\sqrt{1+(\omega\tau)^2}}\cos\left(\omega t-\arctan\omega\tau\right)$。
+
+$\omega\tau\gg1$ 时 $|H|\approx1/(\omega\tau)\to0$，输出趋于零（高频被滤掉）；$\omega\tau\ll1$ 时 $|H|\approx1$、$\varphi\approx0$，输出几乎等于输入。
+
+**8.23** 记 $\|f\|^2=\int|f|^2$。由 $\Delta k^2=\|f'\|^2/\|f\|^2$（求导性质 + 帕塞瓦尔），
 
 $$\Delta x^2\Delta k^2=\frac{\int x^2|f|^2\int|f'|^2}{\|f\|^4}
 \geq\frac{\left|\int x f^*f'\right|^2}{\|f\|^4},$$
@@ -1464,7 +1600,7 @@ $$\Delta x^2\Delta k^2=\frac{\int x^2|f|^2\int|f'|^2}{\|f\|^4}
 
 等号要求 $f'\propto xf$，解是高斯。**高斯基是唯一达到下界的形状。**
 
-**8.26** 用 $\delta$ 的积分表示：
+**8.24** 用 $\delta$ 的积分表示：
 
 $$\int|f|^2\mathrm{d}x=\int f^*(x)\left[\frac{1}{2\pi}\int\tilde f(k)e^{ikx}\mathrm{d}k\right]\mathrm{d}x
 =\frac{1}{2\pi}\int\tilde f(k)\left[\int f^*(x)e^{ikx}\mathrm{d}x\right]\mathrm{d}k
@@ -1472,13 +1608,13 @@ $$\int|f|^2\mathrm{d}x=\int f^*(x)\left[\frac{1}{2\pi}\int\tilde f(k)e^{ikx}\mat
 
 中间一步交换积分次序，方括号里正是 $\tilde f^*(k)$。
 
-**8.27** 证明见 8.4.2 节（两行）。理想积分器 $H(s)=1/s$，冲激响应 $h(t)=\theta(t)$：
+**8.25** 证明见 8.4.2 节（两行）。理想积分器 $H(s)=1/s$，冲激响应 $h(t)=\theta(t)$：
 
 $$\int_{-\infty}^{\infty}|h(t)|\,\mathrm{d}t=\int_0^{\infty}\mathrm{d}t=\infty,$$
 
 **不绝对可积，傅里叶变换不存在**（只有分布意义下的 $1/(i\omega)+\pi\delta(\omega)$）。所以「输出 = 输入与 $h$ 的卷积」这个式子对一般输入不成立；但对零均值的输入（不含直流）仍成立——**因为积分器对直流是发散的。** 这就是为什么示波器不能测纯直流。
 
-**8.28**
+**8.26**
 
 | 收敛域 | 时域信号 | 因果性 | 稳定性 |
 |---|---|---|---|
@@ -1487,7 +1623,7 @@ $$\int_{-\infty}^{\infty}|h(t)|\,\mathrm{d}t=\int_0^{\infty}\mathrm{d}t=\infty,$
 
 两种都发散，但方式不同。**这说明「看极点判稳定」必须配合收敛域**：极点 $s=1$ 只告诉你「有 $e^{t}$ 这个成分」，至于它出现在 $t>0$ 还是 $t<0$，由收敛域决定。
 
-**8.29** $t>0$ 时 $e^{i\omega t}$ 在上半平面衰减，向上闭合，围住 $\omega=ia$：
+**8.27** $t>0$ 时 $e^{i\omega t}$ 在上半平面衰减，向上闭合，围住 $\omega=ia$：
 
 $$\int=2\pi i\cdot\frac{e^{i(ia)t}}{2ia}=\frac{\pi}{a}e^{-at}.$$
 
@@ -1497,7 +1633,7 @@ $$\int_{-\infty}^{\infty}\frac{e^{i\omega t}}{\omega^2+a^2}\,\mathrm{d}\omega=\f
 
 与第 6 章的围道技巧完全一致：**用 $e^{i\omega t}$ 在哪个半平面衰减来决定闭合方向**，$t=0$ 处的「不连续」由两个半平面各贡献一半拼出来。
 
-**8.30** 二阶系统阶跃响应
+**8.28** 二阶系统阶跃响应
 
 $$y(t)=1-\frac{e^{-\zeta\omega_0t}}{\sqrt{1-\zeta^2}}\sin\left(\omega_0\sqrt{1-\zeta^2}\,t+\varphi\right),\qquad \cos\varphi=\zeta .$$
 
@@ -1507,13 +1643,7 @@ $$M_p=y(t_p)-1=\exp\left(-\frac{\pi\zeta}{\sqrt{1-\zeta^2}}\right).$$
 
 $\zeta=0.5$：$\exp(-\pi\times0.5/0.866)=\exp(-1.814)=0.163$，过冲 $16.3\%$。
 
-**8.31** 菲涅耳数 $N_F=a^2/(\lambda L)$。$N_F\gg1$ 是近场（菲涅耳），$N_F\ll1$ 是远场（夫琅禾费），分界取 $N_F\sim1$：
-
-$$L_c=\frac{a^2}{\lambda}=\frac{(10^{-3})^2}{500\times10^{-9}}=2\ \text{m}.$$
-
-**$1\ \text{mm}$ 的孔，屏距超过约 $2\ \text{m}$ 才能用夫琅禾费公式。** 实验室里做夫琅禾费衍射要用透镜（把远场搬到焦面上），就是为了绕开这个距离。
-
-**8.32** 对 $t$ 做变换，$T(x,0)=0$：
+**8.29** 对 $t$ 做变换，$T(x,0)=0$：
 
 $$s\bar T=\alpha\frac{\partial^2\bar T}{\partial x^2}
 \quad\Longrightarrow\quad
@@ -1525,25 +1655,33 @@ $$T(x,t)=T_0\,\mathrm{erfc}\!\left(\frac{x}{2\sqrt{\alpha t}}\right).$$
 
 检查：$x=0$ 时 $\mathrm{erfc}(0)=1$，$T=T_0$ ✓；$t\to\infty$ 时 $\mathrm{erfc}\to0$ ✓（热量扩散进去，远处升温）。
 
-**8.33** 错。变换是可逆的（在平方可积函数上还是等距同构，见帕塞瓦尔定理）。**信息一个字都没少，只是换了一组坐标。** 唯一会「丢」的情形是数值实现：采样、截断、量化，那是离散化的代价，不是变换的性质。
+**8.30** $\mathcal{F}[e^{-|x|}]=2/(1+k^2)$，所以
 
-**8.34** 错。白噪声是**随机过程**：每个频率的幅度是随机的、相位是随机的，谱是「常数」只在统计平均的意义下成立。$\delta$ 是确定性脉冲，谱严格是常数 1、相位为零。**两者的功率谱形状相同，但一个可预测、一个不可预测**——这是本质区别。
+$$\mathcal{F}\left[e^{-|x|}*e^{-|x|}\right]=\frac{4}{(1+k^2)^2}.$$
 
-**8.35** 错。带宽定理是傅里叶变换的数学性质，与「测量是否扰动系统」无关。量子力学里 $\Delta x\Delta p\geq\hbar/2$ 可以被解释成测量扰动，但那是一种**诠释**，不是定理的内容；定理只说不存在同时无限窄和无限纯的波包。
+反变换得
 
-**8.36** 对一半。拉普拉斯变换确实是「乘 $e^{-\sigma t}$ 之后做单边傅里叶变换」，但**必须配合两个额外条件**：积分下限是 $0$（否则初值项不存在），并且要指定收敛域（否则反演不唯一）。只记住「乘个指数」会漏掉这两条，而这两条恰恰是拉普拉斯变换区别于傅里叶变换的全部价值。
+$$(e^{-|x|})*(e^{-|x|})=(1+|x|)e^{-|x|}.$$
 
-**8.37** 错。只对**因果系统**成立。反因果系统的同一个 $H(s)$（极点分布相同）可以稳定也可以不稳定，取决于收敛域。另外「极点全在左半平面」还要求没有虚轴上的重极点（那是临界情形）。
+**验算：** 两边在 $x=0$ 处分别是 $\int e^{-2|t|}\mathrm{d}t=1$ 与 $1$ ✓；$x\to\infty$ 时两边都按 $|x|e^{-|x|}$ 衰减 ✓。
 
-**8.38** 错。幅度确实接近 1（$\omega\ll\omega_c$ 时 $|H|\approx1$），但**相位仍按 $-\omega/\omega_c$ 变化**。相位滞后会让不同频率成分错位，方波的边沿因此变形——「幅度没衰减」不等于「不失真」。
+**8.31** 错。变换是可逆的（在平方可积函数上还是等距同构，见帕塞瓦尔定理）。**信息一个字都没少，只是换了一组坐标。** 唯一会「丢」的情形是数值实现：采样、截断、量化，那是离散化的代价，不是变换的性质。
 
-**8.39** 错。分辨率由孔径（衍射极限 $\sim\lambda/D$）决定，像素只决定采样密度。像素超过衍射斑尺寸之后，再增加只是把同一个模糊斑画得更细。**能提高分辨率的只有：加大孔径、缩短波长、或者用超分辨技术（借助先验或非线性）。**
+**8.32** 错。白噪声是**随机过程**：每个频率的幅度是随机的、相位是随机的，谱是「常数」只在统计平均的意义下成立。$\delta$ 是确定性脉冲，谱严格是常数 1、相位为零。**两者的功率谱形状相同，但一个可预测、一个不可预测**——这是本质区别。
 
-**8.40** 错。热方程是宏观近似（连续介质、局域平衡），在「扰动传播得比光快」这件事有意义之前，它已经失效了。而且热方程给出的「超光速」部分是指数小的：$e^{-x^2/(4\alpha t)}$ 在 $x>ct$ 时小到无法测量。**物理上不能观测的东西，不必要求方程禁止它。**
+**8.33** 错。带宽定理是傅里叶变换的数学性质，与「测量是否扰动系统」无关。量子力学里 $\Delta x\Delta p\geq\hbar/2$ 可以被解释成测量扰动，但那是一种**诠释**，不是定理的内容；定理只说不存在同时无限窄和无限纯的波包。
 
-**8.41** 错（一半）。卷积定理要求 $h$ 有傅里叶变换（绝对可积或平方可积）。理想积分器 $h=\theta(t)$ 不满足，所以严格说它的「传递函数」只在分布意义下存在。但对零均值的输入，卷积仍然收敛——**条件落在输入上，而不是 $h$ 上**。这是「定理的前提被违反但结论仍可用」的典型情形，用之前必须检查输入。
+**8.34** 对一半。拉普拉斯变换确实是「乘 $e^{-\sigma t}$ 之后做单边傅里叶变换」，但**必须配合两个额外条件**：积分下限是 $0$（否则初值项不存在），并且要指定收敛域（否则反演不唯一）。只记住「乘个指数」会漏掉这两条，而这两条恰恰是拉普拉斯变换区别于傅里叶变换的全部价值。
 
-**8.42** 错。$H(s)$ 必须配收敛域才有唯一的时域信号。同一个代数表达式，收敛域在极点左边还是右边，对应的信号一个是因果的、一个是反因果的（见 8.28 题）。**$H(s)$ 是复变函数，不是有理分式；丢掉收敛域就等于丢掉了因果性。**
+**8.35** 错。只对**因果系统**成立。反因果系统的同一个 $H(s)$（极点分布相同）可以稳定也可以不稳定，取决于收敛域。另外「极点全在左半平面」还要求没有虚轴上的重极点（那是临界情形）。
+
+**8.36** 错。幅度确实接近 1（$\omega\ll\omega_c$ 时 $|H|\approx1$），但**相位仍按 $-\omega/\omega_c$ 变化**。相位滞后会让不同频率成分错位，方波的边沿因此变形——「幅度没衰减」不等于「不失真」。
+
+**8.37** 错。热方程是宏观近似（连续介质、局域平衡），在「扰动传播得比光快」这件事有意义之前，它已经失效了。而且热方程给出的「超光速」部分是指数小的：$e^{-x^2/(4\alpha t)}$ 在 $x>ct$ 时小到无法测量。**物理上不能观测的东西，不必要求方程禁止它。**
+
+**8.38** 错（一半）。卷积定理要求 $h$ 有傅里叶变换（绝对可积或平方可积）。理想积分器 $h=\theta(t)$ 不满足，所以严格说它的「传递函数」只在分布意义下存在。但对零均值的输入，卷积仍然收敛——**条件落在输入上，而不是 $h$ 上**。这是「定理的前提被违反但结论仍可用」的典型情形，用之前必须检查输入。
+
+**8.39** 错。$H(s)$ 必须配收敛域才有唯一的时域信号。同一个代数表达式，收敛域在极点左边还是右边，对应的信号一个是因果的、一个是反因果的（见 8.28 题）。**$H(s)$ 是复变函数，不是有理分式；丢掉收敛域就等于丢掉了因果性。**
 
 ## 第 9 章
 
@@ -1837,6 +1975,7 @@ $F_{y'}$ 一般不等于 $y'$：只有 $F$ 正比于 $y'^2$（比如长度的被
 
 **10.1** (a) $\partial_\mu v^\nu$ **不是**：换坐标后多出 $\partial^2x'/\partial x^2$ 项。(b) $\Gamma^\mu{}_{\nu\lambda}$ **不是**：变换律含二阶导数，且平直直角坐标下为零、极坐标下非零。(c) $R^\rho{}_{\sigma\mu\nu}$ **是**：二阶导数项在反对称组合里抵消。(d) $v^\mu\omega_\nu$ **是**：一上一下，各带一个雅可比。(e) $\Gamma\Gamma$ **不是**：两个非张量的乘积，变换后出现二阶导数的交叉项。
 
+
 **10.2** $a=1$ 时 $g_{\theta\theta}=1$、$g_{\varphi\varphi}=\sin^2\theta$，所以
 
 $$v_\theta=g_{\theta\theta}v^\theta=1,\qquad
@@ -1850,6 +1989,7 @@ $$g^{\mu\nu}v_\mu v_\nu=1\cdot1^2+\frac{1}{\sin^2\theta}(2\sin^2\theta)^2=1+4\si
 
 相等 ✓。这是"升降指标不改变矢量"的具体验证。
 
+
 **10.3** 圆柱面 $g_{11}=a^2$、$g_{22}=1$，**两个都是常数**，所有导数都为零，代入
 
 $$\Gamma^\mu{}_{\nu\lambda}=\frac12g^{\mu\rho}\left(
@@ -1859,13 +1999,16 @@ $$\Gamma^\mu{}_{\nu\lambda}=\frac12g^{\mu\rho}\left(
 
 得 $\Gamma\equiv0$。于是 $R^\rho{}_{\sigma\mu\nu}$ 的每一项都含 $\Gamma$ 或其导数，全部为零，曲率为零。**圆柱面是可展曲面，内禀平坦**——它能平铺成一张纸。
 
+
 **10.4** 逐项看：$\Gamma^\theta{}_{\theta\theta}=\frac12g^{\theta\theta}(\partial_\theta g_{\theta\theta}+\partial_\theta g_{\theta\theta}-\partial_\theta g_{\theta\theta})=0$，因为 $g_{\theta\theta}=a^2$ 是常数；$\Gamma^\theta{}_{\theta\varphi}$ 含 $\partial g_{\theta\varphi}=0$（度规对角）和 $\partial_\varphi g_{\theta\theta}=0$；$\Gamma^\varphi{}_{\varphi\varphi}=\frac12g^{\varphi\varphi}(2\partial_\varphi g_{\varphi\varphi}-\partial_\varphi g_{\varphi\varphi})=0$，因为度规不显含 $\varphi$。
+
 
 **10.5** $g^{11}=1$、$g^{22}=1/f$。非零分量只有两个：
 
 $$\Gamma^1{}_{22}=\frac12g^{11}\left(-\frac{\partial g_{22}}{\partial x^1}\right)=-\frac{f'}{2},
 \qquad
 \Gamma^2{}_{12}=\Gamma^2{}_{21}=\frac12g^{22}\frac{\partial g_{22}}{\partial x^1}=\frac{f'}{2f}.$$
+
 
 **10.6** 取 $\rho=\varphi$、$\sigma=\theta$、$\mu=\theta$、$\nu=\varphi$：
 
@@ -1879,7 +2022,9 @@ $$R^\varphi{}_{\theta\varphi\theta}
 
 $$R^\varphi{}_{\theta\varphi\theta}=\frac{1}{\sin^2\theta}-\cot^2\theta=1 .$$
 
+
 **10.7** $\Gamma\equiv0$ ⟹ 它的导数也为零 ⟹ $R^\rho{}_{\sigma\mu\nu}\equiv0$ ⟹ $R_{\mu\nu}\equiv0$ ⟹ $R=g^{\mu\nu}R_{\mu\nu}=0$。一步都不用算。
+
 
 **10.8** 用 10.6.3 的两个里奇分量：
 
@@ -1888,6 +2033,7 @@ $$R=g^{\theta\theta}R_{\theta\theta}+g^{\varphi\varphi}R_{\varphi\varphi}
 =\frac{1}{a^2}+\frac{1}{a^2}=\frac{2}{a^2}.$$
 
 **与 $\theta$ 无关的原因：** 球面上每一点的地位相同（均匀且各向同性），标量曲率是标量，不可能依赖坐标；$R_{\theta\theta}$ 与 $R_{\varphi\varphi}$ 里那些 $\theta$ 依赖，正好被逆度规里的 $\sin^2\theta$ 抵消。
+
 
 **10.9** 二维恒等式 $R_{\mu\nu}=\frac{R}{2}g_{\mu\nu}$ 的两边：
 
@@ -1898,6 +2044,7 @@ $$\varphi\varphi:\quad R_{\varphi\varphi}=\sin^2\theta,\qquad
 
 两式都成立 ✓。**二维时里奇张量不携带超出 $R$ 的信息**，这是 2 维的特殊性质。
 
+
 **10.10** $\mu=\theta$ 分量：
 
 $$\theta''-\sin\theta\cos\theta\,\varphi'^2=0 .$$
@@ -1905,6 +2052,9 @@ $$\theta''-\sin\theta\cos\theta\,\varphi'^2=0 .$$
 代 $\theta=\pi/2$：$\theta''=0$，$\cos(\pi/2)=0$，左边 $=0-0\cdot\varphi'^2=0$ ✓。所以赤道满足测地线方程（同理任何 $\theta=$ 常数的面只有在 $\cos\theta=0$ 时才是测地线，这正好挑出赤道）。
 
 ### 习题 10.11–10.20
+
+
+### 习题 10.11–10.22
 
 **10.11** $m=20$，$a,b,c=0.3,0.2,0.1$：
 
@@ -1919,11 +2069,13 @@ $$I_{\boldsymbol{n}}=\boldsymbol{n}^{\mathsf T}I\boldsymbol{n}
 
 它介于 $I_{xx}$ 与 $I_{yy}$ 之间——**任意方向的转动惯量都被三个主轴值夹住**（瑞利商的性质）。
 
+
 **10.12** 竖直向下为 $-y$。水平/竖直坐标：$\boldsymbol{a}=(0,-g)$。沿斜面/垂直斜面（$x'$ 沿斜面向下，$y'$ 垂直向上）：
 
 $$a_{x'}=g\sin30^\circ=4.9,\qquad a_{y'}=-g\cos30^\circ=-8.49\ \mathrm{m/s^2}.$$
 
 模长：$\sqrt{0+g^2}=\sqrt{4.9^2+8.49^2}=9.8=g$ ✓。**分量变了，矢量没变。**
+
 
 **10.13** 圆环上只有 $\varphi$ 一个坐标，$\mathrm{d}s^2=a^2\mathrm{d}\varphi^2$，度规分量是常数，$\Gamma\equiv0$。测地线方程
 
@@ -1933,38 +2085,133 @@ $$\frac{\mathrm{d}^2\varphi}{\mathrm{d}\lambda^2}=0
 
 **匀速圆周运动就是圆环上的测地线。** 一维流形上任何曲线都是测地线（没有"转弯"的余地），曲率必然为零——这也解释了为什么一维世界没有引力。
 
-**10.14** 太阳表面到地球，$\Phi$ 从 $-GM/R$ 变到几乎零：
 
-$$\frac{\Delta\nu}{\nu}=\frac{GM_\odot}{c^2R_\odot}
-=\frac{1.477\,\mathrm{km}}{6.96\times10^{5}\,\mathrm{km}}
-=2.1\times10^{-6}.$$
+**10.14** 设两点纬度都是 $\theta_0$（从北极量起的余纬），经度差 $\Delta\varphi$。
 
-即波长变长约 $2.1\times10^{-6}$（可见光约 $0.001\,\mathrm{nm}$）。**太阳光谱线的红移里有一部分是这个效应**（另一部分是日冕运动的多普勒效应，两者要分开）。
+**沿纬线走：** 纬线是小圆，半径 $a\sin\theta_0$，所以距离
 
-**10.15** 引力效应（卫星处势更高，钟走得快）：$\Delta\nu/\nu=5.3\times10^{-10}$，每天 $46\,\mu\mathrm{s}$。速度效应（运动的钟慢）：$v^2/(2c^2)=8.3\times10^{-11}$，每天 $-7\,\mu\mathrm{s}$。净 $+39\,\mu\mathrm{s}$/天。**两个效应方向相反、量级只差 6 倍，只算一个会错 100% 以上。** 不修正的话，定位每天漂 $39\,\mu\mathrm{s}\times c=11.7\,\mathrm{km}$。
+$$s_{\text{纬}}=a\sin\theta_0\,\Delta\varphi .$$
 
-**10.16** 太阳边缘：$b=R_\odot=6.96\times10^{8}\,\mathrm{m}$，
+**沿大圆走：** 用球面余弦定理，圆心角 $d/a$ 满足
 
-$$\alpha=\frac{4GM}{c^2b}=\frac{4\times1477}{6.96\times10^{8}}=8.5\times10^{-6}\ \mathrm{rad}=1.75'' .$$
+$$\cos\frac{d}{a}=\cos^2\theta_0+\sin^2\theta_0\cos\Delta\varphi,
+\qquad s_{\text{大圆}}=a\arccos(\cdots).$$
 
-$b=10R_\odot$ 时，$\alpha\propto1/b$，所以是 $0.175''$。**偏折角按 $1/b$ 衰减**，所以只有掠日的星光才能测到。
+**比较：** 对小 $\Delta\varphi$，两式都 $\approx a\sin\theta_0\Delta\varphi$（局部看不出差别）；$\Delta\varphi$ 大时大圆明显更短。$90^\circ$ 纬度、$\Delta\varphi=90^\circ$ 时：纬线距离 $=\frac{\pi}{2}\cdot\frac{a}{\sqrt2}=1.11a$，大圆距离 $=\frac{\pi}{3}a=1.05a$。
 
-**10.17** $\Delta\omega\propto1/[a(1-e^2)]$。金星（$a=1.08\times10^{11}\,\mathrm{m}$，$e=0.0068$，每世纪 162.5 圈）：每圈 $2.57\times10^{-7}\,\mathrm{rad}$，每世纪 $8.4\times10^{-5}\,\mathrm{rad}=8.6''$。地球（$a=1.50\times10^{11}\,\mathrm{m}$，$e=0.0167$，100 圈）：$3.8''$。水星 $43''$。**水星最大是因为它 $a$ 最小、$e$ 最大**：$a$ 小让 $\epsilon/a$ 大，$e$ 大让 $1-e^2$ 小。
+**读法：** 这就是飞机走大圆的原因——**纬线不是测地线（除赤道），走它要多走路**。差值随纬度升高、经度差增大而增大。
 
-**10.18** 速度：$\gamma=1/\sqrt{1-0.999^2}=22.4$，μ 子寿命放大 22 倍（这是它能在海平面附近被观测到的原因）。引力：地面附近 $\Phi/c^2\sim7\times10^{-10}$，高度差带来的相对效应 $\sim10^{-14}$。**速度效应比引力效应大约 15 个数量级**——在粒子物理实验里，引力时间膨胀可以完全忽略。
 
-**10.19** 把 $\Lambda$ 折算成能量密度：$\rho_\Lambda=\dfrac{\Lambda c^2}{8\pi G}$，
+**10.15** 赤道到北极：沿经线（大圆）走，圆心角 $\pi/2$，距离
 
-$$\rho_\Lambda=\frac{1.1\times10^{-52}\times9\times10^{16}}{8\pi\times6.67\times10^{-11}}
-\approx6\times10^{-27}\ \mathrm{kg/m^3}.$$
+$$s_1=a\cdot\frac{\pi}{2}=1.571a .$$
 
-水的密度是 $10^3$，比值 $\sim6\times10^{-30}$。换个说法：**每立方米约 3 个氢原子质量**。这就是"真空的能量密度"，小得荒谬——而这正是宇宙学常数问题。
+赤道周长：赤道是大圆，$C=2\pi a=6.283a$。比值
 
-**10.20** $r_s=\dfrac{2GM}{c^2}$：太阳 $\dfrac{2GM_\odot}{c^2}=2\times1477=2.95\,\mathrm{km}$（太阳半径 $6.96\times10^{5}\,\mathrm{km}$，比值 $4\times10^{-6}$）；地球 $8.9\,\mathrm{mm}$；$75\,\mathrm{kg}$ 的人 $1.1\times10^{-25}\,\mathrm{m}$。**把人压缩到 $10^{-25}$ 米才会变成黑洞**，比质子还小 12 个数量级。
+$$\frac{s_1}{C}=\frac{1}{4}.$$
 
-### 习题 10.21–10.30
+**平面直觉是多少？** 平面上从圆心到边界是 $R$，周长 $2\pi R$，比值 $1/(2\pi)\approx0.159$。
 
-**10.21** 现在把两个方程都解出来。由例 10.3 已得
+**差在哪：** 球面上"到边界的距离/周长"是 $1/4$，平面是 $1/(2\pi)$。这不是测量误差，是曲率：**球面上圆的周长比同半径的平面圆短**（$C=2\pi a\sin(r/a)<2\pi r$），所以比值偏大。量一下这个比值，就能判断空间弯不弯。
+
+
+**10.16** 纬度 $45^\circ$ 对应余纬 $\theta_0=45^\circ$。转角
+
+$$\Delta\alpha=2\pi(1-\cos45^\circ)=2\pi\left(1-\frac{\sqrt2}{2}\right)=0.586\pi=1.840\ \mathrm{rad}=105.4^\circ .$$
+
+**读法两条：**
+
+1. **这个角只依赖余纬，与地球半径无关。** 所以"沿纬线搬一圈转 $105^\circ$"是球面几何的普适结论，换个大小的球也一样。半径只影响"面积与转角"的比例系数（$K=1/a^2$）。
+2. **$45^\circ$ 纬线围出的球冠面积**是 $2\pi a^2(1-\cos45^\circ)$，乘 $K=1/a^2$ 正好是这个角——与 10.5.2 的 $\Delta\alpha=K\times$面积一致。
+
+
+**10.17** 双曲面上 $K=-1/a^2$，角亏与面积的关系仍是"曲率 $\times$ 面积"，但符号相反：
+
+$$\text{角亏}=|K|\times\text{面积}=\frac{\text{面积}}{a^2}.$$
+
+角亏 $0.01\,\mathrm{rad}$、$a=1\,\mathrm{m}$：
+
+$$\text{面积}=0.01\times a^2=0.01\ \mathrm{m^2}.$$
+
+**读法：** 正曲率给"角盈"（内角和 $>\pi$），负曲率给"角亏"（$<\pi$）。**测一个三角形的内角和，就能判断空间的正负**——这是高斯当年做大地测量时想做的事（他在三个山头之间测三角形，想判断地球表面的曲率，当然测不出来，因为地球太大）。
+
+
+**10.18** 反证。设存在一个保持距离的平面地图，即球面上任意两点的距离等于地图上对应两点的距离。
+
+取球面上一个测地三角形（三条边都是大圆）。**在球面上**，它的内角和是
+
+$$A+B+C=\pi+\frac{\text{面积}}{a^2}>\pi .$$
+
+**在地图上**，三条边都是平面上的直线段（因为保距，测地线必须映成直线），而平面三角形的内角和恰好等于 $\pi$。
+
+同一个三角形，内角和既是 $>\pi$ 又是 $=\pi$，矛盾。所以**不存在保距的平面地图**。
+
+**读法：** 这不是"画得不够好"，是**不允许**。所有世界地图都在某处失真——等角投影（墨卡托）保角不保面积，等面积投影保面积不保角。曲率不允许你把三者同时保住。球面是"不可展曲面"，而圆柱、圆锥是"可展"的（$K\equiv0$），所以能剪开铺平。
+
+
+**10.19** 圆锥面（半顶角 $\alpha$，从顶点量起的斜距 $\rho$）：
+
+$$\mathrm{d}s^2=\mathrm{d}\rho^2+\rho^2\sin^2\alpha\,\mathrm{d}\varphi^2 .$$
+
+这与平面极坐标 $\mathrm{d}r^2+r^2\mathrm{d}\vartheta^2$ 形状相同，只要把角度缩放成 $\vartheta=\varphi\sin\alpha$。所以：
+
+- **非零的 $\Gamma$：** $\Gamma^\rho{}_{\varphi\varphi}=-\rho\sin^2\alpha$，$\Gamma^\varphi{}_{\rho\varphi}=1/\rho$。
+- **曲率：** 结构完全照搬 10.6.4 的计算（把 $\varphi$ 换成 $\varphi\sin\alpha$），两项仍精确抵消，$R\equiv0$。
+
+**测地线在展开图上是直线。** 把圆锥沿一条母线剪开铺平，锥面变成平面上的一个扇形（圆心角 $2\pi\sin\alpha$），测地线变成扇形里的直线段——**"直线"跨过剪开的那条缝时要按同样的角度接上**，这就是锥面上测地线"绕着顶点拐弯"的原因。
+
+**读法：** 圆锥是可展曲面，所以它的"弯曲"全是坐标造成的，不是内禀的。这也解释了为什么圆锥上的平行移动不产生任何转角。
+
+
+**10.20** 圆柱面 $\mathrm{d}s^2=a^2\mathrm{d}\varphi^2+\mathrm{d}z^2$，全部 $\Gamma=0$（10.3 节题）。平行移动方程退化成
+
+$$\frac{\mathrm{d}v^\mu}{\mathrm{d}\lambda}=0,$$
+
+即分量是常数。沿纬线走一圈回来，**矢量一模一样，转角为零**。
+
+**与球面对比：** 球面上同样走一圈，转角是 $2\pi(1-\cos\theta_0)\ne0$（例 10.3）。差别不在"坐标弯不弯"（两者都弯），而在**曲率是不是零**：圆柱面 $K=0$，球面 $K=1/a^2$。
+
+**"回到原处方向不变" 是平坦的等价条件：** 若对任何闭合回路平行移动都不产生转角，则由 $\Delta\alpha=K\times$面积，面积任意小时必须 $K=0$。反过来 $K=0$ 时和乐恒为零（局部可积）。**这就是"平坦"的几何定义**，比"看起来直不直"可靠得多。
+
+
+**10.21** 约束在球面上的自由粒子，作用量就是弧长，所以它走测地线：
+
+$$\theta''-\sin\theta\cos\theta\,\varphi'^2=0,
+\qquad
+\varphi''+2\cot\theta\,\theta'\varphi'=0 .$$
+
+**匀速性：** 由度规相容性，$g_{\mu\nu}u^\mu u^\nu=a^2\left(\theta'^2+\sin^2\theta\,\varphi'^2\right)$ 是常数。对常数开方（沿曲线 $\mathrm{d}s/\mathrm{d}\lambda$ 为常数），得"速率" $|\boldsymbol{u}|$ 恒定——**球面上没有力，所以速率不变，只有方向在变**。
+
+**赤道特解：** 取 $\theta=\pi/2$，则 $\theta'=\theta''=0$、$\cos(\pi/2)=0$，第一式给 $0=0$；第二式给 $\varphi''=0$，即 $\varphi=\omega\lambda$。**绕赤道匀速转圈是测地线运动**——卫星在赤道平面上绕地球转，就是这个解。
+
+**非赤道的解：** 一般解是倾斜的大圆。用两个第一积分（能量与角动量）可以把它解成 $\theta(\lambda)$ 的椭圆积分——这正是"球面上的自由粒子沿大圆运动"的完整答案。
+
+
+**10.22** 球面上测地半径为 $r$ 的小圆，周长 $C(r)=2\pi a\sin(r/a)$。展开：
+
+$$C(r)=2\pi r-\frac{\pi r^3}{3a^2}+\cdots$$
+
+与平面值 $2\pi r$ 的差是
+
+$$\Delta C=-\frac{\pi r^3}{3a^2}.$$
+
+**数值（$r=1\,\mathrm{km}$，$a=R_\oplus=6371\,\mathrm{km}$）：**
+
+$$\Delta C=-\frac{\pi\times(10^3)^3}{3\times(6.371\times10^6)^2}
+=-\frac{3.14\times10^9}{1.218\times10^{14}}
+=-2.6\times10^{-5}\ \mathrm{m},$$
+
+即**负 0.026 毫米**。
+
+**读法两条：**
+
+1. **符号为负**：球面上圆的周长比同半径的平面圆短，因为"边"往回收（正曲率）。
+2. **量级小得可怕**：1 公里半径的圆，误差只有 26 微米。这就是为什么古人测不出地球弯曲——**要看出曲率，得把 $r/a$ 做大**，比如用卫星轨道（$r\sim10^7\,\mathrm{m}$）或者测地学基线。
+
+
+### 习题 10.23–10.30
+
+**10.23** 现在把两个方程都解出来。由例 10.3 已得
 
 $$v^\theta=A\cos(c\varphi)+B\sin(c\varphi),\qquad c\equiv\cos\theta_0 .$$
 
@@ -1982,7 +2229,8 @@ $$(v^\theta)^2+\sin^2\theta_0(v^\varphi)^2
 
 与 $\varphi$ 无关 ✓——**平行移动保持长度，这是度规相容性的直接后果**。
 
-**10.22** $\sin x=x-\dfrac{x^3}{6}+\dfrac{x^5}{120}-\cdots$，代 $x=r/a$：
+
+**10.24** $\sin x=x-\dfrac{x^3}{6}+\dfrac{x^5}{120}-\cdots$，代 $x=r/a$：
 
 $$C(r)=2\pi a\left(\frac ra-\frac{r^3}{6a^3}+\frac{r^5}{120a^5}-\cdots\right)
 =2\pi r-\frac{\pi}{3a^2}r^3+\frac{\pi}{60a^4}r^5-\cdots$$
@@ -1995,7 +2243,8 @@ K=\frac{3}{\pi}\cdot\frac{\text{（}r^3\text{ 项系数）}}{1}\Big/\pi\cdot\ldo
 
 更直接：三次项系数是 $-\pi K/3$，所以 $K=-3\times(\text{三次项系数})/\pi$。对球面代入得 $K=1/a^2$ ✓。**高次项可以检验"$K$ 是不是常数"**：若 $r^5$ 项系数不符合 $K^2$ 的规律，说明曲率随位置变。
 
-**10.23** 用测地线偏离方程。球面上取两条经线，初始相距 $\xi_0=a\sin\theta_0\,\Delta\varphi$。分离矢量的分量只有 $\varphi$ 方向，$\xi^\varphi=\Delta\varphi$（常数，因为经线之间的角间距不变）。物理距离是
+
+**10.25** 用测地线偏离方程。球面上取两条经线，初始相距 $\xi_0=a\sin\theta_0\,\Delta\varphi$。分离矢量的分量只有 $\varphi$ 方向，$\xi^\varphi=\Delta\varphi$（常数，因为经线之间的角间距不变）。物理距离是
 
 $$\xi(\tau)=a\sin\theta(\tau)\,\Delta\varphi,
 \qquad \theta(\tau)=\frac{\tau}{a}.$$
@@ -2006,86 +2255,163 @@ $$\xi(\tau)=a\,\Delta\varphi\,\sin\frac{\tau}{a}.$$
 
 它满足 $\dfrac{\mathrm{d}^2\xi}{\mathrm{d}\tau^2}=-\dfrac{1}{a^2}\xi$，**这正是测地线偏离方程在球面上的样子**：$\dfrac{D^2\xi^\mu}{D\tau^2}=-R^\mu{}_{\nu\rho\sigma}u^\nu\xi^\rho u^\sigma$ 缩并后给出 $\ddot\xi=-K\xi$。$\xi$ 在 $\tau=\pi a$（北极）处为零——两条经线相交，如图 10.5 所示。
 
-**10.24** 从第二比安基
 
-$$\nabla_\lambda R_{\rho\sigma\mu\nu}+\nabla_\rho R_{\sigma\lambda\mu\nu}
-+\nabla_\sigma R_{\lambda\rho\mu\nu}=0$$
+**10.26** 从协变导数出发。要求 $\nabla_\lambda v^\mu$ 是张量，而 $\partial_\lambda v^\mu$ 不是，所以 $\Gamma^\mu{}_{\lambda\nu}v^\nu$ 的变换律里必须有一个与 $\partial^2x'/\partial x^2$ 相反的项。逐项算下来：
 
-出发，先对 $\mu$ 与 $\nu$ 缩并（用 $g^{\mu\nu}$）：中间项因 $R$ 的反对称性消掉，剩下
+$$\Gamma'^\mu{}_{\nu\lambda}
+=\frac{\partial x'^\mu}{\partial x^\alpha}
+\frac{\partial x^\beta}{\partial x'^\nu}
+\frac{\partial x^\gamma}{\partial x'^\lambda}\Gamma^\alpha{}_{\beta\gamma}
++\frac{\partial x'^\mu}{\partial x^\alpha}
+\frac{\partial^2 x^\alpha}{\partial x'^\nu\partial x'^\lambda}.$$
 
-$$\nabla_\lambda R_{\rho\sigma}-\nabla_\sigma R_{\rho\lambda}=0
+**第一项**是张量该有的样子（三个雅可比因子）。**第二项含二阶导数**，它不可能由一阶导数组合出来，所以 $\Gamma$ 不是张量。
+
+**这一项从哪来：** 它正是"基矢量随位置变"的数学痕迹。若变换是线性的（$\partial^2x'/\partial x^2=0$，比如直角坐标之间的转动），第二项消失，$\Gamma$ 在这种变换下"像"张量——这正是为什么在直角坐标里算题从来不出问题的原因。
+
+
+**10.27** 用"局部惯性系"这个技巧：在任意一点，总可以选一套坐标使 $\Gamma=0$（10.4.3 的前提）。在那套坐标里，黎曼张量只剩导数项：
+
+$$R_{\rho\sigma\mu\nu}
+=\frac12\left(
+\frac{\partial^2g_{\sigma\mu}}{\partial x^\rho\partial x^\nu}
+-\frac{\partial^2g_{\sigma\nu}}{\partial x^\rho\partial x^\mu}
++\frac{\partial^2g_{\rho\nu}}{\partial x^\sigma\partial x^\mu}
+-\frac{\partial^2g_{\rho\mu}}{\partial x^\sigma\partial x^\nu}
+\right).$$
+
+（这一步是把 $\Gamma=0$ 的 $R^\rho{}_{\sigma\mu\nu}$ 用度规写出来，再用 $\partial g=0$ 化简。）
+
+**交换 $\rho\leftrightarrow\sigma$：** 第一项与第四项互换并变号，第二项与第三项互换并变号，整体变号：
+
+$$R_{\rho\sigma\mu\nu}=-R_{\sigma\rho\mu\nu}.$$
+
+**从一点推广到处处：** 上式是在"局部惯性系"里证的，但两边都是张量，等式在一点成立就在该点的一切坐标系里成立；而这一点是任意的，所以处处成立。**这个"在局部惯性系里证、再用张量性推广"的手法，是张量计算里最常用的招数。**
+
+
+**10.28** 要证 $R_{\mu\nu\rho\sigma}=K\left(g_{\mu\rho}g_{\nu\sigma}-g_{\mu\sigma}g_{\nu\rho}\right)$。
+
+**先验证球面。** 取 $\mu=\theta$、$\nu=\varphi$、$\rho=\theta$、$\sigma=\varphi$，右边是
+
+$$K\left(g_{\theta\theta}g_{\varphi\varphi}-g_{\theta\varphi}g_{\varphi\theta}\right)
+=K\left(a^2\cdot a^2\sin^2\theta-0\right)=Ka^4\sin^2\theta .$$
+
+左边是 10.6.3 算出的 $R_{\theta\varphi\theta\varphi}=a^2\sin^2\theta$。两边相等要求
+
+$$Ka^4\sin^2\theta=a^2\sin^2\theta
 \quad\Longrightarrow\quad
-\nabla_\lambda R_{\rho\sigma}=\nabla_\sigma R_{\rho\lambda}.$$
+K=\frac{1}{a^2}.$$
 
-再对 $\rho$ 与 $\sigma$ 缩并（用 $g^{\rho\sigma}$）：
+**为什么这个形式对一般常曲率空间也对：** 右边是"用度规能造出来的、具有黎曼张量全部对称性的唯一组合"（在二维只有一个独立分量，三维也是）。所以任何常曲率空间都取这个形式，$K$ 就是高斯曲率。
 
-$$\nabla^\sigma R_{\sigma\lambda}=\nabla_\lambda R .$$
+**顺带核对标量曲率：** 缩并两次，$R=K\cdot n(n-1)$；二维给 $R=2K=2/a^2$ ✓ 与 10.6.3 一致。
 
-（左边用对称性写成 $\nabla^\sigma R_{\sigma\lambda}$，右边是对 $\rho\sigma$ 缩并 $R_{\rho\lambda}$ 得 $R_{\lambda}^{\ \sigma}{}_{;\sigma}$ 的处理。）这一步的系数是 $2$，最终得到
 
-$$\nabla^\mu R_{\mu\nu}=\frac12\nabla_\nu R .$$
+**10.29** 协变导数作用在度规上：
 
-**10.25** 取迹：$g^{\mu\nu}G_{\mu\nu}=g^{\mu\nu}R_{\mu\nu}-\frac12R\,g^{\mu\nu}g_{\mu\nu}=R-\frac12R\cdot n$（用 $g^{\mu\nu}g_{\mu\nu}=\delta^\mu_\mu=n$）。所以
+$$\nabla_\lambda g_{\mu\nu}
+=\frac{\partial g_{\mu\nu}}{\partial x^\lambda}
+-\Gamma^\sigma{}_{\lambda\mu}g_{\sigma\nu}
+-\Gamma^\sigma{}_{\lambda\nu}g_{\mu\sigma}.$$
 
-$$g^{\mu\nu}G_{\mu\nu}=\left(1-\frac n2\right)R .$$
+取 $\mu=\nu=\varphi$、$\lambda=\theta$。只有 $\Gamma^\varphi{}_{\theta\varphi}=\Gamma^\varphi{}_{\varphi\theta}=\cot\theta$ 相关：
 
-$n=4$ 时是 $-R\ne0$；$n=2$ 时为零（二维的爱因斯坦张量恒为零，二维没有引力自由度）。
+$$\nabla_\theta g_{\varphi\varphi}
+=\frac{\partial g_{\varphi\varphi}}{\partial\theta}
+-2\Gamma^\varphi{}_{\theta\varphi}g_{\varphi\varphi}
+=2a^2\sin\theta\cos\theta-2(\cot\theta)\left(a^2\sin^2\theta\right).$$
 
-**10.26** 从 $G_{\mu\nu}=\kappa T_{\mu\nu}$（$\kappa=8\pi G/c^4$）出发。两边取迹：$G=g^{\mu\nu}G_{\mu\nu}=-R$（四维），$T=g^{\mu\nu}T_{\mu\nu}$，所以 $-R=\kappa T$，即 $R=-\kappa T$。代回：
+第二项 $=2a^2\sin\theta\cos\theta$，两项精确抵消：
 
-$$R_{\mu\nu}=G_{\mu\nu}+\frac12Rg_{\mu\nu}
-=\kappa T_{\mu\nu}-\frac12\kappa T g_{\mu\nu}
-=\kappa\left(T_{\mu\nu}-\frac12Tg_{\mu\nu}\right).$$
+$$\nabla_\theta g_{\varphi\varphi}=0 .$$
 
-**这个形式在算弱场时更好用**：右边直接是物质的量，左边是要解的 $R_{\mu\nu}$，不需要先解出 $R$。
+**其余组合同理：** 不含导数的那些，$\partial g=0$ 且 $\Gamma$ 项要么为零、要么成对抵消（如 $\nabla_\varphi g_{\theta\theta}$）；含 $\partial_\theta g_{\varphi\varphi}$ 的只有上面这一种。所以 $\nabla_\lambda g_{\mu\nu}=0$ 在整个球面上成立。
 
-**10.27** 二维时里奇张量只有三个独立分量（对称的 $2\times2$），而 $g_{\mu\nu}$ 有两个独立分量、$R$ 有一个——一共三个。可以验证 $R_{\mu\nu}-\frac{R}{2}g_{\mu\nu}\equiv0$：在球面上代 10.6.3 的结果就成立。**一般证明**用"二维只有 1 个独立曲率分量"：$R_{\mu\nu\rho\sigma}$ 在二维只有一个独立分量 $R_{1212}$，所有分量都由它和 $g$ 表示。
+**意义：** 这是"度规相容"的具体验证——平行移动不改变长度和角度。$\Gamma$ 公式里那个 $\frac12$ 正是为了让这条成立而设计的。
 
-三维有 6 个独立分量，里奇有 6 个——**仍然恰好够**，所以三维也没有引力波（没有"剩余"的曲率）。四维才有 20 对 10 的富余。
 
-**10.28** 下一阶来自两项：$\Gamma^i{}_{00}$ 的高阶修正，以及 $\Gamma^i{}_{j0}v^j$ 项。结果是
+**10.30** 设一族测地线 $x^\mu(\tau,s)$，$\tau$ 是仿射参数，$s$ 标记不同的曲线。定义
 
-$$\frac{\mathrm{d}^2\boldsymbol{x}}{\mathrm{d}t^2}=-\nabla\Phi
--\frac{1}{c^2}\left[\left(v^2+4\Phi\right)\nabla\Phi
--4(\boldsymbol{v}\cdot\nabla\Phi)\boldsymbol{v}\right]+\cdots$$
+$$u^\mu=\frac{\partial x^\mu}{\partial\tau},\qquad
+\xi^\mu=\frac{\partial x^\mu}{\partial s}.$$
 
-修正项相对大小 $\sim\Phi/c^2$ 或 $v^2/c^2$。地面实验：$\Phi/c^2\sim7\times10^{-10}$，$v^2/c^2\sim10^{-12}$（对 $1\,\mathrm{m/s}$），**修正比主项小 9～12 个数量级**，所以自由落体实验测不出来（除非用原子干涉仪，那里已经测到了）。
+**第一步，两个导数可交换：** $\dfrac{\partial u^\mu}{\partial s}=\dfrac{\partial\xi^\mu}{\partial\tau}$（偏导次序无关）。
 
-**10.29** 光走零测地线，$\mathrm{d}s^2=0$。弱场度规的两部分都进入：
+**第二步，对测地线方程沿 $s$ 求导。** 每一条都是测地线：
 
-$$0=-\left(1+\frac{2\Phi}{c^2}\right)c^2\mathrm{d}t^2
-+\left(1-\frac{2\Phi}{c^2}\right)\mathrm{d}\boldsymbol{x}^2 .$$
+$$\frac{\partial u^\mu}{\partial\tau}+\Gamma^\mu{}_{\nu\rho}u^\nu u^\rho=0 .$$
 
-**时间部分**（$g_{00}$）决定了"光在引力势里跑得慢"，等效于一个折射率 $n\approx1-2\Phi/c^2$，这是牛顿那一份（$2GM/c^2b$）。**空间部分**（$g_{ij}$ 里那个 $-2\Phi/c^2$）再贡献同样大小的一份。两者相加 $=4GM/c^2b$。
+对 $s$ 求导，用第一步把 $\partial_s u^\mu$ 换成 $\partial_\tau\xi^\mu$，再把 $\partial_s$ 的导数用 $\partial_s x^\lambda=\xi^\lambda$ 展开（链式法则），得到
 
-**牛顿力学没有"空间弯曲"这个概念**（它只有一个标量势），所以只能给出 2。**这就是"4 还是 2"的全部内容。**
+$$\frac{D^2\xi^\mu}{D\tau^2}
+=-R^\mu{}_{\nu\rho\sigma}u^\nu\xi^\rho u^\sigma .$$
 
-**10.30** 史瓦西度规（$r_s=2GM/c^2$）：
+**第三步，读出每一项的含义：** 左边是分离矢量沿测地线的"二阶协变加速度"；右边是黎曼张量乘上切矢量与分离矢量。**这是一个张量方程**（两边都是张量），所以它在任何坐标系里都成立——这正是它比"潮汐力"这种说法更可靠的地方。
 
-$$R_{\mu\nu}=0\ (r\ne0),\qquad R=0,\qquad
-R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}=\frac{48G^2M^2}{c^4r^6}.$$
+**检验（球面）：** 两条经线，$\xi=a\sin\theta\,\Delta\varphi$，$\theta=\tau/a$。右边缩并后给 $\ddot\xi=-K\xi$；左边是 $\ddot\xi$（在一维分离的情形下协变导数简化为普通二阶导）。代入 $K=1/a^2$ 得 $\ddot\xi=-\xi/a^2$，解正是 $\xi\propto\sin(\tau/a)$ ✓——与 10.25 的结果一致。
 
-在 $r=r_s$ 处，$g_{00}=1-r_s/r\to0$、$g_{rr}=(1-r_s/r)^{-1}\to\infty$，但**曲率不变量是有限的**：$\dfrac{48G^2M^2}{c^4r_s^6}$ 是个有限的数。所以 $r=r_s$ **是坐标奇点，不是物理奇点**——换个坐标（比如克鲁斯卡尔坐标）就能穿过去。
-
-真正的奇点在 $r=0$：那里曲率不变量发散，任何坐标都救不了。**判据就是 10.4.5 节那条：算标量，有限就是坐标坏。**
 
 ### 概念与判断 10.31–10.39
 
 **10.31** 错。张量是"按固定规则变换的量"，不是"某种排列方式"。同一个物理量在不同坐标下是不同的数组；反过来，随便摆成矩阵的数字（比如三个数排成 $2\times2$）未必按张量变换。判据是变换律，不是外观。
 
+
 **10.32** 错。"在一点令 $\Gamma=0$"只说明那一点的**一阶**导数为零（局部惯性系），而曲率是 $\Gamma$ 的**导数**组合，一点上不为零。类比：抛物线顶点处斜率为零，但二阶导数不为零，曲线还是弯的。**"局部平直"永远是近似的、一阶的。**
+
 
 **10.33** 错。极坐标下 $\Gamma\ne0$ 只说明"坐标的基矢量在转"，与空间是否弯曲无关。判据是 $R^\rho{}_{\sigma\mu\nu}$：把极坐标的 $\Gamma$ 代进去，两项精确抵消，$R\equiv0$（10.6.4 已算）。**"联络非零"和"空间弯曲"是两件事。**
 
+
 **10.34** 只在"局部、且两点之间没有共轭点"时成立。反例：球面上连接两点的两条测地线，长的那条不是最短；再比如圆柱面上绕圈的测地线可以任意长。**测地线的正确定义是"切矢量自平行"，"最短"是它的一个局部性质。**
 
-**10.35** 错。$G_{\mu\nu}=8\pi GT_{\mu\nu}/c^4$ 有 10 个分量，但其中 4 个由 $\nabla^\mu G_{\mu\nu}\equiv0$（比安基恒等式）约束，剩下的 4 个是坐标选择的自由（规范自由度）。**真正的物理自由度是 $10-4-4=2$**——这就是引力波的两个偏振态。分量数 $\ne$ 自由度，这是规范理论的一般规律。
 
-**10.36** 错。$g^{\mu\nu}G_{\mu\nu}=\left(1-\frac n2\right)R$，四维时为 $-R\ne0$。零迹的是 $R_{\mu\nu}-\frac14Rg_{\mu\nu}$（四维），那是另一个张量。**"爱因斯坦张量无迹"只对二维成立**（$1-n/2=0$）。
+**10.35** 对。这是**零张量原理**：张量的变换律是线性的，零必映到零。
 
-**10.37** 不对（在静态引力场里）。光子在引力场中传播时，**局部**能量守恒；红移是因为发射端和接收端的钟走得不一样（不同的 $g_{00}$）。用"全局能量"看，光子的能量确实减少了，但那部分能量进入了引力场——就像石头落下时动能增加、势能减少一样。**红移不是"能量消失"，是"能量的账面在两端用了不同的钟"。**
+**为什么重要：** 它把"证明一个张量方程"变成"在一个坐标系里验证它"。比如 10.6.4 里证明平面的曲率为零，只在极坐标下算了一遍；因为 $R$ 是张量，它在极坐标为零就意味着处处为零，不需要再到直角坐标里验证。
 
-**10.38** 不对。$\Lambda$ 是"可以加、且不破坏守恒"的项（因为 $\nabla^\mu g_{\mu\nu}=0$），不是"必须加"。取 $\Lambda=0$ 是一个物理假设，其正当性依赖于尺度：太阳系尺度上它测不出来，宇宙学尺度上它主导。**"$\Lambda$ 必须为零"和"$\Lambda$ 必须不为零"都是错的**，它是一个由观测决定的参数。
+**反过来用：** 如果某个量在直角坐标里为零、在极坐标里非零，它一定不是张量（$\Gamma$ 就是这样暴露的）。
 
-**10.39** 错。$\Gamma^\varphi{}_{\theta\varphi}=\cot\theta$ 在 $\theta\to0$ 发散，是因为 $\varphi$ 这个坐标在北极没有定义（所有经线汇聚），不是几何坏了。判据还是那一条：算标量曲率 $R=2/a^2$，在北极有限 ✓。**坐标奇点的特征是"某个坐标分量发散而曲率标量有限"**，这与真奇点（曲率发散）完全不同。
+**注意前提：** 这句话只对**张量**成立。非张量的量（比如 $\Gamma$、$\partial_\mu v^\nu$）在某坐标系里为零，不说明它在别处也为零。
+
+
+**10.36** 错。度规分量按
+
+$$g'_{\mu\nu}=\frac{\partial x^\alpha}{\partial x'^\mu}
+\frac{\partial x^\beta}{\partial x'^\nu}g_{\alpha\beta}
+$$
+
+变换，取行列式得
+
+$$\det g'=\det g\cdot\left|\det\frac{\partial x}{\partial x'}\right|^2 .$$
+
+所以 $\det g$ 不是标量，而是"带权"的量（密度）。**在坐标变换下不变的是** $\sqrt{\lvert g\rvert}\,\mathrm{d}^4x$：体积元前面的因子与雅可比相消，所以
+
+$$\int f\sqrt{\lvert g\rvert}\,\mathrm{d}^4x$$
+
+是坐标无关的。这就是弯曲空间里积分的正确写法（也是作用量原理里必须有 $\sqrt{\lvert g\rvert}$ 的原因）。
+
+**记法：** $\det g<0$（洛伦兹号差）时要用 $\lvert g\rvert$。
+
+
+**10.37** 错，而且错在最容易被指标外观骗的地方。
+
+**理由一（变换律）：** 张量的变换律只含一阶导数（雅可比因子）。$\Gamma$ 的变换律含有 $\partial^2x'/\partial x^2$ 那一项，所以它不是张量。
+
+**理由二（零张量原理）：** 平直空间的直角坐标里 $\Gamma\equiv0$；换到同一空间的极坐标，$\Gamma\ne0$。若 $\Gamma$ 是张量，零张量在任何坐标下都该是零——矛盾。
+
+**"能带上下标" 是障眼法：** 记号上 $\Gamma$ 有三个指标，可以做形式上的升降，但这么做的结果**依赖坐标系**，没有几何意义。就像"坐标本身"也有上标 $x^\mu$，但 $x^\mu$ 不是矢量（它的变换律是仿射的，不是线性的）。
+
+**能出现在方程里的合法方式：** (i) 作为协变导数的一部分（$\nabla_\lambda v^\mu$ 整体是张量）；(ii) 两个 $\Gamma$ 的组合，比如 $R$ 里那些二次项。单独的 $\Gamma$ 只能写"在某坐标系下成立"的式子。
+
+
+**10.38** 错。$\Gamma^\varphi{}_{\theta\varphi}=\cot\theta$ 在 $\theta\to0$ 发散，是因为 $\varphi$ 这个坐标在北极没有定义（所有经线汇聚），不是几何坏了。判据还是那一条：算标量曲率 $R=2/a^2$，在北极有限 ✓。**坐标奇点的特征是"某个坐标分量发散而曲率标量有限"**，这与真奇点（曲率发散）完全不同。
+
+
+**10.39** 需要纠正两点。
+
+**第一，"潮汐力"不是作用在单个粒子上的力。** 单个粒子在引力场里自由下落时是"失重"的——它感受不到任何力，走的是测地线。潮汐效应是**两个相邻粒子之间的相对加速度**，由测地线偏离方程给出，正比于黎曼张量。
+
+**第二，正因为它是相对的、坐标无关的，它才是"时空弯曲"的证据，而不是"引力是力"的证据。** 力可以被变换掉（换到自由下落系），潮汐效应不能——它是曲率。
+
+**正确的说法：** 引力在广义相对论里不是力，是时空的几何；"物体被引力拉向地球"在数学上是"物体沿弯曲时空的测地线运动"。**测地线偏离方程是把"弯曲"翻译成"可测量效应"的那句话**，而它的右边只能由 $R$ 给出，不能由任何"力"给出。
 

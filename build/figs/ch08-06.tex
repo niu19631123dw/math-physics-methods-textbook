@@ -1,36 +1,16 @@
 \begin{tikzpicture}
-  % 左：复平面上的三对极点（颜色与右侧包络一一对应）
-  \begin{scope}[scale=1.02]
-    \fill[gray!10] (-3,-2.3) rectangle (0,2.3);
-    \draw[axisline] (-3.0,0) -- (3.0,0) node[right,font=\small] {$\mathrm{Re}\,s$};
-    \draw[axisline] (0,-2.3) -- (0,2.3) node[above,font=\small] {$\mathrm{Im}\,s$};
-    \node[font=\footnotesize] at (-1.55,2.02) {左半：衰减};
-    \node[font=\footnotesize] at (1.65,2.02) {右半：增长};
-    % 左半平面
-    \fill[blue] (-1.2,1.1) circle (2.2pt);
-    \fill[blue] (-1.2,-1.1) circle (2.2pt);
-    \node[font=\footnotesize,anchor=east] at (-1.35,1.12) {$-\gamma\pm i\Omega$};
-    % 虚轴
-    \fill (0,1.5) circle (2.2pt);
-    \fill (0,-1.5) circle (2.2pt);
-    \node[font=\footnotesize,anchor=west] at (0.12,1.52) {$\pm i\Omega$};
-    % 右半平面
-    \fill[red] (1.0,0.7) circle (2.2pt);
-    \fill[red] (1.0,-0.7) circle (2.2pt);
-    \node[font=\footnotesize,anchor=west] at (1.15,0.72) {$+\gamma\pm i\Omega$};
-  \end{scope}
-  % 右：三种包络（指数增长 / 等幅 / 指数衰减）
-  \begin{axis}[physaxisbox,width=6.9cm,height=5.0cm,xshift=7.2cm,
-    xmin=0,xmax=6,ymin=0,ymax=8.6,
-    xlabel={$t$},ylabel={$|h(t)|$},
-    xtick={0,2,4,6},ytick={0,2,4,6,8},
-    legend columns=3,
-    legend style={font=\scriptsize,draw=none,at={(0.5,-0.30)},anchor=north}]
-  \addplot[thick,red,densely dashed] table[x=t,y=grow] {figs/ch08-06.dat};
-  \addlegendentry{右极点}
-  \addplot[thick] table[x=t,y=const] {figs/ch08-06.dat};
-  \addlegendentry{虚轴极点}
-  \addplot[thick,blue,dashed] table[x=t,y=decay] {figs/ch08-06.dat};
-  \addlegendentry{左极点}
+  \begin{axis}[physaxisbox,width=9.4cm,height=5.2cm,
+    xmode=log, xmin=0.01,xmax=100, ymin=-42,ymax=4,
+    xlabel={$\omega/\omega_c$},ylabel={$20\lg|H|$ (dB)},
+    ytick={0,-10,-20,-30,-40}]
+  \addplot[thick] table[x=f,y=mag] {figs/ch08-06.dat};
+  \node[font=\footnotesize,anchor=north west] at (axis cs:0.012,-6) {幅频};
+  \end{axis}
+  \begin{axis}[width=9.4cm,height=5.2cm,
+    xmode=log, xmin=0.01,xmax=100, ymin=-95,ymax=5,
+    axis y line*=right, axis x line=none,
+    ylabel={相位（度）}, ytick={0,-30,-60,-90}]
+  \addplot[thick,dashed,blue] table[x=f,y=phase] {figs/ch08-06.dat};
+  \node[font=\footnotesize,blue,anchor=south west] at (axis cs:0.02,-78) {相频};
   \end{axis}
 \end{tikzpicture}

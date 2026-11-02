@@ -1,28 +1,29 @@
-\begin{tikzpicture}[scale=1.16]
-\draw[axisline] (-3.05,0) -- (3.25,0) node[right,font=\small] {$\mathrm{Re}\,\omega$};
-\draw[axisline] (0,-2.5) -- (0,2.6) node[above,font=\small] {$\mathrm{Im}\,\omega$};
-% t<0：上半平面闭合（虚线）
-\draw[thick,dashed] (2.2,0) arc (0:118:2.2);
-\draw[thick,dashed,->] (118:2.2) arc (118:131:2.2);
-\draw[thick,dashed] (131:2.2) arc (131:180:2.2);
-% t>0：下半平面闭合（实线）
-\draw[thick] (2.2,0) arc (0:-118:2.2);
-\draw[thick,->] (-118:2.2) arc (-118:-131:2.2);
-\draw[thick] (-131:2.2) arc (-131:-180:2.2);
-% 实轴方向
-\draw[thick,->] (-0.5,0) -- (0.5,0);
-% 极点
-\foreach \x in {-1.1,1.1} {
-  \draw[very thick] (\x-0.075,-0.575) -- (\x+0.075,-0.425);
-  \draw[very thick] (\x-0.075,-0.425) -- (\x+0.075,-0.575);
+\begin{tikzpicture}[scale=1.15]
+% 上半平面回路
+\fill[gray!10] (2.2,0) arc (0:180:2.2) -- cycle;
+\draw[gray!55,dashed] (0,0) circle (2.35);
+\draw[axisline] (-2.7,0) -- (2.95,0) node[right,font=\small] {$\mathrm{Re}\,\omega$};
+\draw[axisline] (0,-1.55) -- (0,2.35) node[above,font=\small] {$\mathrm{Im}\,\omega$};
+% 路径
+\draw[thick] (2.2,0) arc (0:118:2.2);
+\draw[thick,->] (118:2.2) arc (118:131:2.2);
+\draw[thick] (131:2.2) arc (131:180:2.2);
+\draw[thick,->] (-2.2,0) -- (-0.05,0);
+\draw[thick,->] (0.05,0) -- (2.2,0);
+\node[font=\small] at (1.62,1.30) {$C_R$};
+% 四个极点
+\foreach \x/\y in {1.05/0.45, -1.05/0.45, 1.05/-0.45, -1.05/-0.45} {
+  \draw[very thick] (\x-0.07,\y-0.07) -- (\x+0.07,\y+0.07);
+  \draw[very thick] (\x-0.07,\y+0.07) -- (\x+0.07,\y-0.07);
 }
-\node[right,font=\small] at (1.18,-0.60) {$\omega_-$};
-\node[left,font=\small] at (-1.18,-0.60) {$\omega_+$};
-% 闭合方向
-\node[font=\small,anchor=east] at (-2.52,0.72) {$t<0$};
-\node[font=\small,anchor=east] at (-2.52,-0.72) {$t>0$};
-% 极点位置的说明
-\node[font=\footnotesize,anchor=west] at (0.18,0.62)
-  {$\operatorname{Im}\omega_\pm=-\gamma/2<0$};
-\draw[aux] (0.62,0.50) -- (1.00,-0.36);
+\node[right,font=\footnotesize] at (1.13,0.48) {$-\omega_2$};
+\node[left,font=\footnotesize] at (-1.13,0.48) {$-\omega_1$};
+\node[right,font=\footnotesize] at (1.13,-0.48) {$\omega_1$};
+\node[left,font=\footnotesize] at (-1.13,-0.48) {$\omega_2$};
+% 标注
+\node[font=\footnotesize,anchor=west,align=left] at (-2.55,-1.15)
+  {$\omega_{1,2}=\mp\Omega-i\dfrac{\gamma}{2}$：\\
+   两个在下半平面、两个在上半平面；\\
+   上半圆闭合时只捕获上面两个};
+\draw[aux] (-0.95,0.35) -- (-0.66,0.40);
 \end{tikzpicture}
