@@ -3,7 +3,7 @@
 """第 9 章插图数据：最速降线（摆线/直线/圆弧）、悬链线与抛物线对比、瑞利商。
 
 运行：  python build/data/make_ch09.py
-输出：  build/figs/ch09-01.dat, ch09-03.dat, ch09-06.dat
+输出：  build/figs/ch09-01.dat, ch09-03.dat, ch09-05.dat
 所有曲线由公式现算，可重复运行；运行时打印正文引用的数值。
 """
 import os
@@ -114,7 +114,7 @@ def fig04():
           % (R[np.argmin(np.abs(a))], pip, 100 * (R[np.argmin(np.abs(a))] / pip - 1)))
     print('  单参数族最优：a*=%.3f，R=%.4f（高 %.4f%%）' % (a[k], R[k], 100 * (R[k] / pip - 1)))
     print('  族内任何 a 都有 R>=pi^2：%s' % np.all(R >= pip - 1e-9))
-    save('ch09-06.dat', ['a', 'R'], [a, R])
+    save('ch09-05.dat', ['a', 'R'], [a, R])
 
 
 def main():

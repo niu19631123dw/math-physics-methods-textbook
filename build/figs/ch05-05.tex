@@ -1,17 +1,17 @@
-\begin{tikzpicture}
-\begin{axis}[physaxis,width=11.2cm,height=5.4cm,
-  xmin=-3.1,xmax=3.1,ymin=-0.12,ymax=1.20,
-  xlabel={$x$},ylabel={$u(x,t)$},
-  xtick={-3,-2,-1,0,1,2,3},
-  legend pos=north west,legend style={draw=none,fill=none},
-  legend cell align=left]
-\addplot[thick,black,dotted] table[x=x,y=f0] {figs/ch05-05.dat};
-\addlegendentry{初值 $u(x,0)$}
-\addplot[thick,blue] table[x=x,y=wave] {figs/ch05-05.dat};
-\addlegendentry{波动解（$t=1$，$c=1$）}
-\addplot[thick,red,dashed] table[x=x,y=diff] {figs/ch05-05.dat};
-\addlegendentry{扩散解（同一时刻）}
-\draw[auxd] (axis cs:-1.2,0) -- (axis cs:-1.2,0.5);
-\node[font=\footnotesize,anchor=east] at (axis cs:-1.28,0.32) {陡峭的前沿};
-\end{axis}
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  \draw[axisline] (-3.9,0) -- (3.9,0) node[right,font=\small] {$x$};
+  \draw[axisline] (0,-0.45) -- (0,4.7) node[above,font=\small] {$t$};
+  % 源的世界线
+  \draw[very thick,gray!70] (0,0) -- (0,4.4);
+  \node[font=\footnotesize,anchor=west] at (0.14,4.12) {源的世界线};
+  % 未来光锥
+  \draw[thick] (0,0) -- (3.7,3.7);
+  \draw[thick] (0,0) -- (-3.7,3.7);
+  \node[font=\footnotesize,rotate=45,anchor=south west] at (1.78,1.88) {$t=|x|/c$};
+  % 观测事件 P 与它的过去光锥
+  \fill (1.9,3.5) circle (2.2pt) node[above right=1pt,font=\small] {$P$};
+  \draw[aux] (1.9,3.5) -- (0,1.6);
+  \draw[auxd] (1.9,3.5) -- (3.5,1.9);
+  \fill (0,1.6) circle (2.2pt);
+  \node[font=\footnotesize,anchor=south east] at (-0.08,1.72) {$t-R/c$};
 \end{tikzpicture}

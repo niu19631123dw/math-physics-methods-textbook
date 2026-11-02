@@ -3,7 +3,7 @@
 
 运行：python build/data/make_ch05.py
 输出：build/figs/ch05-01.dat, ch05-03a.dat, ch05-03b.dat,
-      ch05-04.dat, ch05-05.dat, ch05-07.dat
+      ch05-04.dat, ch05-06.dat, ch05-07.dat
 每个文件第一行是列名，pgfplots 用 table[x=..., y=...] 读取。
 """
 import io
@@ -81,7 +81,7 @@ wave = 0.5 * (np.where(np.abs(x - t) < w, 1.0, 0.0)
 ell = 0.25         # 扩散长度 sqrt(4*alpha*t)
 erf = np.vectorize(math.erf)
 diff = 0.5 * (erf((x + w) / ell) - erf((x - w) / ell))
-save('ch05-05.dat', ['x', 'f0', 'wave', 'diff'], [x, f0, wave, diff])
+save('ch05-06.dat', ['x', 'f0', 'wave', 'diff'], [x, f0, wave, diff])
 
 # ---------------------------------------------------------------- 图 5.7
 # 多极展开截断到 l <= L 的相对误差：沿轴向正好是 (a/r)^(L+1)

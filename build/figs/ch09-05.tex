@@ -1,21 +1,16 @@
-\begin{tikzpicture}[>=Stealth,scale=1.0]
-  % 球
-  \fill[gray!8] (0,0) circle (1.6);
-  \draw[thick] (0,0) circle (1.6);
-  % 赤道（虚线）
-  \draw[aux] (0,0) ellipse (1.6 and 0.50);
-  % 大圆：倾斜的椭圆，代表过两极的经线圈
-  \draw[thick,red,rotate=-22] (0,0) ellipse (1.6 and 0.62);
-  % 纬线圈：z=0.7 处
-  \draw[thick,blue,densely dashed] (0,0.70) ellipse (1.439 and 0.44);
-  % 轴与极点
-  \draw[auxd] (0,-1.88) -- (0,1.95);
-  \fill (0,1.6) circle (1.2pt);
-  \node[font=\footnotesize,anchor=west] at (0.10,1.78) {北极};
-  % 标注
-  \draw[gray,thin] (1.30,-0.62) -- (1.95,-0.95);
-  \node[font=\footnotesize,anchor=west] at (1.95,-0.95) {大圆（测地线）};
-  \draw[gray,thin] (-1.28,0.98) -- (-1.85,1.42);
-  \node[font=\footnotesize,anchor=east] at (-1.85,1.42) {纬线圈（不是）};
-  \node[font=\footnotesize,anchor=north] at (0,-1.95) {球面上的测地线是大圆，赤道是唯一的例外};
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.4cm,height=5.8cm,
+  xmin=-0.42,xmax=1.02,ymin=9.855,ymax=10.95,
+  xlabel={$a$（正弦修正的幅度）},ylabel={$R[y]$},
+  xtick={-0.4,-0.2,0,0.2,0.4,0.6,0.8,1},
+  ytick={9.9,10.1,10.3,10.5,10.7,10.9}]
+\draw[gray,dashed] (axis cs:-0.42,9.869604) -- (axis cs:1.02,9.869604);
+\node[font=\footnotesize,anchor=south west] at (axis cs:0.66,9.872) {$\pi^2=9.8696$};
+\addplot[thick,red] table[x=a,y=R] {figs/ch09-05.dat};
+\fill (axis cs:0.26,9.8699) circle (1.6pt);
+\draw[gray,thin] (axis cs:0.26,9.8699) -- (axis cs:0.34,10.16);
+\node[font=\footnotesize,anchor=west] at (axis cs:0.34,10.16) {$a^{*}=0.26$：$R=9.870$};
+\draw[gray,thin] (axis cs:0,10.0) -- (axis cs:0.06,10.55);
+\node[font=\footnotesize,anchor=west] at (axis cs:0.06,10.55) {$a=0$：抛物线，$R=10$};
+\end{axis}
 \end{tikzpicture}
