@@ -144,7 +144,7 @@ $m<0$ 时用 $Y_{l,-m}=(-1)^mY_{lm}^{*}$。这样 $Y_{lm}$ 是正交归一的，
 | $G,\ G_0,\ G_{\rm ret}$ | 格林函数、自由空间格林函数、推迟格林函数 |
 | $\lambda_n$ | $-\nabla^2$ 的本征值 |
 | $a_0$ | 玻尔半径 |
-| $\Gamma$ | 环量（流体）；Gamma 函数在附录 F 用 $\Gamma(z)$ |
+| $\Gamma$ | 环量（流体）；Gamma 函数在附录 E 用 $\Gamma(z)$ |
 | $s=\sigma+i\omega$ | 拉普拉斯变量，$\sigma$ 为收敛横坐标 |
 | $g_{\mu\nu}$ | 度规张量 |
 | $R^\mu{}_{\nu\rho\sigma}$ | 黎曼张量 |

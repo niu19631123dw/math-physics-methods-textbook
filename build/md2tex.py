@@ -35,11 +35,10 @@ CHAPTERS = [
 APPENDICES = [
     '附录A-数学约定.md',
     '附录B-判断点总表.md',
-    '附录C-数值演示.md',
-    '附录D-习题详解.md',        # 由 build/answers/*.md 自动拼接
-    '附录E-矢量微积分.md',
-    '附录F-特殊函数速查.md',
-    '附录G-母题对照.md',
+    '附录C-习题详解.md',        # 由 build/answers/*.md 自动拼接
+    '附录D-矢量微积分.md',
+    '附录E-特殊函数速查.md',
+    '附录F-母题对照.md',
 ]
 
 UNICODE_MATH = {
@@ -230,7 +229,7 @@ def convert(lines):
             continue
         if s.startswith('### '):
             hd = re.sub(r'^[0-9A-Z]+(?:\.[0-9]+)+\s*', '', s[4:].strip())
-            if re.match(r'^[ABC]\s*组|^概念|^判断', hd):
+            if re.match(r'^[ABCD]\s*组|^概念|^判断', hd):
                 out.append(r'\subsection*{' + inline(hd) + '}')
             else:
                 out.append(r'\subsection{' + inline(hd) + '}')
@@ -319,13 +318,13 @@ def convert(lines):
 
 
 def build_answers():
-    """把 build/answers/chNN.md 拼成附录 D 的 Markdown 文本。
+    """把 build/answers/chNN.md 拼成附录 C 的 Markdown 文本。
 
     各章答案文件开头的标题（# 或 ##）统一替换成二级标题，避免每一章
     都被 LaTeX 当成一个 appendix。
     """
     d = os.path.join(BUILD, 'answers')
-    parts = ['# 附录 D 习题详解',
+    parts = ['# 附录 C 习题详解',
              '',
              '> 每题给关键步骤、中间结果和最终答案。缺的步骤请自己补全后再看。',
              '']
@@ -354,7 +353,7 @@ def build(names, answers=False):
     """answers=True 时，只有 附录D 由 build/answers/*.md 自动拼接，其余照常读文件。"""
     chunks = []
     for n in names:
-        if answers and n == '附录D-习题详解.md':
+        if answers and n == '附录C-习题详解.md':
             txt = build_answers().splitlines()
         else:
             p = os.path.join(ROOT, n)

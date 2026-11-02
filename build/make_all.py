@@ -94,7 +94,7 @@ def make_full_md():
     files = md2tex.CHAPTERS + md2tex.APPENDICES
     fig_re = re.compile(r'^!\[[^\]]*\]\(\s*figs/[^)\s"]+\.tex\s*(?:"([^"]*)")?\s*\)\s*$')
     for name in files:
-        if name == '附录D-习题详解.md':
+        if name == '附录C-习题详解.md':
             txt = md2tex.build_answers()
         else:
             p = os.path.join(ROOT, name)
@@ -144,9 +144,9 @@ def main():
     m = re.search(r'Pages:\s+(\d+)', info)
     print('PDF 生成：%s 页 -> %s' % (m.group(1) if m else '?', dst))
     make_full_md()
-    io.open(os.path.join(ROOT, '附录D-习题详解.md'), 'w', encoding='utf-8').write(
+    io.open(os.path.join(ROOT, '附录C-习题详解.md'), 'w', encoding='utf-8').write(
         md2tex.build_answers() + '\n')
-    print('附录D 单文件已生成')
+    print('附录C 单文件已生成')
     return 0
 
 
