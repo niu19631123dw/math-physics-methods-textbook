@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.8cm,height=5.8cm,
+  xmin=0,xmax=2.62,ymin=-1.08,ymax=2.3,
+  xlabel={$\omega/\omega_0$},ylabel={$\chi/\chi_{\mathrm{st}}$},
+  legend style={font=\footnotesize,at={(0.68,0.98)},anchor=north}]
+\addplot[thick] table[x=w,y=re] {figs/ch06-06.dat};
+\addlegendentry{$\operatorname{Re}\chi$：色散}
+\addplot[thick,dashed] table[x=w,y=im] {figs/ch06-06.dat};
+\addlegendentry{$\operatorname{Im}\chi$：吸收}
+% 共振位置
+\draw[aux] (axis cs:1,-1.05) -- (axis cs:1,2.02);
+\node[font=\footnotesize,anchor=south west] at (axis cs:1.03,2.02) {$\omega=\omega_0$};
+% 标注
+\node[font=\footnotesize,anchor=west] at (axis cs:1.32,1.12) {吸收峰高 $=2\omega_0/\gamma$};
+\node[font=\footnotesize,anchor=west] at (axis cs:0.18,-0.86) {低频端：$\chi\to\chi_{\mathrm{st}}$};
+\node[font=\footnotesize,anchor=west] at (axis cs:1.32,-0.95) {高频端：$\chi\sim-\omega_p^2/\omega^2$};
+\end{axis}
+\end{tikzpicture}

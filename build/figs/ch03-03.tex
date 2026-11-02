@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.2cm,height=5.4cm,
+  xmin=0,xmax=10,ymin=-3.2,ymax=1.35,
+  xlabel={$x$},ylabel={$J_m,\,Y_m$},
+  ytick={-3,-2,-1,0,1},
+  legend pos=south east]
+\addplot[thick] table[x=x,y=J0] {figs/ch03-03.dat};
+\addlegendentry{$J_0(x)$}
+\addplot[thick,dashed] table[x=x,y=Y0] {figs/ch03-03.dat};
+\addlegendentry{$Y_0(x)$}
+\addplot[thick,dotted] table[x=x,y=J1] {figs/ch03-03.dat};
+\addlegendentry{$J_1(x)$}
+\addplot[thick,dashdotted] table[x=x,y=Y1] {figs/ch03-03.dat};
+\addlegendentry{$Y_1(x)$}
+\end{axis}
+\end{tikzpicture}

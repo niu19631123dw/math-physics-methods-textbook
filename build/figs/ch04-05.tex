@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.8cm,height=5.6cm,
+  xmin=0,xmax=20,ymin=-0.52,ymax=1.08,
+  xlabel={$r/a_0$},ylabel={$R_{nl}(r)/|R|_{\max}$},
+  xtick={0,2,4,6,8,10,12,14,16,18,20},
+  ytick={-0.5,0,0.5,1},
+  legend pos=north east,legend columns=2]
+\addplot[thick,black] table[x=chi,y=R10] {figs/ch04-05.dat};
+\addlegendentry{$1s$}
+\addplot[thick,blue,densely dashed] table[x=chi,y=R20] {figs/ch04-05.dat};
+\addlegendentry{$2s$}
+\addplot[thick,red] table[x=chi,y=R21] {figs/ch04-05.dat};
+\addlegendentry{$2p$}
+\addplot[thick,teal,dash pattern=on 5pt off 2pt on 1pt off 2pt] table[x=chi,y=R30] {figs/ch04-05.dat};
+\addlegendentry{$3s$}
+\draw[auxd] (axis cs:2,-0.52) -- (axis cs:2,1.08);
+\node[font=\footnotesize,anchor=south west] at (axis cs:2.05,-0.40) {$r=2a_0$};
+\end{axis}
+\end{tikzpicture}

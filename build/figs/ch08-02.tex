@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+  % (a) 时域：矩形与高斯
+  \begin{axis}[physaxisbox,width=7.4cm,height=4.6cm,
+    xmin=-3,xmax=3,ymin=-0.15,ymax=1.25,
+    xlabel={$x$},ylabel={$f(x)$},
+    xtick={-2,0,2},ytick={0,0.5,1},
+    title={\footnotesize (a) 两个脉冲},title style={font=\footnotesize}]
+  \addplot[thick] table[x=x,y=rect] {figs/ch08-02.dat};
+  \addplot[thick,dashed,blue] table[x=x,y=gauss] {figs/ch08-02.dat};
+  \end{axis}
+  % (b) 频域：sinc 与高斯
+  \begin{axis}[physaxisbox,width=7.4cm,height=4.6cm,
+    xshift=7.9cm,
+    xmin=-20,xmax=20,ymin=-0.2,ymax=1.1,
+    xlabel={$k$},ylabel={$\tilde f(k)$},
+    xtick={-15,-10,-5,0,5,10,15},ytick={0,0.5,1},
+    title={\footnotesize (b) 各自的频谱},title style={font=\footnotesize}]
+  \addplot[thick] table[x=k,y=rect] {figs/ch08-02k.dat};
+  \addplot[thick,dashed,blue] table[x=k,y=gauss] {figs/ch08-02k.dat};
+  \end{axis}
+\end{tikzpicture}

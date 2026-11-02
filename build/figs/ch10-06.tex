@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=1.0]
+% 太阳
+\fill[gray!25] (0,0) circle (1);
+\draw[gray!55] (0,0) circle (1);
+\node[font=\footnotesize] at (0,-0.45) {太阳};
+% 入射渐近线
+\draw[thick] (-4.6,1.8) -- (-1.55,1.8);
+\draw[aux] (-4.6,1.8) -- (2.6,1.8);
+% 弯曲段
+\draw[thick] (-1.55,1.8) .. controls (-0.55,1.78) and (0.55,1.70) .. (1.55,1.50);
+% 出射
+\draw[thick] (1.55,1.50) -- (3.55,1.13);
+\draw[aux] (1.55,1.50) -- (0.10,1.81);
+% b
+\draw[auxd] (0,0) -- (0,1.8);
+\node[font=\footnotesize,fill=white,inner sep=1.5pt] at (0.0,1.42) {$b$};
+% 偏折角
+\draw[->] (0.10,1.80) ++(180:0.85) arc (180:168:0.85);
+\node[font=\small] at (-0.95,1.62) {$\alpha$};
+
+% 方向标注
+\draw[vec] (-2.9,1.8) -- (-2.3,1.8);
+\node[font=\footnotesize,above] at (-2.6,1.87) {入射};
+\node[font=\footnotesize,anchor=west] at (2.05,1.72) {出射};
+\end{tikzpicture}

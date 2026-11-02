@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+% (a) 三角波：函数值
+\begin{axis}[physaxis,width=5.9cm,height=5.0cm,
+  at={(0,0)},anchor=north west,
+  xmin=0,xmax=1,ymin=-0.3,ymax=1.25,
+  xtick={0,0.5,1},xticklabels={$0$,$\frac12$,$1$},ytick={0,0.5,1},
+  xlabel={$x/L$},ylabel={$S_N$},
+  ylabel style={at={(axis description cs:-0.16,0.5)},rotate=90,anchor=south},
+  title={\footnotesize (a) 函数值：不是 9\% 的过冲},
+  title style={at={(0.5,1.05)},anchor=south,font=\footnotesize},
+  legend columns=3,
+  legend style={at={(0.5,-0.30)},anchor=north,draw=none,fill=none,font=\footnotesize},
+]
+\addplot[thick,gray] table[x=x,y=ex] {figs/ch02-04a.dat};
+\addplot[thick,blue,dashed] table[x=x,y=N1] {figs/ch02-04a.dat};
+\addplot[thick,red] table[x=x,y=N40] {figs/ch02-04a.dat};
+\legend{精确,$N=1$,$N=40$}
+\end{axis}
+% (b) 导数级数
+\begin{axis}[physaxis,width=6.2cm,height=5.0cm,
+  at={(6.7cm,0)},anchor=north west,
+  xmin=0.3,xmax=0.7,ymin=0,ymax=2.65,
+  scaled x ticks=false,scaled y ticks=false,
+  xtick={0.35,0.45,0.55,0.65},xticklabels={$0.35$,$0.45$,$0.55$,$0.65$},
+  ytick={0,1,2},yticklabels={$0$,$1$,$2$},
+  xlabel={$x/L$},ylabel={$S_N'$},
+  ylabel style={at={(axis description cs:-0.10,0.5)},rotate=90,anchor=south},
+  xlabel style={at={(axis description cs:0.5,-0.16)},anchor=north},
+  title={\footnotesize (b) 导数：过冲跑进斜率里},
+  title style={at={(0.5,1.05)},anchor=south,font=\footnotesize},
+]
+\addplot[thick,blue,dashed] table[x=x,y=N10] {figs/ch02-04b.dat};
+\addplot[thick,red] table[x=x,y=N160] {figs/ch02-04b.dat};
+\addplot[aux,dotted,domain=0.3:0.7,samples=2] {2};
+\addplot[aux,dotted,domain=0.3:0.7,samples=2] {2.36};
+\end{axis}
+\end{tikzpicture}

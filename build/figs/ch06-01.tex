@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=1.2]
+\fill[gray!10] (2,0) arc (0:180:2) -- cycle;
+\draw[axisline] (-2.75,0) -- (3.05,0) node[right,font=\small] {$\mathrm{Re}\,z$};
+\draw[axisline] (0,-1.45) -- (0,2.5) node[above,font=\small] {$\mathrm{Im}\,z$};
+% 回路：实轴右行，大半圆左行
+\draw[thick,->] (-2,0) -- (-0.07,0);
+\draw[thick,->] (0.07,0) -- (2,0);
+\draw[thick] (2,0) arc (0:118:2);
+\draw[thick,->] (118:2) arc (118:131:2);
+\draw[thick] (131:2) arc (131:180:2);
+\node[font=\small] at (1.92,1.38) {$C_R$};
+% 半径
+\draw[dim] (0,0) -- (155:2);
+\node[font=\small,anchor=east] at (-1.42,0.62) {$R$};
+% 四个极点
+\foreach \x/\y in {-0.95/0.85, 0.55/1.18, -0.48/-0.72, 0.98/-0.52} {
+  \draw[very thick] (\x-0.075,\y-0.075) -- (\x+0.075,\y+0.075);
+  \draw[very thick] (\x-0.075,\y+0.075) -- (\x+0.075,\y-0.075);
+}
+\node[left,font=\small] at (-1.07,0.85) {$z_1$};
+\node[right,font=\small] at (0.66,1.24) {$z_2$};
+\node[left,font=\small] at (-0.60,-0.72) {$z_3$};
+\node[right,font=\small] at (1.10,-0.52) {$z_4$};
+% 计入与不计入
+\node[font=\footnotesize,anchor=west] at (-1.55,0.32) {回路内：计入};
+\node[font=\footnotesize,anchor=west] at (0.40,-1.16) {回路外：不计};
+\end{tikzpicture}

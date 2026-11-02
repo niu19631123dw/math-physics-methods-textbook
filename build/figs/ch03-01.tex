@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=1.62]
+  % 坐标轴与边界圆
+  \draw[axisline] (-0.45,0) -- (3.30,0) node[right] {$x$};
+  \draw[axisline] (0,-0.45) -- (0,3.02) node[above] {$y$};
+  \draw[aux] (0,0) circle (2.55);
+  \node[below left,font=\small] at (0,0) {$O$};
+  \node[font=\small,anchor=west] at (2.60,0.34) {边界 $r=a$};
+
+  % 极角与半径
+  \draw[thick] (0,0) -- (30:2.55);
+  \draw[thick] (0,0) -- (60:2.55);
+  \draw (1.00,0) arc (0:30:1.00);
+  \node[font=\small] at (15:1.26) {$\varphi$};
+  \node[font=\small,rotate=30] at (0.52,0.38) {$r$};
+
+  % 面积元：径向宽 dr，弧长 r dphi
+  \fill[gray!25] (30:1.55) arc (30:60:1.55) -- (60:2.15) arc (60:30:2.15) -- cycle;
+  \draw[thick] (30:1.55) arc (30:60:1.55);
+  \draw[thick] (30:2.15) arc (30:60:2.15);
+  \draw[thick] (30:1.55) -- (30:2.15);
+  \draw[thick] (60:1.55) -- (60:2.15);
+
+  % 面积元的标注：引线指向灰色小片
+  \node[font=\small,anchor=west] (dA) at (-2.00,1.05)
+    {$\mathrm{d}A=r\,\mathrm{d}r\,\mathrm{d}\varphi$};
+  \draw[gray,thin,->] (dA.east) -- (1.42,1.50);
+
+  % 点 P：膜上的一点
+  \coordinate (P) at (60:2.44);
+  \fill (P) circle (1.6pt) node[right=3pt,font=\small] {$P$};
+\end{tikzpicture}

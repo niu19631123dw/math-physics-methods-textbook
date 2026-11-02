@@ -1,0 +1,33 @@
+\begin{tikzpicture}[scale=1.16]
+% 支割线：正实轴，延伸到回路之外
+\draw[line width=3.4pt,gray!45] (0,0) -- (2.55,0);
+% 坐标轴
+\draw[axisline] (-2.85,0) -- (3.15,0) node[right,font=\small] {$\mathrm{Re}\,z$};
+\draw[axisline] (0,-2.35) -- (0,2.45) node[above,font=\small] {$\mathrm{Im}\,z$};
+% 上沿（左→右）
+\draw[thick,->] (0.55,0.13) -- (2.20,0.13);
+% 下沿（右→左）
+\draw[thick,->] (2.20,-0.13) -- (0.55,-0.13);
+% 大半圆：从 (R,+d) 逆时针绕到 (R,-d)
+\draw[thick] (2.20,0.13) arc (3.38:120:2.2038);
+\draw[thick,->] (120:2.2038) arc (120:132:2.2038);
+\draw[thick] (132:2.2038) arc (132:356.62:2.2038);
+\node[font=\small] at (1.42,1.72) {$C_R$};
+% 小圆：从 (eps,-d) 逆时针绕到 (eps,+d)
+\draw[thick] (0.55,-0.13) arc (-13.3:0:0.5652);
+\draw[thick,->] (0:0.5652) arc (0:13.3:0.5652);
+\node[font=\small,anchor=west] at (0.62,0.70) {$C_\varepsilon$};
+% 支点
+\fill (0,0) circle (2.4pt);
+\node[font=\footnotesize,anchor=east] at (-0.14,-0.32) {支点};
+% f 的极点
+\draw[very thick] (-1.075,-0.075) -- (-0.925,0.075);
+\draw[very thick] (-1.075,0.075) -- (-0.925,-0.075);
+\node[above,font=\small] at (-1.0,0.16) {$z=-1$};
+% 两沿的相位
+\node[font=\footnotesize,above] at (1.55,0.19) {$z=xe^{i0}$};
+\node[font=\footnotesize,below] at (1.40,-0.22) {$z=xe^{2\pi i}$};
+% 支割线标注
+\node[font=\footnotesize,anchor=west] at (2.36,-0.62) {支割线};
+\draw[aux] (2.40,-0.54) -- (2.20,-0.18);
+\end{tikzpicture}

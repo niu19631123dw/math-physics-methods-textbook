@@ -1,0 +1,20 @@
+% 图 1.7 ——弯曲刚度造成的非谐性：f_n/(n f_1) 随泛音阶数上升
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.6cm,height=5.6cm,
+  xmin=0.5,xmax=16.5,ymin=0.998,ymax=1.32,
+  xlabel={泛音阶数 $n$},
+  xtick={1,2,4,6,8,10,12,14,16},
+  legend style={at={(0.02,0.98)},anchor=north west,legend columns=1},
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+]
+\addplot[thick,mark=*,mark size=1.2pt] table[col sep=space,x=n,y=b3] {figs/ch01-07.dat};
+\addlegendentry{$B=10^{-3}$}
+\addplot[thick,dashed,mark=square*,mark size=1.2pt] table[col sep=space,x=n,y=b2] {figs/ch01-07.dat};
+\addlegendentry{$B=3.3\times10^{-4}$}
+\addplot[thick,dashdotted] table[col sep=space,x=n,y=b1] {figs/ch01-07.dat};
+\addlegendentry{$B=10^{-4}$}
+\addplot[thick,dotted] table[col sep=space,x=n,y=b0] {figs/ch01-07.dat};
+\addlegendentry{$B=0$（理想柔弦）}
+\node[font=\small,anchor=south east] at (axis description cs:0.0,1.0) {$f_n/(n f_1)$};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.0cm,height=5.0cm,
+  xmin=-8.6,xmax=8.6,ymin=-0.02,ymax=0.5,
+  xlabel={$k$},ylabel={$L\,c_n$},
+  ylabel style={at={(axis description cs:-0.10,0.5)}},
+  xtick={-8,-4,0,4,8},ytick={0,0.2,0.4},
+  legend style={at={(1.03,1.0)},anchor=north west,draw=none,font=\footnotesize}]
+\addplot[ycomb,thin,red,mark=triangle*,mark size=1.1pt] table[x=k,y=Lcn] {figs/ch08-01c.dat};
+\addlegendentry{$L=8$：间隔 $\pi/4$}
+\addplot[ycomb,thick,blue,mark=square*,mark size=1.2pt] table[x=k,y=Lcn] {figs/ch08-01b.dat};
+\addlegendentry{$L=4$：间隔 $\pi/2$}
+\addplot[ycomb,very thick,black,mark=*,mark size=1.4pt] table[x=k,y=Lcn] {figs/ch08-01a.dat};
+\addlegendentry{$L=2$：间隔 $\pi$}
+\addplot[gray,thick] table[x=k,y=env] {figs/ch08-01d.dat};
+\addlegendentry{连续谱 $\tilde f(k)$}
+\end{axis}
+\end{tikzpicture}

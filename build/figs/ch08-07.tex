@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \begin{axis}[physaxisbox,width=9.4cm,height=5.2cm,
+    xmode=log, xmin=0.01,xmax=100, ymin=-42,ymax=4,
+    xlabel={$\omega/\omega_c$},ylabel={$20\lg|H|$ (dB)},
+    ytick={0,-10,-20,-30,-40}]
+  \addplot[thick] table[x=f,y=mag] {figs/ch08-07.dat};
+  \node[font=\footnotesize,anchor=north west] at (axis cs:0.012,-6) {幅频};
+  \end{axis}
+  \begin{axis}[width=9.4cm,height=5.2cm,
+    xmode=log, xmin=0.01,xmax=100, ymin=-95,ymax=5,
+    axis y line*=right, axis x line=none,
+    ylabel={相位（度）}, ytick={0,-30,-60,-90}]
+  \addplot[thick,dashed,blue] table[x=f,y=phase] {figs/ch08-07.dat};
+  \node[font=\footnotesize,blue,anchor=south west] at (axis cs:0.02,-78) {相频};
+  \end{axis}
+\end{tikzpicture}

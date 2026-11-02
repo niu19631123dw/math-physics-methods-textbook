@@ -1,0 +1,19 @@
+% 图 7.6 —— 翼型表面速度：只有库塔环量让后缘速度有限
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.8cm,height=5.6cm,
+  xmin=0,xmax=360,ymin=0,ymax=4.2,
+  xlabel={圆上的参数角 $\theta$（度）},ylabel={$|v|/U$},
+  xtick={0,90,180,270,360},ytick={0,1,2,3,4},
+  legend style={at={(0.02,0.98)},anchor=north west,legend columns=1},
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+]
+\addplot[thick,dashed] table[col sep=space,x=th,y=v1] {figs/ch07-04.dat};
+\addlegendentry{$\Gamma=0.85\,\Gamma_K$}
+\addplot[very thick] table[col sep=space,x=th,y=v2] {figs/ch07-04.dat};
+\addlegendentry{$\Gamma=\Gamma_K$}
+\addplot[thick,dashdotted] table[col sep=space,x=th,y=v3] {figs/ch07-04.dat};
+\addlegendentry{$\Gamma=1.15\,\Gamma_K$}
+\draw[aux] (axis cs:355.3,0) -- (axis cs:355.3,3.55);
+\node[font=\footnotesize,anchor=south east] at (axis cs:353.5,3.45) {后缘};
+\end{axis}
+\end{tikzpicture}

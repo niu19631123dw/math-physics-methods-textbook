@@ -1,0 +1,19 @@
+% 图 7.1 —— 儒可夫斯基变换下的共形网格：偏心圆 → 翼型
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=10.4cm,height=5.4cm,
+  xmin=-2.85,xmax=3.25,ymin=-1.55,ymax=1.55,
+  xlabel={$x/a$},ylabel={$y/a$},
+  xtick={-2,0,2},ytick={-1,0,1},
+  unbounded coords=jump,
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+  ylabel style={at={(axis description cs:0.0,1.0)},anchor=south,rotate=-90},
+]
+\addplot[thin,blue!60] table[col sep=space,x=x,y=y] {figs/ch07-01.dat};
+\addplot[very thick,blue!70!black] table[col sep=space,x=x,y=y] {figs/ch07-01b.dat};
+\fill (axis cs:2,0) circle (1.6pt);
+\node[font=\footnotesize,anchor=north west] at (axis cs:1.72,-0.05) {后缘 $z=2a$};
+\node[font=\footnotesize,anchor=south west] at (axis cs:-1.35,0.36) {前缘};
+\node[font=\footnotesize,anchor=west,align=left] at (axis cs:0.55,-1.28)
+  {网格两族曲线处处正交——映射在 $z'(\zeta)\neq0$ 处保角};
+\end{axis}
+\end{tikzpicture}

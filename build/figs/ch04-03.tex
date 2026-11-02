@@ -1,0 +1,11 @@
+\begin{tikzpicture}[scale=1.5]
+\foreach \dx/\f/\lab in {0/a/{单极\quad$l=0$}, 3.6/b/{偶极\quad$l=1$}, 7.2/c/{四极\quad$l=2$}} {
+  \begin{scope}[xshift=\dx cm]
+    \draw[aux] (-1.35,0) -- (1.35,0);
+    \draw[aux] (0,-1.35) -- (0,1.35);
+    \fill[gray!12] plot file {figs/ch04-03\f.dat} -- cycle;
+    \draw[thick] plot file {figs/ch04-03\f.dat};
+    \node[font=\small,align=center] at (0,-1.72) {\lab};
+  \end{scope}
+}
+\end{tikzpicture}

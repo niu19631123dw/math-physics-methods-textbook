@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.4cm,height=5.4cm,
+  xmin=0,xmax=1,ymin=-1.05,ymax=1.08,
+  xlabel={$r/a$},ylabel={$J_0\left(j_{0,n}\,r/a\right)$},
+  xtick={0,0.2779,0.4357,0.6379,1},
+  xticklabels={$0$,$0.278$,$0.436$,$0.638$,$1$},
+  xticklabel style={font=\scriptsize},
+  legend pos=north east]
+\addplot[thick] table[x=xi,y=n1] {figs/ch03-05.dat};
+\addlegendentry{$n=1$}
+\addplot[thick,dashed] table[x=xi,y=n2] {figs/ch03-05.dat};
+\addlegendentry{$n=2$}
+\addplot[thick,dotted] table[x=xi,y=n3] {figs/ch03-05.dat};
+\addlegendentry{$n=3$}
+% 圆点 = 各条曲线的零点，也就是节圆所在的半径
+\addplot[only marks,mark=*,mark size=1.7pt,black] coordinates {
+  (0.4357,0) (0.2779,0) (0.6379,0)};
+\draw[gray,densely dotted] (axis cs:0.4357,0) -- (axis cs:0.4357,1);
+\node[font=\footnotesize,anchor=south west] at (axis cs:0.45,0.60) {节圆};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=8.8cm,height=6.4cm,
+  xmin=-0.05,xmax=1.16,ymin=-0.05,ymax=1.20,y dir=reverse,
+  xlabel={$x\ (\mathrm{m})$},ylabel={$y\ (\mathrm{m})$，向下为正},
+  xtick={0,0.5,1},ytick={0,0.5,1},
+  legend style={font=\footnotesize,draw=none,fill=none,at={(0.02,0.02)},anchor=south west}]
+\addplot[thick,red] table[x=x,y=yc] {figs/ch09-01.dat};
+\addlegendentry{摆线 $0.583$ s}
+\addplot[thick,blue,densely dashed] table[x=x,y=yl] {figs/ch09-01.dat};
+\addlegendentry{直线 $0.639$ s}
+\addplot[thick,black,dash pattern=on 5pt off 2pt on 1pt off 2pt] table[x=x,y=ya] {figs/ch09-01.dat};
+\addlegendentry{圆弧 $0.592$ s}
+\fill (axis cs:0,0) circle (1.6pt);
+\fill (axis cs:1,1) circle (1.6pt);
+\node[font=\small,anchor=north west] at (axis cs:-0.02,-0.02) {$A$};
+\node[font=\small,anchor=south east] at (axis cs:0.98,1.04) {$B$};
+\end{axis}
+\end{tikzpicture}

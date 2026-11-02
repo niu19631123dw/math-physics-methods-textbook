@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=10.2cm,height=6.2cm,
+  xbar,bar width=10pt,
+  xmin=0,xmax=6.2,ymin=0.3,ymax=8.7,y dir=reverse,
+  xlabel={$k_c a$},ylabel={模式（按 $k_c a$ 从小到大）},
+  ytick={1,2,3,4,5,6,7,8},
+  yticklabels={{TE$_{11}$},{TM$_{01}$},{TE$_{21}$},{TE$_{01}$},{TM$_{11}$},{TE$_{31}$},{TM$_{21}$},{TE$_{41}$}},
+  yticklabel style={font=\footnotesize},
+  xtick={0,1,2,3,4,5,6},
+  nodes near coords={\pgfmathprintnumber[fixed,precision=3]{\pgfplotspointmeta}},
+  nodes near coords style={font=\scriptsize,anchor=west,fill=white,inner sep=1pt},
+  enlarge y limits=0.04]
+% 单模工作区：1.841 < k_c a < 2.405，只有 TE11 能传
+\addplot[fill=gray!45,draw=black] table[x=kca,y=order] {figs/ch03-07.dat};
+\draw[thin,gray!70!black,densely dashed] (axis cs:1.8412,0.3) -- (axis cs:1.8412,8.7);
+\draw[thin,gray!70!black,densely dashed] (axis cs:2.4048,0.3) -- (axis cs:2.4048,8.7);
+\node[font=\footnotesize,anchor=west] at (axis cs:2.55,1.50) {单模区};
+\end{axis}
+\end{tikzpicture}

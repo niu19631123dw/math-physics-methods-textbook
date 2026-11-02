@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.2cm,height=5.4cm,
+  xmin=0,xmax=7,ymin=-0.45,ymax=1.35,
+  xlabel={$x$},ylabel={$u(x,t)$},
+  xtick=\empty,ytick=\empty,
+  xlabel style={at={(axis description cs:1.0,0.5)},anchor=west},
+]
+\addplot[thick,domain=0:7,samples=160] {0.35+0.35*sin(deg(0.9*x))};
+% 取一段 [x, x+dx]
+\coordinate (A) at (axis cs:2.2,0.671);
+\coordinate (B) at (axis cs:4.0,0.195);
+\draw[aux] (A) -- (axis cs:2.2,0);
+\draw[aux] (B) -- (axis cs:4.0,0);
+\draw[dashed] (A) -- (B);
+\fill (A) circle (1.6pt) node[above left,font=\small] {$x$};
+\fill (B) circle (1.6pt) node[above right,font=\small] {$x+\mathrm{d}x$};
+% 张力：沿切线、向外
+\draw[vec] (A) -- ++(-1.25,0.158) node[left,font=\small] {$T$};
+\draw[vec] (B) -- ++(1.25,-0.352) node[right,font=\small] {$T$};
+% 水平投影
+\draw[auxd] (2.2,0.58) -- (4.0,0.58);
+% dx 尺寸
+\draw[dim] (axis cs:2.2,-0.30) -- (axis cs:4.0,-0.30) node[midway,below,font=\small] {$\mathrm{d}x$};
+\end{axis}
+\end{tikzpicture}

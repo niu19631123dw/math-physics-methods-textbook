@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.6cm,height=5.0cm,
+  xmin=-5.3,xmax=5.3,ymin=-0.05,ymax=2.35,
+  xlabel={$x\ (\mathrm{m})$},ylabel={$y\ (\mathrm{m})$},
+  xtick={-5,-2.5,0,2.5,5},ytick={0,0.5,1,1.5,2},
+  legend columns=3,
+  legend style={font=\footnotesize,draw=none,fill=none,at={(0.5,-0.42)},anchor=north}]
+\addplot[thick,red] table[x=x,y=ycat] {figs/ch09-03.dat};
+\addlegendentry{悬链线}
+\addplot[thick,blue,densely dashed] table[x=x,y=ypar] {figs/ch09-03.dat};
+\addlegendentry{抛物线}
+\addplot[thick,black!60] table[x=x,y=d20] {figs/ch09-03.dat};
+\addlegendentry{差 $\times20$}
+\draw[auxd] (axis cs:-5,0.5) -- (axis cs:5,0.5);
+\draw[auxd] (axis cs:-5,2) -- (axis cs:5,2);
+\draw[dim] (axis cs:0,0) -- (axis cs:0,2) node[midway,right,font=\footnotesize] {$2\ \mathrm{m}$};
+\end{axis}
+\end{tikzpicture}

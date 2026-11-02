@@ -1,0 +1,11 @@
+\begin{tikzpicture}[scale=1.45]
+\foreach \dx/\f/\lab in {0/a/{$s$}, 3.3/b/{$p_z$}, 6.6/c/{$d_{z^2}$}} {
+  \begin{scope}[xshift=\dx cm]
+    \draw[auxd] (-1.2,0) -- (1.2,0);
+    \draw[auxd] (0,-1.2) -- (0,1.2);
+    \fill[gray!14] plot file {figs/ch04-04\f.dat} -- cycle;
+    \draw[thick] plot file {figs/ch04-04\f.dat};
+    \node[font=\small] at (0,-1.5) {\lab};
+  \end{scope}
+}
+\end{tikzpicture}

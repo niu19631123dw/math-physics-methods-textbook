@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.0cm,height=5.4cm,
+  xmin=0.6,xmax=5.4,ymin=0,ymax=17.5,
+  xlabel={$n$（第 $n$ 个零点）},ylabel={$j_{m,n}$},
+  xtick={1,2,3,4,5},
+  ytick={0,3,6,9,12,15},
+  legend style={at={(1.03,0.98)},anchor=north west}]
+\addplot[thick,mark=*,mark size=1.5pt] table[x=n,y=m0] {figs/ch03-06.dat};
+\addlegendentry{$m=0$}
+\addplot[thick,dashed,mark=square*,mark size=1.4pt] table[x=n,y=m1] {figs/ch03-06.dat};
+\addlegendentry{$m=1$}
+\addplot[thick,dotted,mark=triangle*,mark size=1.7pt] table[x=n,y=m2] {figs/ch03-06.dat};
+\addlegendentry{$m=2$}
+\addplot[thick,dashdotted,mark=diamond*,mark size=1.6pt] table[x=n,y=m3] {figs/ch03-06.dat};
+\addlegendentry{$m=3$}
+\addplot[gray,thin] table[x=n,y=asympt] {figs/ch03-06.dat};
+\addlegendentry{$(n-\frac14)\pi$}
+\end{axis}
+\end{tikzpicture}

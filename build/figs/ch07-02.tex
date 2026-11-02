@@ -1,0 +1,40 @@
+% 图 7.2 —— 儒可夫斯基变换：zeta 平面的圆与 z 平面的翼型
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=7.4cm,height=5.6cm,
+  xmin=-2.1,xmax=2.1,ymin=-1.55,ymax=1.55,
+  xlabel={$\xi$},ylabel={$\eta$},
+  xtick={-2,-1,0,1,2},ytick={-1,0,1},
+  title={\footnotesize $\zeta$ 平面},
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+]
+\addplot[very thick,domain=0:360,samples=160]
+  ({-0.10+1.1037*cos(x)},{0.09+1.1037*sin(x)});
+\fill (axis cs:1,0) circle (1.8pt);
+\fill (axis cs:-1,0) circle (1.8pt);
+\fill (axis cs:-0.10,0.09) circle (1.6pt);
+\draw[aux] (axis cs:-0.10,0.09) -- (axis cs:1,0);
+\node[font=\footnotesize,anchor=north] at (axis cs:0.45,0.10) {$R$};
+\node[font=\footnotesize,anchor=south east] at (axis cs:0.98,-0.02) {$\zeta=a$};
+\node[font=\footnotesize,anchor=east] at (axis cs:-1.08,0.18) {$\zeta=-a$};
+\node[font=\footnotesize,anchor=north] at (axis cs:-0.32,0.02) {$\zeta_0$};
+\end{axis}
+
+\begin{scope}[xshift=8.0cm]
+\begin{axis}[physaxisbox,width=7.4cm,height=5.6cm,
+  xmin=-2.45,xmax=2.45,ymin=-1.55,ymax=1.55,
+  xlabel={$x/a$},ylabel={$y/a$},
+  xtick={-2,0,2},ytick={-1,0,1},
+  title={\footnotesize $z$ 平面},
+  unbounded coords=jump,
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+]
+\addplot[very thick] table[col sep=space,x=x,y=y] {figs/ch07-01b.dat};
+\fill (axis cs:2,0) circle (1.8pt);
+\fill (axis cs:-2,0) circle (1.8pt);
+\node[font=\footnotesize,anchor=south east] at (axis cs:1.92,0.30) {后缘 $z=2a$};
+\node[font=\footnotesize,anchor=north east] at (axis cs:-1.95,-0.08) {前缘};
+\draw[dim] (axis cs:-2.0,-0.55) -- (axis cs:2.0,-0.55);
+\node[font=\footnotesize,anchor=north] at (axis cs:0,-0.60) {弦长 $\approx4a$};
+\end{axis}
+\end{scope}
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=2.0]
+\draw[gray!70] (0,0) circle (1);
+\draw[gray!50,dashed] plot[domain=0:360,samples=120]
+  ({-0.55*cos(\x)+0.85*sin(\x)},{0.28*(cos(\x)+sin(\x))});
+% 两条相邻经线
+\draw[thick] plot[domain=0:88,samples=60] ({-0.55*cos(\x)},{sin(\x)+0.28*cos(\x)});
+\draw[thick] plot[domain=0:88,samples=60]
+  ({-0.394*sin(\x)},{cos(\x)+0.3265*sin(\x)});
+\fill (0,1) circle (1.5pt);
+\node[above,font=\small] at (0,1.06) {$C$};
+% 偏离矢量
+\draw[dim] (-0.09,0.86) -- (0.04,0.86) node[midway,below,font=\footnotesize] {$\xi$};
+\draw[dim] (-0.38,0.44) -- (0.26,0.44) node[midway,below,font=\footnotesize] {$\xi(0)$};
+% 说明
+\node[font=\footnotesize,anchor=west,align=left] at (1.05,0.35)
+  {两条初始「平行」的测地线\\ 在 $C$ 点相交：\\[3pt]
+   $\dfrac{D^2\xi^\mu}{D\tau^2}=-R^\mu{}_{\nu\rho\sigma}u^\nu\xi^\rho u^\sigma$};
+\end{tikzpicture}

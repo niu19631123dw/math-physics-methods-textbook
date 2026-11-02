@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.8cm,height=5.4cm,
+  xmin=0,xmax=15,ymin=-0.45,ymax=1.05,
+  xlabel={$kr$},ylabel={$j_l(kr)$},
+  xtick={0,3,6,9,12,15},
+  legend pos=north east,legend columns=3]
+\addplot[thick,black] table[x=x,y=j0] {figs/ch04-07.dat};
+\addlegendentry{$j_0$}
+\addplot[thick,blue,densely dashed] table[x=x,y=j1] {figs/ch04-07.dat};
+\addlegendentry{$j_1$}
+\addplot[thick,red] table[x=x,y=j2] {figs/ch04-07.dat};
+\addlegendentry{$j_2$}
+\end{axis}
+\end{tikzpicture}

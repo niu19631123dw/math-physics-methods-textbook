@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=1.16]
+\draw[axisline] (-3.05,0) -- (3.25,0) node[right,font=\small] {$\mathrm{Re}\,\omega$};
+\draw[axisline] (0,-2.5) -- (0,2.6) node[above,font=\small] {$\mathrm{Im}\,\omega$};
+% t<0：上半平面闭合（虚线）
+\draw[thick,dashed] (2.2,0) arc (0:118:2.2);
+\draw[thick,dashed,->] (118:2.2) arc (118:131:2.2);
+\draw[thick,dashed] (131:2.2) arc (131:180:2.2);
+% t>0：下半平面闭合（实线）
+\draw[thick] (2.2,0) arc (0:-118:2.2);
+\draw[thick,->] (-118:2.2) arc (-118:-131:2.2);
+\draw[thick] (-131:2.2) arc (-131:-180:2.2);
+% 实轴方向
+\draw[thick,->] (-0.5,0) -- (0.5,0);
+% 极点
+\foreach \x in {-1.1,1.1} {
+  \draw[very thick] (\x-0.075,-0.575) -- (\x+0.075,-0.425);
+  \draw[very thick] (\x-0.075,-0.425) -- (\x+0.075,-0.575);
+}
+\node[right,font=\small] at (1.18,-0.60) {$\omega_-$};
+\node[left,font=\small] at (-1.18,-0.60) {$\omega_+$};
+% 闭合方向
+\node[font=\small,anchor=east] at (-2.52,0.72) {$t<0$};
+\node[font=\small,anchor=east] at (-2.52,-0.72) {$t>0$};
+% 极点位置的说明
+\node[font=\footnotesize,anchor=west] at (0.18,0.62)
+  {$\operatorname{Im}\omega_\pm=-\gamma/2<0$};
+\draw[aux] (0.62,0.50) -- (1.00,-0.36);
+\end{tikzpicture}

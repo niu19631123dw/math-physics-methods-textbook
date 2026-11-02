@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  \draw[axisline] (-3.9,0) -- (3.9,0) node[right,font=\small] {$x$};
+  \draw[axisline] (0,-0.45) -- (0,4.7) node[above,font=\small] {$t$};
+  % 源的世界线
+  \draw[very thick,gray!70] (0,0) -- (0,4.4);
+  \node[font=\footnotesize,anchor=west] at (0.14,4.12) {源的世界线};
+  % 未来光锥
+  \draw[thick] (0,0) -- (3.7,3.7);
+  \draw[thick] (0,0) -- (-3.7,3.7);
+  \node[font=\footnotesize,rotate=45,anchor=south west] at (1.78,1.88) {$t=|x|/c$};
+  % 观测事件 P 与它的过去光锥
+  \fill (1.9,3.5) circle (2.2pt) node[above right=1pt,font=\small] {$P$};
+  \draw[aux] (1.9,3.5) -- (0,1.6);
+  \draw[auxd] (1.9,3.5) -- (3.5,1.9);
+  \fill (0,1.6) circle (2.2pt);
+  \node[font=\footnotesize,anchor=south east] at (-0.08,1.72) {$t-R/c$};
+\end{tikzpicture}

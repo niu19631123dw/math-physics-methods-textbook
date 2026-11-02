@@ -1,0 +1,21 @@
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  % 球
+  \fill[gray!8] (0,0) circle (1.6);
+  \draw[thick] (0,0) circle (1.6);
+  % 赤道（虚线）
+  \draw[aux] (0,0) ellipse (1.6 and 0.50);
+  % 大圆：倾斜的椭圆，代表过两极的经线圈
+  \draw[thick,red,rotate=-22] (0,0) ellipse (1.6 and 0.62);
+  % 纬线圈：z=0.7 处
+  \draw[thick,blue,densely dashed] (0,0.70) ellipse (1.439 and 0.44);
+  % 轴与极点
+  \draw[auxd] (0,-1.88) -- (0,1.95);
+  \fill (0,1.6) circle (1.2pt);
+  \node[font=\footnotesize,anchor=west] at (0.10,1.78) {北极};
+  % 标注
+  \draw[gray,thin] (1.30,-0.62) -- (1.95,-0.95);
+  \node[font=\footnotesize,anchor=west] at (1.95,-0.95) {大圆（测地线）};
+  \draw[gray,thin] (-1.28,0.98) -- (-1.85,1.42);
+  \node[font=\footnotesize,anchor=east] at (-1.85,1.42) {纬线圈（不是）};
+  \node[font=\footnotesize,anchor=north] at (0,-1.95) {球面上的测地线是大圆，赤道是唯一的例外};
+\end{tikzpicture}

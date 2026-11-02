@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.4cm,height=5.0cm,
+  xmin=-8,xmax=8,ymin=0,ymax=1.05,
+  xlabel={$x$},ylabel={$|u(x,t)|^2$},
+  xtick={-6,-4,-2,0,2,4,6},ytick={0,0.5,1},
+  legend pos=north east]
+\addplot[thick] table[x=x,y=env] {figs/ch08-03a.dat};
+\addlegendentry{$t=0$}
+\addplot[thick,dashed] table[x=x,y=env] {figs/ch08-03b.dat};
+\addlegendentry{$t=2$}
+\addplot[thick,dotted] table[x=x,y=env] {figs/ch08-03c.dat};
+\addlegendentry{$t=5$}
+\end{axis}
+\end{tikzpicture}

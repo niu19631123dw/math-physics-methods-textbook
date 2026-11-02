@@ -1,0 +1,18 @@
+% 图 1.2 ——三角形初值在达朗贝尔解中分裂成两个半高的三角
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.6cm,height=5.4cm,
+  xmin=0,xmax=7,ymin=0,ymax=1.18,
+  xlabel={$x$},ylabel={$u$},
+  xtick={0,1,2,3,4,5,6,7},ytick={0,0.5,1},
+  legend style={at={(0.02,0.98)},anchor=north west,legend columns=1},
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+]
+\addplot[thick] table[col sep=space,x=x,y=u0] {figs/ch01-02.dat};
+\addlegendentry{$ct=0$}
+\addplot[thick,dashed] table[col sep=space,x=x,y=u1] {figs/ch01-02.dat};
+\addlegendentry{$ct=0.8$}
+\addplot[thick,dashdotted] table[col sep=space,x=x,y=u2] {figs/ch01-02.dat};
+\addlegendentry{$ct=1.6$}
+\node[font=\footnotesize,anchor=west] at (axis cs:5.15,0.62) {峰高减半};
+\end{axis}
+\end{tikzpicture}

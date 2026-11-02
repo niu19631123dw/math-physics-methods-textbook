@@ -1,0 +1,36 @@
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+% ============ (a) 接地平面 ============
+\begin{scope}
+  \fill[gray!10] (-2.7,-1.75) rectangle (2.7,0);
+  \draw[thick] (-2.7,0) -- (2.7,0);
+  \foreach \xx in {-2.55,-2.25,...,2.55} {
+    \draw[gray] (\xx,0) -- ++(-0.16,-0.16);
+  }
+  \draw[axisline] (0,0) -- (0,2.0) node[above,font=\small] {$z$};
+  \fill (0,1.15) circle (2.1pt) node[right=3pt,font=\small] {$q$};
+  \fill[white] (0,-1.15) circle (2.1pt);
+  \draw[thick] (0,-1.15) circle (2.1pt) node[left=3pt,font=\small] {$q'=-q$};
+  \draw[aux] (0,1.15) -- (0,-1.15);
+  \node[left=2pt,font=\footnotesize] at (-0.02,0.62) {$d$};
+  \node[left=2pt,font=\footnotesize] at (-0.02,-0.62) {$d$};
+  \fill (1.6,0) circle (1.6pt) node[above right=1pt,font=\small] {$P$};
+  \draw[dashed] (0,1.15) -- (1.6,0) node[midway,above=1pt,font=\footnotesize] {$r_1$};
+  \draw[dashed] (0,-1.15) -- (1.6,0) node[midway,above=1pt,font=\footnotesize] {$r_2$};
+  \node[font=\small,anchor=north] at (0.4,-1.85) {接地导体（$z=0$）};
+\end{scope}
+% ============ (b) 接地导体球 ============
+\begin{scope}[xshift=7.7cm,scale=1.15]
+  \draw[thick] (0,0) circle (1.0);
+  \draw[aux] (-1.55,0) -- (3.05,0);
+  \fill (0,0) circle (1.3pt) node[below left=1pt,font=\small] {$O$};
+  \fill (2.45,0) circle (1.9pt) node[above right=2pt,font=\small] {$q$};
+  \fill[white] (0.408,0) circle (1.9pt);
+  \draw[thick] (0.408,0) circle (1.9pt) node[below=4pt,font=\footnotesize] {$q'$};
+  \coordinate (P) at (0.574,0.819);
+  \fill (P) circle (1.5pt) node[above right=1pt,font=\small] {$P$};
+  \draw[dashed] (P) -- (2.45,0) node[midway,above right=1pt,font=\footnotesize] {$r_1$};
+  \draw[dashed] (P) -- (0.408,0) node[midway,left=2pt,font=\footnotesize] {$r_2$};
+  \draw[dim] (0,-1.22) -- (2.45,-1.22) node[pos=0.42,below=2pt,font=\footnotesize] {$d$};
+\end{scope}
+\node[font=\small,anchor=north] at (9.1,-1.78) {接地导体球};
+\end{tikzpicture}

@@ -1,0 +1,28 @@
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  % 坐标轴
+  \draw[axisline] (-0.25,0) -- (6.7,0) node[right,font=\small] {$x$};
+  \draw[axisline] (0,-0.35) -- (0,3.25) node[above,font=\small] {$y$};
+  % 真实解 y(x)
+  \draw[thick] plot[domain=0:6,samples=120] (\x,{1.45+0.5*sin(deg(0.8*\x))});
+  % 邻近曲线 y+eps*eta
+  \draw[thick,red,densely dashed] plot[domain=0:6,samples=160] (\x,{1.45+0.5*sin(deg(0.8*\x))+0.72*sin(30*\x)});
+  % 扰动 epsilon*eta 单独画在下面
+  \draw[thick,blue!70] plot[domain=0:6,samples=160] (\x,{0.30+0.72*sin(30*\x)});
+  \draw[auxd] (0,0.30) -- (6,0.30);
+  % 竖直连线：显示每一点的差
+  \foreach \x in {0.7,1.4,2.1,2.8,3.5,4.2,4.9,5.6} {
+    \pgfmathsetmacro{\ya}{1.45+0.5*sin(deg(0.8*\x))}
+    \pgfmathsetmacro{\yb}{\ya+0.72*sin(30*\x)}
+    \draw[vec,gray] (\x,\ya) -- (\x,\yb);
+  }
+  % 端点
+  \fill (0,1.45) circle (1.5pt);
+  \fill (6,{1.45+0.5*sin(deg(4.8))}) circle (1.5pt);
+  \node[font=\small,anchor=north east] at (-0.05,0) {$a$};
+  \node[font=\small,anchor=north west] at (6,0) {$b$};
+  % 标注
+  \node[font=\small,anchor=west] at (6.15,{1.95}) {$y(x)$};
+  \node[font=\small,red,anchor=west] at (6.15,2.72) {$y+\varepsilon\eta$};
+  \node[font=\small,blue!70,anchor=west] at (6.15,0.95) {$\varepsilon\eta(x)$};
+  \node[font=\footnotesize,anchor=west] at (0.15,2.95) {每个 $\varepsilon$ 对应一条邻近曲线};
+\end{tikzpicture}

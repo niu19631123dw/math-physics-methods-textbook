@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=7.4cm,height=5.6cm,
+  xmin=0,xmax=1.30,ymin=-0.8,ymax=7.35,
+  xlabel={$x/L$},ylabel={},
+  xtick={0,0.25,0.5,0.75,1},
+  xticklabels={$0$,$\frac14$,$\frac12$,$\frac34$,$1$},
+  ytick=\empty,
+  xlabel style={at={(axis description cs:0.5,-0.10)},anchor=north},
+]
+% 每个模的中位线
+\addplot[auxd,domain=0:1,samples=2] {0};
+\addplot[auxd,domain=0:1,samples=2] {2};
+\addplot[auxd,domain=0:1,samples=2] {4};
+\addplot[auxd,domain=0:1,samples=2] {6};
+\addplot[thick,domain=0:1,samples=200] {sin(deg(pi*x))};
+\addplot[thick,domain=0:1,samples=200] {2+sin(deg(2*pi*x))};
+\addplot[thick,domain=0:1,samples=200] {4+sin(deg(3*pi*x))};
+\addplot[thick,domain=0:1,samples=200] {6+sin(deg(4*pi*x))};
+% 节点
+\fill (axis cs:0.5,2) circle (1.6pt);
+\fill (axis cs:0.3333,4) circle (1.6pt);
+\fill (axis cs:0.6667,4) circle (1.6pt);
+\fill (axis cs:0.25,6) circle (1.6pt);
+\fill (axis cs:0.5,6) circle (1.6pt);
+\fill (axis cs:0.75,6) circle (1.6pt);
+% 端点
+\fill (axis cs:0,0) circle (1.6pt);
+\fill (axis cs:1,0) circle (1.6pt);
+\fill (axis cs:0,2) circle (1.6pt);
+\fill (axis cs:1,2) circle (1.6pt);
+\fill (axis cs:0,4) circle (1.6pt);
+\fill (axis cs:1,4) circle (1.6pt);
+\fill (axis cs:0,6) circle (1.6pt);
+\fill (axis cs:1,6) circle (1.6pt);
+\node[right,font=\small] at (axis cs:1.03,0) {$n=1$};
+\node[right,font=\small] at (axis cs:1.03,2) {$n=2$};
+\node[right,font=\small] at (axis cs:1.03,4) {$n=3$};
+\node[right,font=\small] at (axis cs:1.03,6) {$n=4$};
+\end{axis}
+\end{tikzpicture}

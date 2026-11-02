@@ -1,0 +1,36 @@
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  % 远处均匀场
+  \foreach \y in {2.15,2.80} {
+    \draw[vec] (-4.5,\y) -- (4.5,\y);
+    \draw[vec] (-4.5,-\y) -- (4.5,-\y);
+  }
+  % 被球拉弯的场线：左半（终止于球面），右半（从球面出发）
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(-4.5,1.55) (-3.0,1.50) (-2.20,1.15) (-1.039,0.60)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(-4.5,0.66) (-3.0,0.58) (-2.20,0.33) (-1.20,0)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(-4.5,-1.55) (-3.0,-1.50) (-2.20,-1.15) (-1.039,-0.60)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(-4.5,-0.66) (-3.0,-0.58) (-2.20,-0.33) (-1.20,0)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(1.039,0.60) (2.20,1.15) (3.0,1.50) (4.5,1.55)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(1.20,0) (2.20,0.33) (3.0,0.58) (4.5,0.66)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(1.039,-0.60) (2.20,-1.15) (3.0,-1.50) (4.5,-1.55)};
+  \draw[vec] plot[smooth,tension=0.8] coordinates
+    {(1.20,0) (2.20,-0.33) (3.0,-0.58) (4.5,-0.66)};
+  % 导体球
+  \fill[gray!12] (0,0) circle (1.2);
+  \draw[thick] (0,0) circle (1.2);
+  % 表面电荷
+  \foreach \a in {140,180,220} {\node[font=\small] at (\a:0.98) {$-$};}
+  \foreach \a in {40,0,-40} {\node[font=\small] at (\a:0.98) {$+$};}
+  % 标注
+  \node[font=\small,anchor=north] at (0,-1.28) {接地导体球};
+  \node[font=\small,anchor=west] at (2.55,2.32) {$\boldsymbol{E}_0$};
+  \node[font=\footnotesize,anchor=north] at (-2.35,-1.30) {$\sigma<0$};
+  \node[font=\footnotesize,anchor=north] at (2.35,-1.30) {$\sigma>0$};
+  \node[font=\footnotesize,anchor=west] at (1.42,-0.82) {$\sigma\propto\cos\theta$};
+\end{tikzpicture}

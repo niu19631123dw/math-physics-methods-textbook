@@ -1,0 +1,29 @@
+% 图 1.3 ——两族特征线与依赖区间
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  % 第一象限内的特征线网格
+  \begin{scope}
+    \clip (0,0) rectangle (6,4.05);
+    \foreach \i in {1,2,3,4,5} {
+      \draw[gray!55,thin] (\i,0) -- (\i+4.05,4.05);
+      \draw[gray!55,thin] (\i,0) -- (\i-4.05,4.05);
+    }
+    \foreach \j in {1,2,3} {
+      \draw[gray!35,very thin] (0,\j) -- (6,\j);
+    }
+  \end{scope}
+  % 坐标轴
+  \draw[axisline] (-0.25,0) -- (6.55,0) node[right,font=\small] {$x$};
+  \draw[axisline] (0,-0.25) -- (0,4.35) node[above,font=\small] {$t$};
+  % 过 P 的两条特征线
+  \draw[very thick] (1,0) -- (5,4);
+  \draw[very thick] (5,0) -- (1,4);
+  \fill (3,2) circle (2.1pt) node[above right,font=\small] {$(x,t)$};
+  % 依赖区间
+  \draw[line width=2.4pt,gray!70] (1,0) -- (5,0);
+  \draw[dim] (1,-0.42) -- (3,-0.42) node[midway,below,font=\footnotesize] {$ct$};
+  \draw[dim] (3,-0.42) -- (5,-0.42) node[midway,below,font=\footnotesize] {$ct$};
+  \draw[aux] (1,0) -- (1,-0.42);
+  \draw[aux] (5,0) -- (5,-0.42);
+  \draw[aux] (3,0) -- (3,-0.42);
+  \node[font=\small,below] at (3,-0.95) {依赖区间 $[x-ct,\ x+ct]$};
+\end{tikzpicture}

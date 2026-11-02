@@ -1,0 +1,23 @@
+\begin{tikzpicture}[>=Stealth,scale=1.95]
+  % 球体
+  \fill[gray!10] (0,0) circle (1);
+  \draw[thick] (0,0) circle (1);
+  % 极轴
+  \draw[axisline] (0,-1.28) -- (0,1.42) node[right,font=\small] {$z$};
+  % 三条节锥：画成球面上的纬度圆（透视成椭圆）
+  % theta=39.2: cos=0.7746, sin=0.6325
+  \draw[thick,red] (0,0.7746) ellipse (0.6325 and 0.177);
+  % theta=90: 赤道
+  \draw[thick,red] (0,0) ellipse (1 and 0.28);
+  % theta=140.8
+  \draw[thick,red] (0,-0.7746) ellipse (0.6325 and 0.177);
+  % 顶点与极角标注
+  \fill (0,0) circle (1.1pt);
+  \draw[aux] (0,0) -- (39.2:1);
+  \draw[aux] (0,0) -- (140.8:1);
+  \node[font=\footnotesize,fill=white,inner sep=1pt] at (0.30,0.62) {$\theta=39.2^\circ$};
+  \node[font=\footnotesize,fill=white,inner sep=1pt] at (0.78,0.06) {$\theta=90^\circ$};
+  \node[font=\footnotesize,fill=white,inner sep=1pt] at (0.30,-0.62) {$\theta=140.8^\circ$};
+  \node[font=\footnotesize,anchor=west] at (1.06,0.92) {$P_3=0$};
+  \node[font=\footnotesize,anchor=west] at (-1.15,1.05) {节锥};
+\end{tikzpicture}

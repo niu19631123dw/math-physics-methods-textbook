@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.8cm,height=5.6cm,
+  xmode=log,ymode=log,
+  xmin=1,xmax=100,ymin=1e-6,ymax=2,
+  xlabel={$r/a$},ylabel={相对误差},
+  legend pos=south west,legend style={draw=none,fill=none},
+  xtick={1,2,5,10,20,50,100},
+  xticklabels={$1$,$2$,$5$,$10$,$20$,$50$,$100$}]
+\addplot[thick,black] table[x=r,y=e0] {figs/ch05-07.dat};
+\addlegendentry{$l\le 0$}
+\addplot[thick,red,dashed] table[x=r,y=e1] {figs/ch05-07.dat};
+\addlegendentry{$l\le 1$}
+\addplot[thick,blue,dash dot] table[x=r,y=e2] {figs/ch05-07.dat};
+\addlegendentry{$l\le 2$}
+\draw[auxd] (axis cs:5,1e-6) -- (axis cs:5,0.45);
+\node[font=\footnotesize,anchor=south] at (axis cs:5,0.5) {$r=5a$};
+\end{axis}
+\end{tikzpicture}

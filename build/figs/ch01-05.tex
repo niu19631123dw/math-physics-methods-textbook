@@ -1,0 +1,27 @@
+% 图 1.5 ——镜像延拓：把半无限弦变成无限长弦
+\begin{tikzpicture}[>=Stealth,scale=0.95]
+  % ---------- 上排：奇延拓（固定端）
+  \begin{scope}[yshift=3.5cm]
+    \draw[axisline] (-3.4,0) -- (3.4,0) node[right,font=\small] {$x$};
+    \draw[very thick] (0,-1.25) -- (0,1.25);
+    \node[font=\footnotesize,below] at (0,-1.28) {墙};
+    \draw[thick] (0,0) -- (0.55,0) -- (1.6,1.0) -- (2.65,0) -- (3.25,0);
+    \draw[thick,dashed] (0,0) -- (-0.55,0) -- (-1.6,-0.8) -- (-2.65,0) -- (-3.25,0);
+    \node[font=\footnotesize,anchor=west,align=left] at (-3.35,1.55)
+      {奇延拓\\$f(-x)=-f(x)$};
+    \node[font=\footnotesize,anchor=south] at (1.55,1.06) {真实弦};
+    \node[font=\footnotesize,anchor=north] at (-1.6,-0.88) {镜像取负};
+  \end{scope}
+  % ---------- 下排：偶延拓（自由端）
+  \begin{scope}[yshift=0cm]
+    \draw[axisline] (-3.4,0) -- (3.4,0) node[right,font=\small] {$x$};
+    \draw[very thick] (0,-1.25) -- (0,1.25);
+    \node[font=\footnotesize,below] at (0,-1.28) {光滑杆};
+    \draw[thick] (0,0) -- (0.55,0) -- (1.6,1.0) -- (2.65,0) -- (3.25,0);
+    \draw[thick,dashed] (0,0) -- (-0.55,0) -- (-1.6,1.0) -- (-2.65,0) -- (-3.25,0);
+    \node[font=\footnotesize,anchor=west,align=left] at (-3.35,1.55)
+      {偶延拓\\$f(-x)=f(x)$};
+    \node[font=\footnotesize,anchor=south] at (1.55,1.06) {真实弦};
+    \node[font=\footnotesize,anchor=north] at (-1.6,-0.10) {镜像不变号};
+  \end{scope}
+\end{tikzpicture}

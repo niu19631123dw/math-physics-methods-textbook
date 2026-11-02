@@ -1,0 +1,20 @@
+% 图 7.4 —— 马格努斯效应：旋转圆柱两侧的流速差与升力
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  % 圆柱
+  \draw[very thick] (0,0) circle (1.05);
+  \fill (0,0) circle (1.6pt);
+  % 顺时针转动
+  \draw[->,thick] (0.62,0.72) arc (49:-49:0.95);
+  \node[font=\footnotesize,anchor=west] at (1.12,0.42) {$\omega$};
+  % 来流
+  \draw[vec] (-3.7,0) -- (-1.30,0) node[midway,above,font=\footnotesize] {$U$};
+  % 两侧速度叠加
+  \draw[vec] (-0.85,1.22) -- (1.05,1.22) node[right,font=\footnotesize] {$U+v$};
+  \draw[vec] (1.05,-1.22) -- (-0.85,-1.22) node[left,font=\footnotesize] {$U-v$};
+  \node[font=\footnotesize,anchor=south] at (0,1.36) {流速快、压力低};
+  \node[font=\footnotesize,anchor=north] at (0,-1.38) {流速慢、压力高};
+  % 升力
+  \draw[vec,very thick] (2.05,0) -- (2.05,1.35);
+  \node[font=\footnotesize,anchor=south west] at (2.05,1.38) {$L=\rho U|\Gamma|$};
+  \node[font=\footnotesize,anchor=west,align=left] at (2.15,0.72) {$=\rho U|\Gamma|$};
+\end{tikzpicture}

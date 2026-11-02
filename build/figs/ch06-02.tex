@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.8cm,height=5.6cm,
+  xmin=0,xmax=185,ymin=-0.03,ymax=1.14,
+  xlabel={半圆上的角位置 $\theta$},ylabel={$|e^{iaz}|$},
+  xtick={0,45,90,135,180},
+  xticklabels={$0$,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$},
+  ytick={0,0.5,1},
+  legend style={font=\footnotesize,at={(0.5,1.0)},anchor=north,legend columns=2}]
+\addplot[thick,domain=0:180,samples=400] {exp(-3*sin(x))};
+\addlegendentry{$aR=3$}
+\addplot[thick,dashed,domain=0:180,samples=400] {exp(-12*sin(x))};
+\addlegendentry{$aR=12$}
+\addplot[dotted,domain=0:180,samples=200,forget plot] {exp(-2*3*x/180)};
+\addplot[dotted,domain=0:180,samples=200,forget plot] {exp(-2*3*(180-x)/180)};
+\node[font=\footnotesize,anchor=west] at (axis cs:96,0.24) {中间几乎为零};
+\draw[dim] (axis cs:2,0.11) -- (axis cs:34,0.11);
+\node[font=\footnotesize,anchor=south] at (axis cs:18,0.13) {宽度 $\sim 1/(aR)$};
+\end{axis}
+\end{tikzpicture}

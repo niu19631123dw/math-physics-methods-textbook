@@ -1,0 +1,21 @@
+% 图 7.7 —— 升力系数随攻角（薄翼理论）
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.4cm,height=5.4cm,
+  xmin=-9,xmax=17,ymin=-1.2,ymax=2.2,
+  xlabel={攻角 $\alpha$（度）},ylabel={$C_L$},
+  xtick={-8,-4,0,4,8,12,16},ytick={-1,0,1,2},
+  xlabel style={at={(axis description cs:1.0,0.0)},anchor=west},
+]
+\fill[gray!12] (axis cs:15,-1.2) rectangle (axis cs:17,2.2);
+\node[font=\footnotesize,anchor=south,rotate=90] at (axis cs:16.1,-0.15) {已失速};
+\addplot[very thick] table[col sep=space,x=al,y=CL] {figs/ch07-05.dat};
+\draw[aux] (axis cs:-3.2,-1.2) -- (axis cs:-3.2,2.2);
+\node[font=\footnotesize,anchor=south east] at (axis cs:-3.7,-0.15) {零升力角};
+\draw[dim] (axis cs:0,-0.62) -- (axis cs:4,-0.62);
+\draw[aux] (axis cs:0,0) -- (axis cs:0,-0.62);
+\draw[aux] (axis cs:4,0) -- (axis cs:4,-0.62);
+\node[font=\footnotesize,anchor=north] at (axis cs:2,-0.70) {$4^\circ$};
+\node[font=\footnotesize,anchor=west,align=left] at (axis cs:-8.4,1.85)
+  {斜率 $2\pi$/弧度 $=0.11$/度};
+\end{axis}
+\end{tikzpicture}

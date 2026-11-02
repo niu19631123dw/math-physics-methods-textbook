@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=2.0]
+% 球
+\draw[gray!70] (0,0) circle (1);
+\draw[gray!50,dashed] plot[domain=0:360,samples=120]
+  ({-0.55*cos(\x)+0.85*sin(\x)},{0.28*(cos(\x)+sin(\x))});
+% 八分之一球面：三条大圆弧
+\draw[thick] plot[domain=0:90,samples=60] ({-0.55*cos(\x)},{sin(\x)+0.28*cos(\x)});
+\draw[thick] plot[domain=0:90,samples=60] ({0.85*cos(\x)},{sin(\x)+0.28*cos(\x)});
+\draw[thick] plot[domain=0:90,samples=60]
+  ({-0.55*cos(\x)+0.85*sin(\x)},{0.28*(cos(\x)+sin(\x))});
+% 顶点
+\fill (-0.55,0.28) circle (1.5pt);
+\fill (0.85,0.28) circle (1.5pt);
+\fill (0,1) circle (1.5pt);
+\node[left,font=\small] at (-0.62,0.24) {$A$};
+\node[right,font=\small] at (0.92,0.24) {$B$};
+\node[above,font=\small] at (0,1.06) {$C$};
+% 被搬运的矢量
+\draw[vec] (-0.55,0.28) -- ++(62:0.42) node[above,font=\footnotesize] {$\boldsymbol{v}$};
+\draw[vec] (0.15,0.52) -- ++(150:0.40);
+\draw[vec] (0.85,0.28) -- ++(118:0.42);
+\draw[vec] (0,1) -- ++(180:0.44) node[left,font=\footnotesize] {$\boldsymbol{v}'$};
+% 说明
+\node[font=\footnotesize,anchor=north west,align=left] at (-1.30,-1.10)
+  {沿 $A\to C\to B\to A$ 平行移动一圈，\\
+   回到 $A$ 时 $\boldsymbol{v}'$ 相对 $\boldsymbol{v}$ 转了 $90^\circ$\\
+   （$=A+B+C-\pi$，与路径无关）};
+\end{tikzpicture}

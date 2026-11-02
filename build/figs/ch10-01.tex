@@ -1,0 +1,24 @@
+\begin{tikzpicture}[scale=1.15]
+\draw[gray!55,dashed] (0,0) circle (2.2);
+\draw[axisline] (-2.35,0) -- (2.55,0) node[right,font=\small] {$x$};
+\draw[axisline] (0,-0.55) -- (0,2.55) node[above,font=\small] {$y$};
+\coordinate (P) at (30:2.2);
+\coordinate (Q) at (72:2.2);
+\fill (P) circle (1.8pt);
+\fill (Q) circle (1.8pt);
+\node[below right,font=\small] at (P) {$P$};
+\node[above left,font=\small] at (Q) {$Q$};
+\fill (0,0) circle (1.5pt);
+\node[below left,font=\small] at (0,0) {$O$};
+% P 处
+\draw[vec] (P) -- ++(30:0.95) node[above right,font=\small] {$\hat{\boldsymbol{e}}_r$};
+\draw[vec] (P) -- ++(120:0.80) node[above left,font=\small] {$\hat{\boldsymbol{e}}_\varphi$};
+% Q 处
+\draw[vec] (Q) -- ++(72:0.95) node[above right,font=\small] {$\hat{\boldsymbol{e}}_r$};
+\draw[vec] (Q) -- ++(162:0.80) node[left,font=\small] {$\hat{\boldsymbol{e}}_\varphi$};
+% 说明
+\node[font=\footnotesize,anchor=north west,align=left] at (-2.45,-0.85)
+  {由 $P$ 走到 $Q$，位置只挪了一点，\\
+   但 $\hat{\boldsymbol{e}}_r$ 转了 $42^\circ$：\\
+   基矢量是位置的函数};
+\end{tikzpicture}

@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.8cm,height=5.6cm,
+  xmin=-6.2,xmax=6.2,ymin=-0.05,ymax=0.50,
+  xlabel={$x$},ylabel={$K(x,t)$},
+  xtick={-6,-4,-2,0,2,4,6},
+  legend pos=north east,legend style={draw=none,fill=none}]
+\addplot[thick,blue] table[x=x,y=k1] {figs/ch05-04.dat};
+\addlegendentry{$t=0.5$}
+\addplot[thick,red,dashed] table[x=x,y=k2] {figs/ch05-04.dat};
+\addlegendentry{$t=2$}
+\addplot[thick,black,dash dot] table[x=x,y=k3] {figs/ch05-04.dat};
+\addlegendentry{$t=8$}
+\draw[auxd] (axis cs:-1.0,0.399) -- (axis cs:1.0,0.399);
+\draw[auxd] (axis cs:-1.6,0.200) -- (axis cs:1.6,0.200);
+\draw[auxd] (axis cs:-2.4,0.100) -- (axis cs:2.4,0.100);
+\node[font=\footnotesize,anchor=north west,align=left] at (axis cs:-5.2,0.47)
+  {峰值 $\propto 1/\sqrt{t}$\\[2pt] 宽度 $\propto\sqrt{t}$\\[2pt] 面积恒为 $1$};
+\end{axis}
+\end{tikzpicture}

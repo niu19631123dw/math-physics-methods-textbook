@@ -1,0 +1,33 @@
+% 图 7.3 —— 圆柱绕流：无环量（左）与带环量（右）
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=7.2cm,height=5.2cm,
+  xmin=-3.4,xmax=3.4,ymin=-2.4,ymax=2.4,
+  xlabel={$x$},ylabel={},xtick={-2,0,2},ytick={-2,0,2},
+  title={\footnotesize $\Gamma=0$},
+  unbounded coords=jump,
+  xlabel style={at={(axis description cs:1.0,0.5)},anchor=west},
+]
+\addplot[thin,gray] table[col sep=space,x=x,y=y] {figs/ch07-02a.dat};
+\addplot[very thick,domain=0:360,samples=120] ({cos(x)},{sin(x)});
+\fill (axis cs:-1,0) circle (1.6pt);
+\fill (axis cs:1,0) circle (1.6pt);
+\node[font=\footnotesize,anchor=north west] at (axis cs:1.10,-0.10) {驻点};
+\end{axis}
+
+\begin{scope}[xshift=7.9cm]
+\begin{axis}[physaxisbox,width=7.2cm,height=5.2cm,
+  xmin=-3.4,xmax=3.4,ymin=-2.4,ymax=2.4,
+  xlabel={$x$},ylabel={},xtick={-2,0,2},ytick={-2,0,2},
+  title={\footnotesize $\Gamma=2\pi Ua$（$\beta=30^\circ$）},
+  unbounded coords=jump,
+  xlabel style={at={(axis description cs:1.0,0.5)},anchor=west},
+]
+\addplot[thin,gray] table[col sep=space,x=x,y=y] {figs/ch07-02b.dat};
+\addplot[very thick,domain=0:360,samples=120] ({cos(x)},{sin(x)});
+\fill (axis cs:0.866,0.5) circle (1.6pt);
+\fill (axis cs:-0.866,0.5) circle (1.6pt);
+\node[font=\footnotesize,anchor=south west] at (axis cs:0.95,0.55) {驻点};
+\node[font=\footnotesize,anchor=south] at (axis cs:-2.1,1.55) {上方流速变小};
+\end{axis}
+\end{scope}
+\end{tikzpicture}

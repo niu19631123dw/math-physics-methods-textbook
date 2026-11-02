@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=Stealth,scale=1.0]
+  % 轴线
+  \draw[auxd] (0,-1.6) -- (0,1.6) node[above,font=\small] {$z$};
+  % 环（上下边界）
+  \draw[very thick] (0,1) ellipse ({cosh(1)} and {0.30*cosh(1)});
+  \draw[very thick] (0,-1) ellipse ({cosh(1)} and {0.30*cosh(1)});
+  % 平行圆（母线绕 z 轴转出来的圆）
+  \foreach \z in {-0.875,-0.75,...,0.876} {
+    \draw[gray!70,thin] (0,\z) ellipse ({cosh(\z)} and {0.30*cosh(\z)});
+  }
+  \draw[gray!70,thin] (0,0) ellipse (1 and 0.30);
+  % 两条母线
+  \draw[thick,red] plot[domain=-1:1,samples=80] ({cosh(\x)},{\x});
+  \draw[thick,red] plot[domain=-1:1,samples=80] ({-cosh(\x)},{\x});
+  % 腰部半径
+  \fill (1,0) circle (1.3pt);
+  \draw[gray,thin] (1,0) -- (2.05,-0.55);
+  \node[font=\footnotesize,anchor=west] at (2.05,-0.55) {腰部 $r=a$};
+  % 环半径
+  \draw[gray,thin] ({cosh(1)},1) -- (2.30,1.55);
+  \node[font=\footnotesize,anchor=west] at (2.30,1.55) {环 $R=a\cosh(z_0/a)$};
+\end{tikzpicture}

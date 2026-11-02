@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+% (a) 两端固定
+\begin{axis}[physaxis,width=4.2cm,height=3.0cm,
+  at={(0,0)},anchor=north west,
+  xmin=0,xmax=1,ymin=-1.55,ymax=1.55,
+  xtick={0,0.5,1},xticklabels={$0$,$\frac12$,$1$},ytick={-1,1},
+  title={\footnotesize (a) 固定--固定},
+  title style={at={(0.5,1.05)},anchor=south,font=\footnotesize},
+]
+\addplot[thick,domain=0:1,samples=100] {sin(deg(pi*x))};
+\addplot[thick,blue,dashed,domain=0:1,samples=100] {sin(deg(2*pi*x))};
+\fill (axis cs:0,0) circle (1.4pt);
+\fill (axis cs:1,0) circle (1.4pt);
+\end{axis}
+% (b) 一端固定一端自由
+\begin{axis}[physaxis,width=4.2cm,height=3.0cm,
+  at={(4.5cm,0)},anchor=north west,
+  xmin=0,xmax=1,ymin=-1.55,ymax=1.55,
+  xtick={0,0.5,1},xticklabels={$0$,$\frac12$,$1$},ytick={-1,1},
+  title={\footnotesize (b) 固定--自由},
+  title style={at={(0.5,1.05)},anchor=south,font=\footnotesize},
+]
+\addplot[thick,domain=0:1,samples=100] {sin(deg(0.5*pi*x))};
+\addplot[thick,blue,dashed,domain=0:1,samples=100] {sin(deg(1.5*pi*x))};
+\fill (axis cs:0,0) circle (1.4pt);
+\draw[aux] (axis cs:1,1.45) -- (axis cs:1,-1.45);
+\end{axis}
+% (c) 两端自由
+\begin{axis}[physaxis,width=4.2cm,height=3.0cm,
+  at={(9.0cm,0)},anchor=north west,
+  xmin=0,xmax=1,ymin=-1.55,ymax=1.55,
+  xtick={0,0.5,1},xticklabels={$0$,$\frac12$,$1$},ytick={-1,1},
+  xlabel={$x/L$},
+  title={\footnotesize (c) 自由--自由},
+  title style={at={(0.5,1.05)},anchor=south,font=\footnotesize},
+]
+\addplot[thick,domain=0:1,samples=100] {cos(deg(pi*x))};
+\addplot[thick,blue,dashed,domain=0:1,samples=100] {cos(deg(2*pi*x))};
+\draw[aux] (axis cs:0,1.45) -- (axis cs:0,-1.45);
+\draw[aux] (axis cs:1,1.45) -- (axis cs:1,-1.45);
+\end{axis}
+\end{tikzpicture}

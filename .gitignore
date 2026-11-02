@@ -1,0 +1,27 @@
+# 构建中间产物
+build/*.aux
+build/*.log
+build/*.toc
+build/*.out
+build/main.pdf
+build/body.tex
+build/appendix.tex
+build/_preview/
+build/_*
+build/__pycache__/
+build/**/__pycache__/
+build/preview/
+build/test.*
+build/tikz*
+
+# 一次性修补脚本（历史草稿，不入库）
+build/patch*.py
+build/fix*.py
+build/audit*.py
+
+# 上一版归档（本地参考，不发布）
+_v1/
+
+# 杂项
+.DS_Store
+Thumbs.db

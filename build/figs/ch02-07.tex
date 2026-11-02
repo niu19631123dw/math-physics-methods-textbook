@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=9.2cm,height=5.4cm,
+  xmin=0,xmax=5,ymin=-2.15,ymax=2.6,
+  xtick={0,1,2,3,4,5},ytick={-2,-1,0,1,2},
+  xlabel={$t/T_1$},ylabel={$u$},
+]
+\addplot[thick,blue] table[x=t,y=y] {figs/ch02-07.dat};
+\addplot[thick,red,dashed] table[x=t,y=env] {figs/ch02-07.dat};
+\addplot[aux,dotted] table[x=t,y expr=-\thisrow{env}] {figs/ch02-07.dat};
+\node[font=\scriptsize,anchor=east] at (axis cs:4.98,2.45) {包络 $2|\cos\frac{\omega_2-\omega_1}{2}t|$};
+\end{axis}
+\end{tikzpicture}

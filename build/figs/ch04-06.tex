@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[physaxisbox,width=9.8cm,height=5.6cm,
+  xmin=0,xmax=30,ymin=0,ymax=0.62,
+  xlabel={$r/a_0$},ylabel={$r^2|R_{nl}|^2\ \ (a_0^{-1})$},
+  xtick={0,5,10,15,20,25,30},
+  legend pos=north east,legend columns=2]
+\addplot[thick,black] table[x=chi,y=P10] {figs/ch04-06.dat};
+\addlegendentry{$1s$}
+\addplot[thick,blue,densely dashed] table[x=chi,y=P20] {figs/ch04-06.dat};
+\addlegendentry{$2s$}
+\addplot[thick,red] table[x=chi,y=P21] {figs/ch04-06.dat};
+\addlegendentry{$2p$}
+\addplot[thick,teal,dash pattern=on 5pt off 2pt on 1pt off 2pt] table[x=chi,y=P30] {figs/ch04-06.dat};
+\addlegendentry{$3s$}
+\draw[auxd] (axis cs:1,0) -- (axis cs:1,0.62);
+\node[font=\footnotesize,anchor=west] at (axis cs:2.6,0.42) {$r=a_0$};
+\end{axis}
+\end{tikzpicture}

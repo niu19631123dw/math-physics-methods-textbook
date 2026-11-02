@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=1.0]
+% (a) (1,2) 模
+\begin{scope}
+  \draw[thick] (0,0) rectangle (3,3);
+  \draw[aux] (0,1.5) -- (3,1.5);
+  \node[font=\small] at (1.5,2.35) {$+$};
+  \node[font=\small] at (1.5,0.62) {$-$};
+  \node[font=\footnotesize] at (1.5,-0.42) {(a) $(1,2)$ 模};
+  \node[font=\footnotesize,anchor=south east] at (2.92,0.14) {$x$};
+  \node[font=\footnotesize,anchor=north west] at (0.12,2.9) {$y$};
+\end{scope}
+% (b) (2,1) 模
+\begin{scope}[xshift=4.4cm]
+  \draw[thick] (0,0) rectangle (3,3);
+  \draw[aux] (1.5,0) -- (1.5,3);
+  \node[font=\small] at (0.62,1.5) {$+$};
+  \node[font=\small] at (2.38,1.5) {$-$};
+  \node[font=\footnotesize] at (1.5,-0.42) {(b) $(2,1)$ 模};
+\end{scope}
+% (c) 同相叠加
+\begin{scope}[yshift=-4.3cm]
+  \draw[thick] (0,0) rectangle (3,3);
+  \draw[aux] (0,3) -- (3,0);
+  \node[font=\small] at (0.9,0.7) {$+$};
+  \node[font=\small] at (2.1,2.3) {$-$};
+  \node[font=\footnotesize] at (1.5,-0.42) {(c) $(1,2)+(2,1)$};
+\end{scope}
+% (d) 反相叠加
+\begin{scope}[xshift=4.4cm,yshift=-4.3cm]
+  \draw[thick] (0,0) rectangle (3,3);
+  \draw[aux] (0,0) -- (3,3);
+  \node[font=\small] at (2.3,0.7) {$+$};
+  \node[font=\small] at (0.7,2.3) {$-$};
+  \node[font=\footnotesize] at (1.5,-0.42) {(d) $(1,2)-(2,1)$};
+\end{scope}
+\end{tikzpicture}

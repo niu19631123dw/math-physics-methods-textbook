@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=1.2]
+\fill[gray!8] (2,0) arc (0:180:2) -- cycle;
+\draw[axisline] (-2.75,0) -- (3.1,0) node[right,font=\small] {$\mathrm{Re}\,z$};
+\draw[axisline] (0,-0.95) -- (0,2.5) node[above,font=\small] {$\mathrm{Im}\,z$};
+% 大半圆
+\draw[thick] (2,0) arc (0:118:2);
+\draw[thick,->] (118:2) arc (118:131:2);
+\draw[thick] (131:2) arc (131:180:2);
+% 实轴两段
+\draw[thick,->] (-2,0) -- (-0.47,0);
+\draw[thick,->] (0.47,0) -- (2,0);
+% 小半圆：从右向左上方绕过（顺时针）
+\draw[thick] (-0.45,0) arc (180:120:0.45);
+\draw[thick,->] (120:0.45) arc (120:60:0.45);
+\draw[thick] (60:0.45) arc (60:0:0.45);
+% 极点
+\draw[very thick] (-0.075,-0.075) -- (0.075,0.075);
+\draw[very thick] (-0.075,0.075) -- (0.075,-0.075);
+% 半径与 epsilon
+\draw[dim] (60:0.60) -- (60:2);
+\node[font=\small,anchor=west] at (0.78,1.12) {$R$};
+\draw[dim] (0,-0.18) -- (0.45,-0.18);
+\node[font=\footnotesize] at (0.22,-0.36) {$\varepsilon$};
+\node[font=\small,anchor=east] at (-0.20,-0.32) {$z_0$};
+% 标注
+\node[font=\footnotesize,anchor=west] at (-2.55,-0.62) {P.V.（主值）};
+\node[font=\small,anchor=east] at (-0.72,0.46) {$C_\varepsilon$};
+\node[font=\small,anchor=west] at (2.04,0.62) {$C_R$};
+\node[font=\footnotesize,anchor=north west,align=left] at (0.62,-0.52)
+  {顺时针绕半圈\\给出 $-i\pi\,\mathrm{Res}$};
+\draw[aux] (0.60,-0.46) -- (0.42,-0.12);
+\end{tikzpicture}

@@ -1,0 +1,36 @@
+% figlib.tex —— 全书插图公共样式。只放样式定义，不要在这里 \usepackage。
+% 由 main.tex 在导言区 \input。
+
+\pgfplotsset{
+  compat=1.18,
+  physaxis/.style={
+    width=8.4cm, height=5.2cm,
+    axis lines=middle,
+    xlabel style={at={(axis description cs:0.5,-0.06)},anchor=north,font=\small},
+    ylabel style={at={(axis description cs:-0.04,0.5)},rotate=-90,anchor=south,font=\small},
+    tick label style={font=\footnotesize},
+    legend style={font=\footnotesize,draw=none,fill=none},
+    legend cell align=left,
+    samples=160,
+    every axis plot/.append style={line join=round}
+  },
+  physaxisbox/.style={
+    physaxis,
+    axis lines=box,
+    tick align=outside,
+    tick pos=left
+  }
+}
+
+\tikzset{
+  >=Stealth,
+  vec/.style={->,thick,>=Stealth},
+  axisline/.style={->,>=Stealth},
+  aux/.style={dashed,gray},
+  auxd/.style={dotted,gray},
+  dim/.style={<->,>=Stealth},
+  surf/.style={thick},
+  node font/.style={font=\small},
+  lbl/.style={font=\small,inner sep=1pt},
+  smalllbl/.style={font=\footnotesize,inner sep=1pt}
+}

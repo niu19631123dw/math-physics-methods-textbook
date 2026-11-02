@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[physaxis,width=11.2cm,height=5.4cm,
+  xmin=-3.1,xmax=3.1,ymin=-0.12,ymax=1.20,
+  xlabel={$x$},ylabel={$u(x,t)$},
+  xtick={-3,-2,-1,0,1,2,3},
+  legend pos=north west,legend style={draw=none,fill=none},
+  legend cell align=left]
+\addplot[thick,black,dotted] table[x=x,y=f0] {figs/ch05-05.dat};
+\addlegendentry{初值 $u(x,0)$}
+\addplot[thick,blue] table[x=x,y=wave] {figs/ch05-05.dat};
+\addlegendentry{波动解（$t=1$，$c=1$）}
+\addplot[thick,red,dashed] table[x=x,y=diff] {figs/ch05-05.dat};
+\addlegendentry{扩散解（同一时刻）}
+\draw[auxd] (axis cs:-1.2,0) -- (axis cs:-1.2,0.5);
+\node[font=\footnotesize,anchor=east] at (axis cs:-1.28,0.32) {陡峭的前沿};
+\end{axis}
+\end{tikzpicture}

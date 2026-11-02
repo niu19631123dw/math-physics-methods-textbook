@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=1.16]
+% 方框回路 C_N
+\draw[thick] (-2.5,-2.5) rectangle (2.5,2.5);
+\draw[thick,->] (-0.35,-2.5) -- (0.35,-2.5);
+\draw[thick,->] (2.5,-0.35) -- (2.5,0.35);
+\draw[thick,->] (0.35,2.5) -- (-0.35,2.5);
+\draw[thick,->] (-2.5,0.35) -- (-2.5,-0.35);
+\node[font=\small] at (1.72,2.16) {$C_N$};
+% 坐标轴：只画到方框之外
+\draw[axisline] (-2.5,0) -- (-3.05,0);
+\draw[axisline] (2.5,0) -- (3.15,0) node[right,font=\small] {$\mathrm{Re}\,z$};
+\draw[axisline] (0,2.5) -- (0,2.95) node[above,font=\small] {$\mathrm{Im}\,z$};
+\draw[axisline] (0,-2.5) -- (0,-2.95);
+% pi*cot(pi*z) 的极点：整数点
+\foreach \n in {-2,-1,0,1,2} {
+  \draw[very thick] (\n-0.075,-0.075) -- (\n+0.075,0.075);
+  \draw[very thick] (\n-0.075,0.075) -- (\n+0.075,-0.075);
+}
+% f 的极点
+\foreach \y in {1.5,-1.5} {
+  \draw[very thick] (-0.075,\y-0.075) -- (0.075,\y+0.075);
+  \draw[very thick] (-0.075,\y+0.075) -- (0.075,\y-0.075);
+}
+\node[right,font=\small] at (0.14,1.5) {$f$ 的极点};
+% 半宽 N+1/2
+\draw[dim] (0,-0.22) -- (2.5,-0.22);
+\node[font=\footnotesize] at (1.25,-0.44) {$N+\tfrac12$};
+% 说明
+\node[font=\footnotesize,anchor=west] at (-2.30,-1.02)
+  {每个整数：$\pi\cot\pi z$ 的一阶极点};
+\node[font=\footnotesize,anchor=west] at (-2.30,1.06) {四边：$|\cot\pi z|$ 有界};
+\end{tikzpicture}
